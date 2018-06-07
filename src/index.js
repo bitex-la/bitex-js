@@ -6,12 +6,12 @@ import {
  } from './models'
 
 export default class Bitex {
-  constructor({api_key, environment = 'production'}){
+  constructor({apiKey, environment = 'production'}){
     const prefix = (environment !== 'production') ? environment + '.' : ''
     if(environment === 'test') process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 
     this.client = new JsonapiClient(`https://${prefix}bitex.la/api`)
-    this.client.set_header('Authorization', api_key)
+    this.client.setHeader('Authorization', apiKey)
 
     this.defineModels()
   }

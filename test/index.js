@@ -11,7 +11,7 @@ describe('bitex-js', () => {
   let client
 
   beforeEach(() => {
-    client = new Bitex({api_key: 'valid_api_key', environment: 'test'})
+    client = new Bitex({apiKey: 'valid_api_key', environment: 'test'})
   })
 
   afterEach(() => {
