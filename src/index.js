@@ -79,6 +79,14 @@ export default class Bitex {
   }
 
   async getTransactions(code){
-    return this.client.find({type: 'markets', id: code, path: 'transactions'})
+    return this.client.find({type: 'markets', id: code, path: 'transactions'}).then(
+      (market) => market.transactions
+    )
+  }
+
+  async getCandles(code){
+    return this.client.find({type: 'markets', id: code, path: 'candles'}).then(
+      (market) => market.candles
+    )
   }
 }

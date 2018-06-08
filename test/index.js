@@ -68,11 +68,21 @@ describe('bitex-js', () => {
     })
 
     it('should get public market transactions', async () => {
-      const market = await client.getTransactions('bch_usd')
-      expect(market).to.be.an.instanceof(Market)
-      expect(market.transactions.length).to.equal(1)
-      expect(market.transactions[0]).to.be.an.instanceof(Transaction)
-      expect(market.transactions[0].price).to.equal(1222)
+      const transactions = await client.getTransactions('bch_usd')
+      expect(transactions.length).to.equal(1)
+      expect(transactions[0]).to.be.an.instanceof(Transaction)
+      expect(transactions[0].price).to.equal(1222)
+    })
+
+    it('should get public market candles', async () => {
+      const candles = await client.getCandles('btc_usd')
+      expect(candles.length).to.equal(1)
+      expect(candles[0]).to.be.an.instanceof(Candle)
+      expect(candles[0].low).to.equal(100)
+      expect(candles[0].open).to.equal(200)
+      expect(candles[0].close).to.equal(300)
+      expect(candles[0].high).to.equal(400)
+      expect(candles[0].volume).to.equal(10)
     })
   })
 })

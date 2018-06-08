@@ -116,5 +116,49 @@ let mockServer = () => {
         }
       ]
     })
+
+    let marketCandles = nock('https://test.bitex.la')
+      .get('/api/markets/btc_usd/candles/')
+      .reply(200, {
+        "data": {
+          "id": "btc_usd",
+          "type": "markets",
+          "relationships": {
+            "candles": {
+              "data": [
+                {
+                  "id": "1528396871",
+                  "type": "candles"
+                }
+              ]
+            },
+            "transactions": {
+              "data": null
+            },
+            "bids": {
+              "data": null
+            },
+            "asks": {
+              "data": null
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "1528396871",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1528396871,
+              "low": 100,
+              "open": 200,
+              "close": 300,
+              "high": 400,
+              "volume": 10,
+              "price_before_last": 0,
+              "vwap": 0
+            }
+          }
+        ]
+      })
 }
 export default mockServer
