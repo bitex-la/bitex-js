@@ -30,6 +30,7 @@ import {
   CashDepositMethod,
   Ticker,
   Candle,
+  Transaction,
   ContactRequest,
   Country
 } from '../src/models'
@@ -64,6 +65,14 @@ describe('bitex-js', () => {
       const ticker = await client.getTicker('btc_usd')
       expect(ticker).to.be.an.instanceof(Ticker)
       expect(ticker.last).to.equal(200)
+    })
+
+    it('should get public market transactions', async () => {
+      const market = await client.getTransactions('bch_usd')
+      expect(market).to.be.an.instanceof(Market)
+      expect(market.transactions.length).to.equal(1)
+      expect(market.transactions[0]).to.be.an.instanceof(Transaction)
+      expect(market.transactions[0].price).to.equal(1222)
     })
   })
 })

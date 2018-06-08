@@ -25,6 +25,7 @@ import {
   CashDepositMethod,
   Ticker,
   Candle,
+  Transaction,
   ContactRequest,
   Country
 } from './models'
@@ -64,6 +65,7 @@ export default class Bitex {
     this.client.define(CashDepositMethod)
     this.client.define(Ticker)
     this.client.define(Candle)
+    this.client.define(Transaction)
     this.client.define(ContactRequest)
     this.client.define(Country)
   }
@@ -74,5 +76,9 @@ export default class Bitex {
 
   async getTicker(code){
     return this.client.find({type: 'markets', id: code, customParams: {scope: 'ticker'}})
+  }
+
+  async getTransactions(code){
+    return this.client.find({type: 'markets', id: code, path: 'transactions'})
   }
 }

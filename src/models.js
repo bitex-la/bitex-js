@@ -226,6 +226,14 @@ export class Candle {
   }
 }
 
+export class Transaction {
+  constructor(){
+    this.timestamp = null
+    this.amount = null
+    this.price = null
+  }
+}
+
 export class ContactRequest {
   constructor(){
     this.email = null

@@ -77,5 +77,44 @@ let mockServer = () => {
         }
       }
     })
+
+    let marketTransactions = nock('https://test.bitex.la')
+    .get('/api/markets/bch_usd/transactions/')
+    .reply(200, {
+      "data": {
+        "id": "bch_usd",
+        "type": "markets",
+        "relationships": {
+          "candles": {
+            "data": null
+          },
+          "transactions": {
+            "data": [
+              {
+                "id": "27",
+                "type": "transactions"
+              }
+            ]
+          },
+          "bids": {
+            "data": null
+          },
+          "asks": {
+            "data": null
+          }
+        }
+      },
+      "included": [
+        {
+          "id": "27",
+          "type": "transactions",
+          "attributes": {
+            "timestamp": 1528479620,
+            "price": 1222,
+            "amount": 1
+          }
+        }
+      ]
+    })
 }
 export default mockServer
