@@ -2,32 +2,32 @@ import axios from 'axios'
 import _ from 'lodash'
 import JsonapiClient from 'heather-js'
 import {
-  Market,
-  OrderGroup,
-  Ask,
-  Bid,
-  Orderbook,
-  Movement,
   Account,
-  User,
-  PurchaseIntention,
-  Purchase,
-  Sale,
-  Reception,
-  Emission,
-  CoinWithdrawal,
-  UserCoinAddressBookEntry,
-  CashWithdrawal,
+  Ask,
   Bank,
-  WithdrawalInstruction,
-  Notification,
+  Bid,
+  Candle,
   CashDeposit,
   CashDepositMethod,
-  Ticker,
-  Candle,
-  Transaction,
+  CashWithdrawal,
+  CoinWithdrawal,
   ContactRequest,
-  Country
+  Country,
+  Emission,
+  Market,
+  Movement,
+  Notification,
+  Orderbook,
+  OrderGroup,
+  Purchase,
+  PurchaseIntention,
+  Reception,
+  Sale,
+  Ticker,
+  Transaction,
+  User,
+  UserCoinAddressBookEntry,
+  WithdrawalInstruction
 } from './models'
 
 export default class Bitex {
@@ -42,32 +42,32 @@ export default class Bitex {
   }
 
   defineModels(){
-    this.client.define(Market)
-    this.client.define(OrderGroup)
-    this.client.define(Ask)
-    this.client.define(Bid)
-    this.client.define(Orderbook)
-    this.client.define(Movement)
     this.client.define(Account)
-    this.client.define(User)
-    this.client.define(PurchaseIntention)
-    this.client.define(Purchase)
-    this.client.define(Sale)
-    this.client.define(Reception)
-    this.client.define(Emission)
-    this.client.define(CoinWithdrawal)
-    this.client.define(UserCoinAddressBookEntry)
-    this.client.define(CashWithdrawal)
+    this.client.define(Ask)
     this.client.define(Bank)
-    this.client.define(WithdrawalInstruction)
-    this.client.define(Notification)
+    this.client.define(Bid)
+    this.client.define(Candle)
     this.client.define(CashDeposit)
     this.client.define(CashDepositMethod)
-    this.client.define(Ticker)
-    this.client.define(Candle)
-    this.client.define(Transaction)
+    this.client.define(CashWithdrawal)
+    this.client.define(CoinWithdrawal)
     this.client.define(ContactRequest)
     this.client.define(Country)
+    this.client.define(Emission)
+    this.client.define(Market)
+    this.client.define(Movement)
+    this.client.define(Notification)
+    this.client.define(Orderbook)
+    this.client.define(OrderGroup)
+    this.client.define(Purchase)
+    this.client.define(PurchaseIntention)
+    this.client.define(Reception)
+    this.client.define(Sale)
+    this.client.define(Ticker)
+    this.client.define(Transaction)
+    this.client.define(User)
+    this.client.define(UserCoinAddressBookEntry)
+    this.client.define(WithdrawalInstruction)
   }
 
   async getMarket(code){
