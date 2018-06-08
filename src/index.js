@@ -71,4 +71,8 @@ export default class Bitex {
   async getMarket(code){
     return this.client.find({type: 'markets', id: code})
   }
+
+  async getTicker(code){
+    return this.client.find({type: 'markets', id: code, customParams: {scope: 'ticker'}})
+  }
 }

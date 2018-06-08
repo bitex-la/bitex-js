@@ -57,5 +57,25 @@ let mockServer = () => {
         }
       ]
     })
+
+  let marketTicker = nock('https://test.bitex.la')
+    .get('/api/markets/btc_usd/?scope=ticker')
+    .reply(200, {
+      "data": {
+        "id": "btc_usd",
+        "type": "tickers",
+        "attributes": {
+          "last": 200,
+          "open": 100,
+          "high": 300,
+          "low": 50,
+          "vwap": null,
+          "volume": 0,
+          "bid": 10,
+          "ask": 0,
+          "price_before_last": 0
+        }
+      }
+    })
 }
 export default mockServer

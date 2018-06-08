@@ -59,5 +59,11 @@ describe('bitex-js', () => {
       expect(market.bids[0]).to.be.an.instanceof(OrderGroup)
       expect(market.asks.length).to.equal(0)
     })
+
+    it('should get market ticker', async () => {
+      const ticker = await client.getTicker('btc_usd')
+      expect(ticker).to.be.an.instanceof(Ticker)
+      expect(ticker.last).to.equal(200)
+    })
   })
 })
