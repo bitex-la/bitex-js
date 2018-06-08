@@ -2,8 +2,32 @@ import axios from 'axios'
 import _ from 'lodash'
 import JsonapiClient from 'heather-js'
 import {
-  Market
- } from './models'
+  Market,
+  OrderGroup,
+  Ask,
+  Bid,
+  Orderbook,
+  Movement,
+  Account,
+  User,
+  PurchaseIntention,
+  Purchase,
+  Sale,
+  Reception,
+  Emission,
+  CoinWithdrawal,
+  UserCoinAddressBookEntry,
+  CashWithdrawal,
+  Bank,
+  WithdrawalInstruction,
+  Notification,
+  CashDeposit,
+  CashDepositMethod,
+  Ticker,
+  Candle,
+  ContactRequest,
+  Country
+} from './models'
 
 export default class Bitex {
   constructor({apiKey, environment = 'production'}){
@@ -18,6 +42,30 @@ export default class Bitex {
 
   defineModels(){
     this.client.define(Market)
+    this.client.define(OrderGroup)
+    this.client.define(Ask)
+    this.client.define(Bid)
+    this.client.define(Orderbook)
+    this.client.define(Movement)
+    this.client.define(Account)
+    this.client.define(User)
+    this.client.define(PurchaseIntention)
+    this.client.define(Purchase)
+    this.client.define(Sale)
+    this.client.define(Reception)
+    this.client.define(Emission)
+    this.client.define(CoinWithdrawal)
+    this.client.define(UserCoinAddressBookEntry)
+    this.client.define(CashWithdrawal)
+    this.client.define(Bank)
+    this.client.define(WithdrawalInstruction)
+    this.client.define(Notification)
+    this.client.define(CashDeposit)
+    this.client.define(CashDepositMethod)
+    this.client.define(Ticker)
+    this.client.define(Candle)
+    this.client.define(ContactRequest)
+    this.client.define(Country)
   }
 
   async getMarket(code){
