@@ -92,5 +92,13 @@ describe('bitex-js', () => {
       expect(newAsk.user.id).to.equal('8')
       expect(newAsk.orderbook.id).to.equal('1')
     })
+
+    it('should be able to put a bid', async () => {
+      const newBid = await client.createBid('btc_usd', 12, 100)
+      expect(newBid).to.be.an.instanceof(Bid)
+      expect(newBid.id).to.equal('70')
+      expect(newBid.user.id).to.equal('8')
+      expect(newBid.orderbook.id).to.equal('1')
+    })
   })
 })

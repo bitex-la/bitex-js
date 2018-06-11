@@ -199,5 +199,45 @@ let mockServer = () => {
           }
         }
       })
+
+    let postBid = nock('https://test.bitex.la')
+      .post('/api/markets/btc_usd/bids/', {
+        "data": {
+          "type": "bids",
+          "attributes": {
+            "amount": 100,
+            "price": 12,
+            "remaining_amount": null,
+            "orderbook": null,
+            "user": null
+          }
+        }
+      })
+      .reply(200, {
+        "data": {
+          "id": "70",
+          "type": "bids",
+          "attributes": {
+            "amount": 100,
+            "remaining_amount": 100,
+            "price": 12.0
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "8",
+                "type": "users"
+              }
+            },
+            "orderbook": {
+              "data": {
+                "id": "1",
+                "type": "orderbooks"
+              }
+            }
+          }
+        }
+      })
+
 }
 export default mockServer

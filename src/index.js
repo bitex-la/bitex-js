@@ -99,4 +99,12 @@ export default class Bitex {
 
     return this.client.create({resource: ask, orderbook_code})
   }
+
+  async createBid(orderbook_code, price, amount){
+    let bid = new Bid()
+    bid.price = price
+    bid.amount = amount
+
+    return this.client.create({resource: bid, orderbook_code})
+  }
 }
