@@ -200,6 +200,47 @@ let mockServer = () => {
         }
       })
 
+    let cancelAsks = nock('https://test.bitex.la')
+      .post('/api/markets/btc_usd/asks/cancel/', [
+        {
+          "data": {
+            "type": "asks",
+            "id": "70",
+            "attributes": {
+              "amount": null,
+              "remaining_amount": null,
+              "price": null,
+              "orderbook": null,
+              "user": null
+            }
+          }
+        },
+        {
+          "data": {
+            "type": "asks",
+            "id": "71",
+            "attributes": {
+              "amount": null,
+              "remaining_amount": null,
+              "price": null,
+              "orderbook": null,
+              "user": null
+            }
+          }
+        }
+      ])
+      .reply(207, {
+        "data": [{
+          "type": "cancel_status",
+          "text": "conflict",
+          "value": false
+        }, {
+          "type": "cancel_status",
+          "text": "not_found",
+          "value": true
+        }]
+      })
+
     let postBid = nock('https://test.bitex.la')
       .post('/api/markets/btc_usd/bids/', {
         "data": {
@@ -239,5 +280,45 @@ let mockServer = () => {
         }
       })
 
+    let cancelBids = nock('https://test.bitex.la')
+      .post('/api/markets/btc_usd/bids/cancel/', [
+        {
+          "data": {
+            "type": "bids",
+            "id": "70",
+            "attributes": {
+              "amount": null,
+              "remaining_amount": null,
+              "price": null,
+              "orderbook": null,
+              "user": null
+            }
+          }
+        },
+        {
+          "data": {
+            "type": "bids",
+            "id": "71",
+            "attributes": {
+              "amount": null,
+              "remaining_amount": null,
+              "price": null,
+              "orderbook": null,
+              "user": null
+            }
+          }
+        }
+      ])
+      .reply(207, {
+        "data": [{
+          "type": "cancel_status",
+          "text": "conflict",
+          "value": false
+        }, {
+          "type": "cancel_status",
+          "text": "not_found",
+          "value": true
+        }]
+      })
 }
 export default mockServer

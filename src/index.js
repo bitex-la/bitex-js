@@ -6,6 +6,7 @@ import {
   Ask,
   Bank,
   Bid,
+  CancelStatus,
   Candle,
   CashDeposit,
   CashDepositMethod,
@@ -46,6 +47,7 @@ export default class Bitex {
     this.client.define(Ask)
     this.client.define(Bank)
     this.client.define(Bid)
+    this.client.define(CancelStatus)
     this.client.define(Candle)
     this.client.define(CashDeposit)
     this.client.define(CashDepositMethod)
@@ -100,11 +102,39 @@ export default class Bitex {
     return this.client.create({resource: ask, orderbook_code})
   }
 
+  async cancelAsk(ids){
+    const asks = ids.map((id) => {
+      let ask = new Ask()
+      ask.id = id
+      return ask
+    })
+
+    //This parameter is ignored by the controller. In case this changes, we should
+    //add the orderbook code as a parameter to this method.
+    const orderbook_code = 'btc_usd'
+
+    return this.client.customAction({type: Ask, action: 'cancel', resource: asks, orderbook_code})
+  }
+
   async createBid(orderbook_code, price, amount){
     let bid = new Bid()
     bid.price = price
     bid.amount = amount
 
     return this.client.create({resource: bid, orderbook_code})
+  }
+
+  async cancelBid(ids){
+    const bids = ids.map((id) => {
+      let bid = new Bid()
+      bid.id = id
+      return bid
+    })
+
+    //This parameter is ignored by the controller. In case this changes, we should
+    //add the orderbook code as a parameter to this method.
+    const orderbook_code = 'btc_usd'
+
+    return this.client.customAction({type: Bid, action: 'cancel', resource: bids, orderbook_code})
   }
 }

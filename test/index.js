@@ -11,6 +11,7 @@ import {
   Ask,
   Bank,
   Bid,
+  CancelStatus,
   Candle,
   CashDeposit,
   CashDepositMethod,
@@ -93,12 +94,30 @@ describe('bitex-js', () => {
       expect(newAsk.orderbook.id).to.equal('1')
     })
 
+    it('should be able to cancel an ask', async () => {
+      const response = await client.cancelAsk(['70', '71'])
+      expect(response.data.length).to.equal(2)
+      expect(response.data[0].text).to.equal("conflict")
+      expect(response.data[0].value).to.equal(false)
+      expect(response.data[1].text).to.equal("not_found")
+      expect(response.data[1].value).to.equal(true)
+    })
+
     it('should be able to put a bid', async () => {
       const newBid = await client.createBid('btc_usd', 12, 100)
       expect(newBid).to.be.an.instanceof(Bid)
       expect(newBid.id).to.equal('70')
       expect(newBid.user.id).to.equal('8')
       expect(newBid.orderbook.id).to.equal('1')
+    })
+
+    it('should be able to cancel a bid', async () => {
+      const response = await client.cancelBid(['70', '71'])
+      expect(response.data.length).to.equal(2)
+      expect(response.data[0].text).to.equal("conflict")
+      expect(response.data[0].value).to.equal(false)
+      expect(response.data[1].text).to.equal("not_found")
+      expect(response.data[1].value).to.equal(true)
     })
   })
 })
