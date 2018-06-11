@@ -84,5 +84,13 @@ describe('bitex-js', () => {
       expect(candles[0].high).to.equal(400)
       expect(candles[0].volume).to.equal(10)
     })
+
+    it('should be able to put an ask', async () => {
+      const newAsk = await client.createAsk('btc_usd', 150, 1.2)
+      expect(newAsk).to.be.an.instanceof(Ask)
+      expect(newAsk.id).to.equal('57')
+      expect(newAsk.user.id).to.equal('8')
+      expect(newAsk.orderbook.id).to.equal('1')
+    })
   })
 })

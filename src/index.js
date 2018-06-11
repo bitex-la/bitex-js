@@ -79,14 +79,24 @@ export default class Bitex {
   }
 
   async getTransactions(code){
-    return this.client.find({type: 'markets', id: code, path: 'transactions'}).then(
-      (market) => market.transactions
+    return this.client.findAll({type: Transaction, orderbook_code: code}).then(
+      (market) => {
+        return market.transactions
+      }
     )
   }
 
   async getCandles(code){
-    return this.client.find({type: 'markets', id: code, path: 'candles'}).then(
+    return this.client.findAll({type: Candle, orderbook_code: code}).then(
       (market) => market.candles
     )
+  }
+
+  async createAsk(orderbook_code, price, amount){
+    let ask = new Ask()
+    ask.price = price
+    ask.amount = amount
+
+    return this.client.create({resource: ask, orderbook_code})
   }
 }

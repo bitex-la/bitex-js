@@ -20,8 +20,11 @@ export class Ask {
     this.remaining_amount = null
     this.price = null,
     this.orderbook = null
-    this.orderbook_code = null
     this.user = null
+  }
+
+  static path({ orderbook_code }){
+    return `markets/${orderbook_code}/asks`
   }
 }
 
@@ -31,8 +34,11 @@ export class Bid {
     this.remaining_amount = null
     this.price = null,
     this.orderbook = null
-    this.orderbook_code = null
     this.user = null
+  }
+
+  static path({ orderbook_code }){
+    return `markets/${orderbook_code}/bids`
   }
 }
 
@@ -224,6 +230,10 @@ export class Candle {
     this.volume = null
     this.price_before_last = null
   }
+
+  static path({ orderbook_code }){
+    return `markets/${orderbook_code}/candles`
+  }
 }
 
 export class Transaction {
@@ -231,6 +241,10 @@ export class Transaction {
     this.timestamp = null
     this.amount = null
     this.price = null
+  }
+
+  static path({ orderbook_code }){
+    return `markets/${orderbook_code}/transactions`
   }
 }
 
