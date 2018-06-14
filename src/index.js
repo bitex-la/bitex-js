@@ -137,4 +137,13 @@ export default class Bitex {
 
     return this.client.customAction({type: Bid, action: 'cancel', resource: bids, orderbook_code})
   }
+
+  async createCashDeposit(currency, amount, method){
+    let cashDeposit = new CashDeposit()
+    cashDeposit.requested_amount = amount
+    cashDeposit.requested_currency = currency
+    cashDeposit.deposit_method = method
+
+    return this.client.create({resource: cashDeposit})
+  }
 }

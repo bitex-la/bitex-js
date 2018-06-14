@@ -3,7 +3,7 @@ import spies from 'chai-spies'
 chai.use(spies)
 const sandbox = chai.spy.sandbox()
 
-import { mockMarketServer } from './mock-servers'
+import { mockMarketServer, mockFundingServer } from './mock-servers'
 
 import Bitex from '../src'
 import {
@@ -118,6 +118,21 @@ describe('bitex-js', () => {
       expect(response.data[0].value).to.equal(false)
       expect(response.data[1].text).to.equal("not_found")
       expect(response.data[1].value).to.equal(true)
+    })
+  })
+
+  describe('Funding', () => {
+    beforeEach(() => {
+      mockFundingServer()
+    })
+
+    it('should be able to create a cash deposit', async () => {
+      const newCashDeposit = await client.createCashDeposit('ARS', 1000, 'debin')
+      expect(newCashDeposit).to.be.an.instanceof(CashDeposit)
+      expect(newCashDeposit.id).to.equal('80')
+      expect(newCashDeposit.requested_amount).to.equal(1000)
+      expect(newCashDeposit.requested_currency).to.equal('ARS')
+      expect(newCashDeposit.deposit_method).to.equal('debin')
     })
   })
 })
