@@ -4,6 +4,7 @@ import JsonapiClient from 'heather-js'
 import {
   Account,
   Ask,
+  AssetWallet,
   Bank,
   Bid,
   CancelStatus,
@@ -45,6 +46,7 @@ export default class Bitex {
   defineModels(){
     this.client.define(Account)
     this.client.define(Ask)
+    this.client.define(AssetWallet)
     this.client.define(Bank)
     this.client.define(Bid)
     this.client.define(CancelStatus)
@@ -145,5 +147,9 @@ export default class Bitex {
     cashDeposit.deposit_method = method
 
     return this.client.create({resource: cashDeposit})
+  }
+
+  async getAssetWallets(){
+    return this.client.findAll({type: 'asset_wallets', customParams: {scope: 'exchange'}})
   }
 }

@@ -9,6 +9,7 @@ import Bitex from '../src'
 import {
   Account,
   Ask,
+  AssetWallet,
   Bank,
   Bid,
   CancelStatus,
@@ -133,6 +134,15 @@ describe('bitex-js', () => {
       expect(newCashDeposit.requested_amount).to.equal(1000)
       expect(newCashDeposit.requested_currency).to.equal('ARS')
       expect(newCashDeposit.deposit_method).to.equal('debin')
+    })
+
+    it('should be able to get the wallets for ', async () => {
+      const assetWallets = await client.getAssetWallets()
+      expect(assetWallets.length).to.equal(2)
+      expect(assetWallets[0]).to.be.an.instanceof(AssetWallet)
+      expect(assetWallets[0].currency).to.equal('btc')
+      expect(assetWallets[1]).to.be.an.instanceof(AssetWallet)
+      expect(assetWallets[1].currency).to.equal('bch')
     })
   })
 })

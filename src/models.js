@@ -24,6 +24,16 @@ export class Ask {
   }
 }
 
+export class AssetWallet {
+  constructor(){
+    this.address = null
+    this.auto_sell_address = null
+    this.balance = null
+    this.available = null
+    this.currency = null
+  }
+}
+
 export class Bank {
   constructor(){
     this.name = null
