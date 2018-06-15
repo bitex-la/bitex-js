@@ -264,5 +264,52 @@ let mockServer = () => {
   let deleteWithdrawalInstructions = nock('https://test.bitex.la')
     .delete('/api/withdrawal_instructions/12/')
     .reply(200)
+
+  let newCoinWithdrawal = nock('https://test.bitex.la')
+    .post('/api/coin_withdrawals/', {
+      "data": {
+        "type": "coin_withdrawals",
+        "attributes": {
+          "amount": 12.3456789,
+          "currency": "btc",
+          "label": "Trezor",
+          "to_addresses": "mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb"
+        }
+      }
+    })
+    .reply(200, {
+      "data": {
+        "id": "41",
+        "type": "coin_withdrawals",
+        "attributes": {
+          "amount": 12.3456789,
+          "status": "received",
+          "label": "Trezor",
+          "to_addresses": "mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb"
+        },
+        "relationships": {
+          "user": {
+            "data": {
+              "id": "8",
+              "type": "users"
+            }
+          },
+          "coin": {
+            "data": {
+              "attributes": {
+                "id": 1,
+                "code": "btc",
+                "name": "bitcoin",
+                "decimals": 8
+              },
+              "id": 1,
+              "code": "btc",
+              "name": "bitcoin",
+              "decimals": 8
+            }
+          }
+        }
+      }
+    })
 }
 export default mockServer

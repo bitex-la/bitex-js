@@ -196,5 +196,13 @@ describe('bitex-js', () => {
       const result = await client.deleteWithdrawalInstructions('12')
       expect(result).to.equal('')
     })
+
+    it('should be able to create a coin withdrawal', async () => {
+      const newCoinWithdrawal = await client.createCoinWithdrawal('btc', 12.3456789, 'Trezor', 'mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb')
+      expect(newCoinWithdrawal).to.be.an.instanceof(CoinWithdrawal)
+      expect(newCoinWithdrawal.id).to.equal('41')
+      expect(newCoinWithdrawal.amount).to.equal(12.3456789)
+      expect(newCoinWithdrawal.status).to.equal('received')
+    })
   })
 })

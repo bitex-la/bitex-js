@@ -179,4 +179,14 @@ export default class Bitex {
     withdrawalInstruction.id = id
     return this.client.delete({resource: withdrawalInstruction})
   }
+
+  async createCoinWithdrawal(currency, amount, label, address){
+    let coinWithdrawal = new CoinWithdrawal()
+    coinWithdrawal.amount = amount
+    coinWithdrawal.currency = currency
+    coinWithdrawal.label = label
+    coinWithdrawal.to_addresses = address
+
+    return this.client.create({resource: coinWithdrawal})
+  }
 }
