@@ -144,5 +144,20 @@ describe('bitex-js', () => {
       expect(assetWallets[1]).to.be.an.instanceof(AssetWallet)
       expect(assetWallets[1].currency).to.equal('bch')
     })
+
+    it('should be able to create a cash withdrawal', async () => {
+      let instructions = new WithdrawalInstruction()
+      instructions.id = 10
+      instructions.label = 'Local Bank'
+
+      const newCashWithdrawal = await client.createCashWithdrawal('ars', 100, instructions)
+      expect(newCashWithdrawal).to.be.an.instanceof(CashWithdrawal)
+      expect(newCashWithdrawal.amount).to.equal(100)
+      expect(newCashWithdrawal.status).to.equal('received')
+      expect(newCashWithdrawal.currency).to.equal('ARS')
+      expect(newCashWithdrawal.payment_method).to.equal('domestic_bank')
+      expect(newCashWithdrawal.label).to.equal('Local Bank')
+      expect(newCashWithdrawal.withdrawal_instruction).to.be.an.instanceof(WithdrawalInstruction)
+    })
   })
 })

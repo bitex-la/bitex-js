@@ -152,4 +152,13 @@ export default class Bitex {
   async getAssetWallets(){
     return this.client.findAll({type: 'asset_wallets', customParams: {scope: 'exchange'}})
   }
+
+  async createCashWithdrawal(currency, amount, instructions){
+    let cashWithdrawal = new CashWithdrawal()
+    cashWithdrawal.amount = amount
+    cashWithdrawal.fiat = currency
+    cashWithdrawal.withdrawal_instruction = instructions
+
+    return this.client.create({resource: cashWithdrawal})
+  }
 }

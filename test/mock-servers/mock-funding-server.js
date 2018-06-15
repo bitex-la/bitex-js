@@ -85,14 +85,88 @@ let mockServer = () => {
             }
           }
         }
-    ],
-    "included": [
-      {
-        "id": "8",
-        "type": "exchange_apps"
+      ],
+      "included": [
+        {
+          "id": "8",
+          "type": "exchange_apps"
+        }
+      ]
+    })
+
+  let newCashWithdrawal = nock('https://test.bitex.la')
+    .post('/api/cash_withdrawals/', {
+      "data": {
+        "type": "cash_withdrawals",
+        "attributes": {
+          "amount": 100,
+          "fiat": "ars",
+          "label": null,
+          "status": null,
+          "created_at": null,
+          "payment_method": null
+        },
+        "relationships": {
+          "withdrawal_instruction": {
+            "data": {
+              "type": "withdrawal_instructions",
+              "id": 10,
+              "attributes": {
+                "label": "Local Bank",
+                "body": null
+              }
+            }
+          }
+        }
       }
-    ]
-  })
+    })
+    .reply(200, {
+      "data": {
+        "id": "29",
+        "type": "cash_withdrawals",
+        "attributes": {
+          "status": "received",
+          "amount": 100,
+          "country": "AR",
+          "payment_method": "domestic_bank",
+          "currency": "ARS",
+          "label": "Local Bank",
+          "created_at": "2018-06-06T17:05:19.024Z"
+        },
+        "relationships": {
+          "withdrawal_instruction": {
+            "data": {
+              "id": "10",
+              "type": "withdrawal_instructions"
+            }
+          }
+        }
+      },
+      "included": [
+        {
+          "id": "10",
+          "type": "withdrawal_instructions",
+          "attributes": {
+            "label": "Local Bank",
+            "schema": "bitex",
+            "body": {
+              "name": "John Doe",
+              "city": "Buenos Aires",
+              "phone": "12341234",
+              "cuit": "12341234",
+              "address": "My Address 123",
+              "bank": "hsbc",
+              "bank_account_number": "12341234",
+              "cbu": "1234123412341234",
+              "account_type": "savings",
+              "currency": "ARS",
+              "country": "AR",
+              "payment_method": "domestic_bank"
+            }
+          }
+        }
+      ]
+    })
 
 }
 export default mockServer
