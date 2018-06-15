@@ -159,5 +159,42 @@ describe('bitex-js', () => {
       expect(newCashWithdrawal.label).to.equal('Local Bank')
       expect(newCashWithdrawal.withdrawal_instruction).to.be.an.instanceof(WithdrawalInstruction)
     })
+
+    it('should be able to create new withdrawal instructions', async () => {
+      const label = 'Local Bank'
+      const body = {
+        name: "John Doe",
+        city: "Buenos Aires",
+        phone: "12341234",
+        cuit: "12341234",
+        address: "My Address 123",
+        bank: "hsbc",
+        bank_account_number: "12341234",
+        cbu: "1234123412341234",
+        account_type: "savings",
+        currency: "ARS",
+        country: "AR",
+        payment_method: "domestic_bank"
+      }
+
+      const newWithdrawalInstruction = await client.createWithdrawalInstructions(label, body)
+      expect(newWithdrawalInstruction).to.be.an.instanceof(WithdrawalInstruction)
+      expect(newWithdrawalInstruction.id).to.equal('23')
+    })
+
+    it('should be able to list withdrawal instructions', async () => {
+      const withdrawalInstructions = await client.getWithdrawalInstructions()
+      expect(withdrawalInstructions.length).to.equal(2)
+      expect(withdrawalInstructions[0]).to.be.an.instanceof(WithdrawalInstruction)
+      expect(withdrawalInstructions[0].body.payment_method).to.equal('third_party')
+      expect(withdrawalInstructions[1]).to.be.an.instanceof(WithdrawalInstruction)
+      expect(withdrawalInstructions[1].body.payment_method).to.equal('domestic_bank')
+    })
+
+    it('should be able to delete a withdrawal instruction', async () => {
+      //Should not throw an exception
+      const result = await client.deleteWithdrawalInstructions('12')
+      expect(result).to.equal('')
+    })
   })
 })

@@ -168,5 +168,101 @@ let mockServer = () => {
       ]
     })
 
+  let newWithdrawalInstruction = nock('https://test.bitex.la')
+    .post('/api/withdrawal_instructions/', {
+      "data": {
+        "type": "withdrawal_instructions",
+        "attributes": {
+          "label": "Local Bank",
+          "body": {
+            "name": "John Doe",
+            "city": "Buenos Aires",
+            "phone": "12341234",
+            "cuit": "12341234",
+            "address": "My Address 123",
+            "bank": "hsbc",
+            "bank_account_number": "12341234",
+            "cbu": "1234123412341234",
+            "account_type": "savings",
+            "currency": "ARS",
+            "country": "AR",
+            "payment_method": "domestic_bank"
+          }
+        }
+      }
+    })
+    .reply(200, {
+      "data": {
+        "id": "23",
+        "type": "withdrawal_instructions",
+        "attributes": {
+          "label": "Local Bank",
+          "schema": "bitex",
+          "body": {
+            "name": "John Doe",
+            "city": "Buenos Aires",
+            "phone": "12341234",
+            "cuit": "12341234",
+            "address": "My Address 123",
+            "bank": "hsbc",
+            "bank_account_number": "12341234",
+            "cbu": "1234123412341234",
+            "account_type": "savings",
+            "currency": "ARS",
+            "country": "AR",
+            "payment_method": "domestic_bank"
+          }
+        }
+      }
+    })
+
+  let listWithdrawalInstructions = nock('https://test.bitex.la')
+    .get('/api/withdrawal_instructions/')
+    .reply(200, {
+      "data": [
+        {
+          "id": "21",
+          "type": "withdrawal_instructions",
+          "attributes": {
+            "label": "Other",
+            "schema": "bitex",
+            "body": {
+              "name": "John Doe",
+              "city": "Buenos Aires",
+              "phone": "12341234",
+              "country": "AR",
+              "payment_method": "third_party",
+              "currency": "USD"
+            }
+          }
+        },
+        {
+          "id": "22",
+          "type": "withdrawal_instructions",
+          "attributes": {
+            "label": "Local Bank",
+            "schema": "bitex",
+            "body": {
+              "name": "John Doe",
+              "city": "Buenos Aires",
+              "phone": "12341234",
+              "cuit": "12341234",
+              "address": "My Address 123",
+              "bank": "hsbc",
+              "bank_account_number": "12341234",
+              "cbu": "1234123412341234",
+              "account_type": "savings",
+              "currency": "ARS",
+              "country": "AR",
+              "payment_method": "domestic_bank"
+            }
+          }
+        }
+      ]
+    })
+
+  let deleteWithdrawalInstructions = nock('https://test.bitex.la')
+    .delete('/api/withdrawal_instructions/12/')
+    .reply(200)
 }
 export default mockServer

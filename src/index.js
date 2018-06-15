@@ -161,4 +161,22 @@ export default class Bitex {
 
     return this.client.create({resource: cashWithdrawal})
   }
+
+  async createWithdrawalInstructions(label, body){
+    let withdrawalInstruction = new WithdrawalInstruction()
+    withdrawalInstruction.label = label
+    withdrawalInstruction.body = body
+
+    return this.client.create({resource: withdrawalInstruction})
+  }
+
+  async getWithdrawalInstructions(){
+    return this.client.findAll({type: 'withdrawal_instructions'})
+  }
+
+  async deleteWithdrawalInstructions(id){
+    let withdrawalInstruction = new WithdrawalInstruction()
+    withdrawalInstruction.id = id
+    return this.client.delete({resource: withdrawalInstruction})
+  }
 }
