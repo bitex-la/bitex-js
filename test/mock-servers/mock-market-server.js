@@ -320,5 +320,121 @@ let mockServer = () => {
           "value": true
         }]
       })
+
+    let getOrders = nock('https://test.bitex.la')
+      .get('/api/orders/')
+      .reply(200, {
+        "data": [
+          {
+            "id": "71",
+            "type": "bids",
+            "attributes": {
+              "amount": 12800,
+              "remaining_amount": 12800,
+              "price": 12800
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "8",
+                  "type": "users"
+                }
+              },
+              "orderbook": {
+                "data": {
+                  "id": "1",
+                  "type": "orderbooks"
+                }
+              }
+            }
+          },
+          {
+            "id": "72",
+            "type": "bids",
+            "attributes": {
+              "amount": 1500,
+              "remaining_amount": 1500,
+              "price": 2000
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "8",
+                  "type": "users"
+                }
+              },
+              "orderbook": {
+                "data": {
+                  "id": "8",
+                  "type": "orderbooks"
+                }
+              }
+            }
+          },
+          {
+            "id": "58",
+            "type": "asks",
+            "attributes": {
+              "amount": 0.75,
+              "remaining_amount": 0.75,
+              "price": 13500
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "8",
+                  "type": "users"
+                }
+              },
+              "orderbook": {
+                "data": {
+                  "id": "1",
+                  "type": "orderbooks"
+                }
+              }
+            }
+          }
+        ],
+        "included": [
+          {
+            "id": "1",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_usd",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "usd",
+                "decimals": 2
+              }
+            }
+          },
+          {
+            "id": "8",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "bch_usd",
+              "base": {
+                "code": "bch",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "usd",
+                "decimals": 2
+              }
+            }
+          }
+        ]
+      })
+
+    let cancelAllOrders = nock('https://test.bitex.la')
+      .post('/api/orders/all/cancel/')
+      .reply(204)
+
+    let cancelOrdersByOrderbook = nock('https://test.bitex.la')
+      .post('/api/orders/btc_usd/cancel/')
+      .reply(204)
 }
 export default mockServer

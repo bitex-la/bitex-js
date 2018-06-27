@@ -19,6 +19,7 @@ import {
   Market,
   Movement,
   Notification,
+  Order,
   Orderbook,
   OrderGroup,
   Purchase,
@@ -61,6 +62,7 @@ export default class Bitex {
     this.client.define(Market)
     this.client.define(Movement)
     this.client.define(Notification)
+    this.client.define(Order)
     this.client.define(Orderbook)
     this.client.define(OrderGroup)
     this.client.define(Purchase)
@@ -138,6 +140,16 @@ export default class Bitex {
     const orderbook_code = 'btc_usd'
 
     return this.client.customAction({type: Bid, action: 'cancel', resource: bids, orderbook_code})
+  }
+
+  async getOrders(){
+    return this.client.findAll({type: 'orders'})
+  }
+
+  async cancelOrders(orderbook_code){
+    let order = new Order()
+    order.id = orderbook_code || 'all'
+    return this.client.customAction({resource: order, action: 'cancel'})
   }
 
   async createCashDeposit(currency, amount, method){

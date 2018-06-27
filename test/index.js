@@ -24,6 +24,7 @@ import {
   Market,
   Movement,
   Notification,
+  Order,
   Orderbook,
   OrderGroup,
   Purchase,
@@ -119,6 +120,30 @@ describe('bitex-js', () => {
       expect(response.data[0].value).to.equal(false)
       expect(response.data[1].text).to.equal("not_found")
       expect(response.data[1].value).to.equal(true)
+    })
+
+    it('should be able to get all Orders', async () => {
+      const orders = await client.getOrders()
+      expect(orders.length).to.equal(3)
+      expect(orders[0]).to.be.an.instanceof(Bid)
+      expect(orders[0].orderbook).to.be.an.instanceof(Orderbook)
+      expect(orders[0].orderbook.base.code).to.equal('btc')
+      expect(orders[1]).to.be.an.instanceof(Bid)
+      expect(orders[1].orderbook).to.be.an.instanceof(Orderbook)
+      expect(orders[1].orderbook.base.code).to.equal('bch')
+      expect(orders[2]).to.be.an.instanceof(Ask)
+      expect(orders[2].orderbook).to.be.an.instanceof(Orderbook)
+      expect(orders[2].orderbook.base.code).to.equal('btc')
+    })
+
+    it('should be able to cancel all Orders', async () => {
+      const response = await client.cancelOrders()
+      expect(response).to.equal('')
+    })
+
+    it('should be able to cancel all Orders in an orderbook', async () => {
+      const response = await client.cancelOrders('btc_usd')
+      expect(response).to.equal('')
     })
   })
 

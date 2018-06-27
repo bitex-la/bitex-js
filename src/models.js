@@ -174,6 +174,8 @@ export class Notification {
   }
 }
 
+export class Order {}
+
 export class Orderbook {
   constructor(){
     this.code = null
