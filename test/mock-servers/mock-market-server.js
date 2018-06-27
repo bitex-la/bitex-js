@@ -436,5 +436,57 @@ let mockServer = () => {
     let cancelOrdersByOrderbook = nock('https://test.bitex.la')
       .post('/api/orders/btc_usd/cancel/')
       .reply(204)
+
+    let getOrderbooks = nock('https://test.bitex.la')
+      .get('/api/orderbooks/')
+      .reply(200, {
+        "data": [
+          {
+            "id": "1",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_usd",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "usd",
+                "decimals": 2
+              }
+            }
+          },
+          {
+            "id": "5",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_ars",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "ars",
+                "decimals": 2
+              }
+            }
+          },
+          {
+            "id": "8",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "bch_usd",
+              "base": {
+                "code": "bch",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "usd",
+                "decimals": 2
+              }
+            }
+          }
+        ]
+      })
 }
 export default mockServer

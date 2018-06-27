@@ -152,6 +152,10 @@ export default class Bitex {
     return this.client.customAction({resource: order, action: 'cancel'})
   }
 
+  async getOrderbooks(){
+    return this.client.findAll({type: 'orderbooks'})
+  }
+
   async createCashDeposit(currency, amount, method){
     let cashDeposit = new CashDeposit()
     cashDeposit.requested_amount = amount

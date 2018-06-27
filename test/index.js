@@ -127,13 +127,13 @@ describe('bitex-js', () => {
       expect(orders.length).to.equal(3)
       expect(orders[0]).to.be.an.instanceof(Bid)
       expect(orders[0].orderbook).to.be.an.instanceof(Orderbook)
-      expect(orders[0].orderbook.base.code).to.equal('btc')
+      expect(orders[0].orderbook.code).to.equal('btc_usd')
       expect(orders[1]).to.be.an.instanceof(Bid)
       expect(orders[1].orderbook).to.be.an.instanceof(Orderbook)
-      expect(orders[1].orderbook.base.code).to.equal('bch')
+      expect(orders[1].orderbook.code).to.equal('bch_usd')
       expect(orders[2]).to.be.an.instanceof(Ask)
       expect(orders[2].orderbook).to.be.an.instanceof(Orderbook)
-      expect(orders[2].orderbook.base.code).to.equal('btc')
+      expect(orders[2].orderbook.code).to.equal('btc_usd')
     })
 
     it('should be able to cancel all Orders', async () => {
@@ -144,6 +144,17 @@ describe('bitex-js', () => {
     it('should be able to cancel all Orders in an orderbook', async () => {
       const response = await client.cancelOrders('btc_usd')
       expect(response).to.equal('')
+    })
+
+    it('should be able to get all Orderbooks', async () => {
+      const orderbooks = await client.getOrderbooks()
+      expect(orderbooks.length).to.equal(3)
+      expect(orderbooks[0]).to.be.an.instanceof(Orderbook)
+      expect(orderbooks[0].code).to.equal('btc_usd')
+      expect(orderbooks[1]).to.be.an.instanceof(Orderbook)
+      expect(orderbooks[1].code).to.equal('btc_ars')
+      expect(orderbooks[2]).to.be.an.instanceof(Orderbook)
+      expect(orderbooks[2].code).to.equal('bch_usd')
     })
   })
 
