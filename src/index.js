@@ -7,6 +7,7 @@ import {
   AssetWallet,
   Bank,
   Bid,
+  BuyingBot,
   CancelStatus,
   Candle,
   CashDeposit,
@@ -26,6 +27,7 @@ import {
   PurchaseIntention,
   Reception,
   Sale,
+  SellingBot,
   Ticker,
   Transaction,
   User,
@@ -50,6 +52,7 @@ export default class Bitex {
     this.client.define(AssetWallet)
     this.client.define(Bank)
     this.client.define(Bid)
+    this.client.define(BuyingBot)
     this.client.define(CancelStatus)
     this.client.define(Candle)
     this.client.define(CashDeposit)
@@ -69,6 +72,7 @@ export default class Bitex {
     this.client.define(PurchaseIntention)
     this.client.define(Reception)
     this.client.define(Sale)
+    this.client.define(SellingBot)
     this.client.define(Ticker)
     this.client.define(Transaction)
     this.client.define(User)
@@ -212,5 +216,29 @@ export default class Bitex {
     coinWithdrawal.to_addresses = address
 
     return this.client.create({resource: coinWithdrawal})
+  }
+
+  async getBuyingBots(){
+    return this.client.findAll({type: 'buying_bots'})
+  }
+
+  async getBuyingBot(id){
+    return this.client.find({type: 'buying_bots', id})
+  }
+
+  async createBuyingBot(amount, orderbookId){
+    let buyingBot = new BuyingBot()
+    buyingBot.amount = amount
+    let orderbook = new Orderbook()
+    orderbook.id = orderbookId
+    buyingBot.orderbook = orderbook
+
+    return this.client.create({resource: buyingBot})
+  }
+
+  async cancelBuyingBot(buyingBotId){
+    let buyingBot = new BuyingBot()
+    buyingBot.id = buyingBotId
+    return this.client.customAction({resource: buyingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
   }
 }

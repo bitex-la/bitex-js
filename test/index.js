@@ -5,7 +5,7 @@ const sandbox = chai.spy.sandbox()
 
 import _ from 'lodash'
 
-import { mockMarketServer, mockFundingServer } from './mock-servers'
+import { mockMarketServer, mockFundingServer, mockBotsServer } from './mock-servers'
 
 import Bitex from '../src'
 import {
@@ -14,6 +14,7 @@ import {
   AssetWallet,
   Bank,
   Bid,
+  BuyingBot,
   CancelStatus,
   Candle,
   CashDeposit,
@@ -33,6 +34,7 @@ import {
   PurchaseIntention,
   Reception,
   Sale,
+  SellingBot,
   Ticker,
   Transaction,
   User,
@@ -266,6 +268,43 @@ describe('bitex-js', () => {
       expect(newCoinWithdrawal.id).to.equal('41')
       expect(newCoinWithdrawal.amount).to.equal(12.3456789)
       expect(newCoinWithdrawal.status).to.equal('received')
+    })
+  })
+
+  describe('Buying/Selling Bots', () => {
+    beforeEach(() => {
+      mockBotsServer()
+    })
+
+    it('should be able to get created buying bots', async () => {
+      const buyingBots = await client.getBuyingBots()
+      expect(buyingBots.length).to.equal(1)
+      expect(buyingBots[0]).to.be.an.instanceof(BuyingBot)
+      expect(buyingBots[0].amount).to.equal(100)
+      expect(buyingBots[0].orderbook.id).to.equal('1')
+    })
+
+    it('should be able to get created buying bot', async () => {
+      const buyingBot = await client.getBuyingBot(1)
+      expect(buyingBot).to.be.an.instanceof(BuyingBot)
+      expect(buyingBot.amount).to.equal(100)
+      expect(buyingBot.orderbook.id).to.equal('1')
+    })
+
+    it('should be able to create a buying bot', async () => {
+      const buyingBot = await client.createBuyingBot(100, '1')
+      expect(buyingBot).to.be.an.instanceof(BuyingBot)
+      expect(buyingBot.id).to.equal('1')
+      expect(buyingBot.amount).to.equal(100)
+      expect(buyingBot.executing).to.equal(true)
+    })
+
+    it('should be able to cancel a buying bot', async () => {
+      const buyingBot = await client.cancelBuyingBot(1)
+      expect(buyingBot).to.be.an.instanceof(BuyingBot)
+      expect(buyingBot.id).to.equal('1')
+      expect(buyingBot.amount).to.equal(100)
+      expect(buyingBot.to_cancel).to.equal(true)
     })
   })
 })

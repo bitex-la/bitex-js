@@ -56,6 +56,19 @@ export class Bid {
   }
 }
 
+export class BuyingBot {
+  constructor(){
+    this.amount = null
+    this.remaining_amount = null
+    this.chunk_size = null
+    this.eta = null
+    this.executing = null
+    this.to_cancel = null
+    this.user = null
+    this.orderbook = null
+  }
+}
+
 export class CancelStatus {
   constructor(){
     this.text = null
@@ -225,6 +238,19 @@ export class Sale {
     this.currency = null
     this.date = null
     this.broker = null
+  }
+}
+
+export class SellingBot {
+  constructor(){
+    this.amount = null
+    this.remaining_amount = null
+    this.chunk_size = null
+    this.eta = null
+    this.executing = null
+    this.to_cancel = null
+    this.user = null
+    this.orderbook = null
   }
 }
 
