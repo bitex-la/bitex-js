@@ -156,6 +156,14 @@ export default class Bitex {
     return this.client.findAll({type: 'orderbooks'})
   }
 
+  async getMovements(){
+    return this.client.findAll({type: 'movements'})
+  }
+
+  async getAccount(){
+    return this.client.findAll({type: 'accounts'}).then((accounts) => accounts[0])
+  }
+
   async createCashDeposit(currency, amount, method){
     let cashDeposit = new CashDeposit()
     cashDeposit.requested_amount = amount

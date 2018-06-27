@@ -3,6 +3,8 @@ import spies from 'chai-spies'
 chai.use(spies)
 const sandbox = chai.spy.sandbox()
 
+import _ from 'lodash'
+
 import { mockMarketServer, mockFundingServer } from './mock-servers'
 
 import Bitex from '../src'
@@ -155,6 +157,31 @@ describe('bitex-js', () => {
       expect(orderbooks[1].code).to.equal('btc_ars')
       expect(orderbooks[2]).to.be.an.instanceof(Orderbook)
       expect(orderbooks[2].code).to.equal('bch_usd')
+    })
+
+    it('should be able to get users movements', async () => {
+      const movements = await client.getMovements()
+      expect(movements.length).to.equal(5)
+      expect(movements[0]).to.be.an.instanceof(Movement)
+      expect(movements[0].kind).to.equal('Buy')
+      expect(movements[1]).to.be.an.instanceof(Movement)
+      expect(movements[1].kind).to.equal('Sell')
+      expect(movements[2]).to.be.an.instanceof(Movement)
+      expect(movements[2].kind).to.equal('CashDeposit')
+      expect(movements[3]).to.be.an.instanceof(Movement)
+      expect(movements[3].kind).to.equal('CoinWithdrawal')
+      expect(movements[4]).to.be.an.instanceof(Movement)
+      expect(movements[4].kind).to.equal('CoinDeposit')
+    })
+
+    it('should be able to get user account', async () => {
+      const account = await client.getAccount()
+      expect(account).to.be.an.instanceof(Account)
+      expect(_.keys(account.balances)).to.eql(['btc', 'usd', 'ars', 'clp', 'bch'])
+      expect(account.movements.length).to.equal(0)
+      expect(account.pending_movements.length).to.equal(1)
+      expect(account.pending_movements[0]).to.be.an.instanceof(PurchaseIntention)
+      expect(account.pending_movements[0].requested_amount).to.equal(123)
     })
   })
 

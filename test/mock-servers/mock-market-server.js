@@ -488,5 +488,171 @@ let mockServer = () => {
           }
         ]
       })
+
+    let getMovements = nock('https://test.bitex.la')
+      .get('/api/movements/')
+      .reply(200, {
+        "data": [
+          {
+            "id": "1528228593Buy",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1528228593,
+              "currencies_involved": "BTC_USD",
+              "currency": "BTC",
+              "amount": 0.995,
+              "fee": 0.005,
+              "fee_decimals": 8,
+              "fee_currency": "BTC",
+              "price": 123,
+              "price_decimals": null,
+              "kind": "Buy"
+            }
+          },
+          {
+            "id": "1528228593Sell",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1528228593,
+              "currencies_involved": "BTC_USD",
+              "currency": "BTC",
+              "amount": 1,
+              "fee": 0.615,
+              "fee_decimals": 2,
+              "fee_currency": "USD",
+              "price": 123,
+              "price_decimals": null,
+              "kind": "Sell"
+            }
+          },
+          {
+            "id": "1527510284CashDeposit",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1527510284,
+              "currencies_involved": "ARS",
+              "currency": "ARS",
+              "amount": 12222,
+              "fee": 0,
+              "fee_decimals": 0,
+              "fee_currency": null,
+              "price": null,
+              "price_decimals": null,
+              "kind": "CashDeposit"
+            }
+          },
+          {
+            "id": "1521731296CoinWithdrawal",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1521731296,
+              "currencies_involved": "BTC",
+              "currency": "BTC",
+              "amount": 12,
+              "fee": 0,
+              "fee_decimals": 0,
+              "fee_currency": null,
+              "price": null,
+              "price_decimals": null,
+              "kind": "CoinWithdrawal"
+            }
+          },
+          {
+            "id": "1521731014CoinDeposit",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1521731014,
+              "currencies_involved": "BTC",
+              "currency": "BTC",
+              "amount": 321,
+              "fee": 0,
+              "fee_decimals": 0,
+              "fee_currency": null,
+              "price": null,
+              "price_decimals": null,
+              "kind": "CoinDeposit"
+            }
+          }
+        ]
+      })
+
+    let getAccount = nock('https://test.bitex.la')
+      .get('/api/accounts/')
+      .reply(200, {
+        "data": [
+          {
+            "id": "8",
+            "type": "accounts",
+            "attributes": {
+              "balances": {
+                "btc": {
+                  "total": 308.84335732,
+                  "available": 202.50335732
+                },
+                "usd": {
+                  "total": 12312577.85164167,
+                  "available": 12312292.85164167
+                },
+                "ars": {
+                  "total": 12222,
+                  "available": 12222
+                },
+                "clp": {
+                  "total": 0,
+                  "available": 0
+                },
+                "bch": {
+                  "total": 321,
+                  "available": 317.77
+                }
+              },
+              "country": "AR"
+            },
+            "relationships": {
+              "movements": {
+                "data": []
+              },
+              "pending_movements": {
+                "data": [
+                  {
+                    "id": "7",
+                    "type": "purchase_intentions"
+                  }
+                ]
+              },
+              "user": {
+                "data": {
+                  "id": "8",
+                  "type": "users"
+                }
+              }
+            }
+          }
+        ],
+        "included": [
+          {
+            "id": "7",
+            "type": "purchase_intentions",
+            "attributes": {
+              "requested_amount": 123,
+              "requested_currency": "USD",
+              "created_at": 1522857372
+            }
+          },
+          {
+            "id": "8",
+            "type": "users",
+            "attributes": {
+              "name": "Nico Orchow",
+              "email": "nico@bitex.la",
+              "kyc_accepted": true,
+              "otp_enabled": false,
+              "kyc_pending": false,
+              "do_not_email": false,
+              "trezor_login_enabled": false
+            }
+          }
+        ]
+      })
 }
 export default mockServer
