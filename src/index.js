@@ -241,4 +241,28 @@ export default class Bitex {
     buyingBot.id = buyingBotId
     return this.client.customAction({resource: buyingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
   }
+
+  async getSellingBots(){
+    return this.client.findAll({type: 'selling_bots'})
+  }
+
+  async getSellingBot(id){
+    return this.client.find({type: 'selling_bots', id})
+  }
+
+  async createSellingBot(amount, orderbookId){
+    let sellingBot = new SellingBot()
+    sellingBot.amount = amount
+    let orderbook = new Orderbook()
+    orderbook.id = orderbookId
+    sellingBot.orderbook = orderbook
+
+    return this.client.create({resource: sellingBot})
+  }
+
+  async cancelSellingBot(sellingBotId){
+    let sellingBot = new SellingBot()
+    sellingBot.id = sellingBotId
+    return this.client.customAction({resource: sellingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
+  }
 }

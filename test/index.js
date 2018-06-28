@@ -306,5 +306,36 @@ describe('bitex-js', () => {
       expect(buyingBot.amount).to.equal(100)
       expect(buyingBot.to_cancel).to.equal(true)
     })
+
+    it('should be able to get created selling bots', async () => {
+      const sellingBots = await client.getSellingBots()
+      expect(sellingBots.length).to.equal(1)
+      expect(sellingBots[0]).to.be.an.instanceof(SellingBot)
+      expect(sellingBots[0].amount).to.equal(100)
+      expect(sellingBots[0].orderbook.id).to.equal('1')
+    })
+
+    it('should be able to get created selling bot', async () => {
+      const sellingBot = await client.getSellingBot(1)
+      expect(sellingBot).to.be.an.instanceof(SellingBot)
+      expect(sellingBot.amount).to.equal(100)
+      expect(sellingBot.orderbook.id).to.equal('1')
+    })
+
+    it('should be able to create a selling bot', async () => {
+      const sellingBot = await client.createSellingBot(100, '1')
+      expect(sellingBot).to.be.an.instanceof(SellingBot)
+      expect(sellingBot.id).to.equal('1')
+      expect(sellingBot.amount).to.equal(100)
+      expect(sellingBot.executing).to.equal(true)
+    })
+
+    it('should be able to cancel a selling bot', async () => {
+      const sellingBot = await client.cancelSellingBot(1)
+      expect(sellingBot).to.be.an.instanceof(SellingBot)
+      expect(sellingBot.id).to.equal('1')
+      expect(sellingBot.amount).to.equal(100)
+      expect(sellingBot.to_cancel).to.equal(true)
+    })
   })
 })
