@@ -56,6 +56,13 @@ export class Bid {
   }
 }
 
+export class BitcoinAddress {
+  constructor(){
+    this.auto_sell = null
+    this.public_address = null
+  }
+}
+
 export class BuyingBot {
   constructor(){
     this.amount = null
@@ -201,6 +208,50 @@ export class OrderGroup {
   constructor(){
     this.price = null
     this.amount = null
+  }
+}
+
+export class Payment {
+  constructor(){
+    this.amount = null
+    this.confirmed_quantity = null
+    this.currency = null
+    this.customer_reference = null
+    this.expected_quantity = null
+    this.keep = null
+    this.kept = null
+    this.last_quoted_on = null
+    this.merchant_reference = null
+    this.overpaid = null
+    this.quote_valid_until = null
+    this.settlement_amount = null
+    this.settlement_currency = null
+    this.status = null
+    this.unconfirmed_quantity = null
+    this.valid_until = null
+    this.address = null
+  }
+
+  static path(){
+    return 'merchants/payments'
+  }
+}
+
+export class POS {
+  constructor(){
+    this.merchant_keep = null
+    this.merchant_logo = null
+    this.merchant_name = null
+    this.merchant_site = null
+    this.merchant_slug = null
+  }
+
+  static path(){
+    return 'merchants/pos'
+  }
+
+  static get type(){
+    return 'pos'
   }
 }
 

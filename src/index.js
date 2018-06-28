@@ -7,6 +7,7 @@ import {
   AssetWallet,
   Bank,
   Bid,
+  BitcoinAddress,
   BuyingBot,
   CancelStatus,
   Candle,
@@ -23,6 +24,8 @@ import {
   Order,
   Orderbook,
   OrderGroup,
+  Payment,
+  POS,
   Purchase,
   PurchaseIntention,
   Reception,
@@ -52,6 +55,7 @@ export default class Bitex {
     this.client.define(AssetWallet)
     this.client.define(Bank)
     this.client.define(Bid)
+    this.client.define(BitcoinAddress)
     this.client.define(BuyingBot)
     this.client.define(CancelStatus)
     this.client.define(Candle)
@@ -68,6 +72,8 @@ export default class Bitex {
     this.client.define(Order)
     this.client.define(Orderbook)
     this.client.define(OrderGroup)
+    this.client.define(Payment)
+    this.client.define(POS)
     this.client.define(Purchase)
     this.client.define(PurchaseIntention)
     this.client.define(Reception)
@@ -264,5 +270,36 @@ export default class Bitex {
     let sellingBot = new SellingBot()
     sellingBot.id = sellingBotId
     return this.client.customAction({resource: sellingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
+  }
+
+  async getPayments(){
+    return this.client.findAll({type: Payment})
+  }
+
+  async getPayment(id){
+    return this.client.find({type: Payment, id})
+  }
+
+  async createPayment(amount, keep, currency, callback_url, customer_reference, merchant_reference){
+    let payment = new Payment()
+    payment.amount = amount
+    payment.keep = keep
+    payment.currency = currency
+    payment.callback_url = callback_url
+    payment.customer_reference = customer_reference
+    payment.merchant_reference = merchant_reference
+
+    return this.client.create({resource: payment})
+  }
+
+  async createPOS(merchant_keep, merchant_logo, merchant_name, merchant_site, merchant_slug){
+    let pos = new POS()
+    pos.merchant_keep = merchant_keep
+    pos.merchant_logo = merchant_logo
+    pos.merchant_name = merchant_name
+    pos.merchant_site = merchant_site
+    pos.merchant_slug = merchant_slug
+
+    return this.client.create({resource: pos})
   }
 }

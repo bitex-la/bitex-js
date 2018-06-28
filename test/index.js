@@ -5,7 +5,7 @@ const sandbox = chai.spy.sandbox()
 
 import _ from 'lodash'
 
-import { mockMarketServer, mockFundingServer, mockBotsServer } from './mock-servers'
+import { mockMarketServer, mockFundingServer, mockBotsServer, mockMerchantServer } from './mock-servers'
 
 import Bitex from '../src'
 import {
@@ -14,6 +14,7 @@ import {
   AssetWallet,
   Bank,
   Bid,
+  BitcoinAddress,
   BuyingBot,
   CancelStatus,
   Candle,
@@ -30,6 +31,8 @@ import {
   Order,
   Orderbook,
   OrderGroup,
+  Payment,
+  POS,
   Purchase,
   PurchaseIntention,
   Reception,
@@ -336,6 +339,45 @@ describe('bitex-js', () => {
       expect(sellingBot.id).to.equal('1')
       expect(sellingBot.amount).to.equal(100)
       expect(sellingBot.to_cancel).to.equal(true)
+    })
+  })
+
+  describe('Merchant', () => {
+    beforeEach(() => {
+      mockMerchantServer()
+    })
+
+    it('should be able to get all payments', async () => {
+      const payments = await client.getPayments()
+      expect(payments.length).to.equal(1)
+      expect(payments[0]).to.be.an.instanceof(Payment)
+      expect(payments[0].amount).to.equal(15)
+      expect(payments[0].address).to.be.an.instanceof(BitcoinAddress)
+      expect(payments[0].address.public_address).to.equal('mfYmtH9Pg8jyBmZ4mEajAPApsQXkjdR62q')
+    })
+
+    it('should be able to get a payment', async () => {
+      const payment = await client.getPayment(1)
+      expect(payment).to.be.an.instanceof(Payment)
+      expect(payment.amount).to.equal(15)
+      expect(payment.address).to.be.an.instanceof(BitcoinAddress)
+      expect(payment.address.public_address).to.equal('mfYmtH9Pg8jyBmZ4mEajAPApsQXkjdR62q')
+    })
+
+    it('should be able to create a payment', async () => {
+      const payment = await client.createPayment(200, 10, '1', 'https://mystore.com/webhook', 'Purchase at My Store', 'Sale id: 2212')
+      expect(payment).to.be.an.instanceof(Payment)
+      expect(payment.id).to.equal('3')
+      expect(payment.amount).to.equal(200)
+      expect(payment.currency).to.equal('btc')
+      expect(payment.address.public_address).to.equal('mnB4AQSyFgM94Mw3EYJSHFeKsd6Stwor3Z')
+    })
+
+    it('should be able to create a point of sale', async () => {
+      const pos = await client.createPOS(10, 'https://mystore.com/logo.png', 'My Store', 'https://mystore.com', 'my-store')
+      expect(pos).to.be.an.instanceof(POS)
+      expect(pos.id).to.equal('8')
+      expect(pos.merchant_keep).to.equal(10)
     })
   })
 })
