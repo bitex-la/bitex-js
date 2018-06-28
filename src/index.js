@@ -87,11 +87,11 @@ export default class Bitex {
   }
 
   async getMarket(code){
-    return this.client.find({type: 'markets', id: code})
+    return this.client.find({type: Market, id: code})
   }
 
   async getTicker(code){
-    return this.client.find({type: 'markets', id: code, customParams: {scope: 'ticker'}})
+    return this.client.find({type: Market, id: code, customParams: {scope: 'ticker'}})
   }
 
   async getTransactions(code){
@@ -153,7 +153,7 @@ export default class Bitex {
   }
 
   async getOrders(){
-    return this.client.findAll({type: 'orders'})
+    return this.client.findAll({type: Order})
   }
 
   async cancelOrders(orderbookCode){
@@ -163,15 +163,15 @@ export default class Bitex {
   }
 
   async getOrderbooks(){
-    return this.client.findAll({type: 'orderbooks'})
+    return this.client.findAll({type: Orderbook})
   }
 
   async getMovements(){
-    return this.client.findAll({type: 'movements'})
+    return this.client.findAll({type: Movement})
   }
 
   async getAccount(){
-    return this.client.findAll({type: 'accounts'}).then((accounts) => accounts[0])
+    return this.client.findAll({type: Account}).then((accounts) => accounts[0])
   }
 
   async createCashDeposit(currency, amount, method){
@@ -184,7 +184,7 @@ export default class Bitex {
   }
 
   async getAssetWallets(){
-    return this.client.findAll({type: 'asset_wallets', customParams: {scope: 'exchange'}})
+    return this.client.findAll({type: AssetWallet, customParams: {scope: 'exchange'}})
   }
 
   async createCashWithdrawal(currency, amount, instructions){
@@ -205,7 +205,7 @@ export default class Bitex {
   }
 
   async getWithdrawalInstructions(){
-    return this.client.findAll({type: 'withdrawal_instructions'})
+    return this.client.findAll({type: WithdrawalInstruction})
   }
 
   async deleteWithdrawalInstructions(id){
@@ -225,11 +225,11 @@ export default class Bitex {
   }
 
   async getBuyingBots(){
-    return this.client.findAll({type: 'buying_bots'})
+    return this.client.findAll({type: BuyingBot})
   }
 
   async getBuyingBot(id){
-    return this.client.find({type: 'buying_bots', id})
+    return this.client.find({type: BuyingBot, id})
   }
 
   async createBuyingBot(amount, orderbookId){
@@ -249,11 +249,11 @@ export default class Bitex {
   }
 
   async getSellingBots(){
-    return this.client.findAll({type: 'selling_bots'})
+    return this.client.findAll({type: SellingBot})
   }
 
   async getSellingBot(id){
-    return this.client.find({type: 'selling_bots', id})
+    return this.client.find({type: SellingBot, id})
   }
 
   async createSellingBot(amount, orderbookId){
