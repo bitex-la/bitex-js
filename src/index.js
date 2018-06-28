@@ -95,7 +95,7 @@ export default class Bitex {
   }
 
   async getTransactions(code){
-    return this.client.findAll({type: Transaction, orderbook_code: code}).then(
+    return this.client.findAll({type: Transaction, orderbookCode: code}).then(
       (market) => {
         return market.transactions
       }
@@ -103,17 +103,17 @@ export default class Bitex {
   }
 
   async getCandles(code){
-    return this.client.findAll({type: Candle, orderbook_code: code}).then(
+    return this.client.findAll({type: Candle, orderbookCode: code}).then(
       (market) => market.candles
     )
   }
 
-  async createAsk(orderbook_code, price, amount){
+  async createAsk(orderbookCode, price, amount){
     let ask = new Ask()
     ask.price = price
     ask.amount = amount
 
-    return this.client.create({resource: ask, orderbook_code})
+    return this.client.create({resource: ask, orderbookCode})
   }
 
   async cancelAsk(ids){
@@ -125,17 +125,17 @@ export default class Bitex {
 
     //This parameter is ignored by the controller. In case this changes, we should
     //add the orderbook code as a parameter to this method.
-    const orderbook_code = 'btc_usd'
+    const orderbookCode = 'btc_usd'
 
-    return this.client.customAction({type: Ask, action: 'cancel', resource: asks, orderbook_code})
+    return this.client.customAction({type: Ask, action: 'cancel', resource: asks, orderbookCode})
   }
 
-  async createBid(orderbook_code, price, amount){
+  async createBid(orderbookCode, price, amount){
     let bid = new Bid()
     bid.price = price
     bid.amount = amount
 
-    return this.client.create({resource: bid, orderbook_code})
+    return this.client.create({resource: bid, orderbookCode})
   }
 
   async cancelBid(ids){
@@ -147,18 +147,18 @@ export default class Bitex {
 
     //This parameter is ignored by the controller. In case this changes, we should
     //add the orderbook code as a parameter to this method.
-    const orderbook_code = 'btc_usd'
+    const orderbookCode = 'btc_usd'
 
-    return this.client.customAction({type: Bid, action: 'cancel', resource: bids, orderbook_code})
+    return this.client.customAction({type: Bid, action: 'cancel', resource: bids, orderbookCode})
   }
 
   async getOrders(){
     return this.client.findAll({type: 'orders'})
   }
 
-  async cancelOrders(orderbook_code){
+  async cancelOrders(orderbookCode){
     let order = new Order()
-    order.id = orderbook_code || 'all'
+    order.id = orderbookCode || 'all'
     return this.client.customAction({resource: order, action: 'cancel'})
   }
 

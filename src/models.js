@@ -19,8 +19,8 @@ export class Ask {
     this.user = null
   }
 
-  static path({ orderbook_code }){
-    return `markets/${orderbook_code}/asks`
+  static path({ orderbookCode }){
+    return `markets/${orderbookCode}/asks`
   }
 }
 
@@ -51,8 +51,8 @@ export class Bid {
     this.user = null
   }
 
-  static path({ orderbook_code }){
-    return `markets/${orderbook_code}/bids`
+  static path({ orderbookCode }){
+    return `markets/${orderbookCode}/bids`
   }
 }
 
@@ -95,8 +95,8 @@ export class Candle {
     this.price_before_last = null
   }
 
-  static path({ orderbook_code }){
-    return `markets/${orderbook_code}/candles`
+  static path({ orderbookCode }){
+    return `markets/${orderbookCode}/candles`
   }
 }
 
@@ -326,8 +326,8 @@ export class Transaction {
     this.price = null
   }
 
-  static path({ orderbook_code }){
-    return `markets/${orderbook_code}/transactions`
+  static path({ orderbookCode }){
+    return `markets/${orderbookCode}/transactions`
   }
 }
 
