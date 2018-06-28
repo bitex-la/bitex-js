@@ -15,7 +15,8 @@
     "url": "git+https://github.com/bitex-la/bitex-js.git"
   },
   "keywords": [
-    "jsonapi",
+    "bitex",
+    "bitcoin",
     "client"
   ],
   "author": "Nicolas Orchow <nico@bitex.la> (https://bitex.la/)",
@@ -26,7 +27,7 @@
   "homepage": "https://github.com/bitex-la/bitex-js#readme",
   "dependencies": {
     "axios": "0.17.1",
-    "heather-js": "file:../jsonapi-client",
+    "heather-js": "^0.1.0",
     "immutable": "^3.8.2",
     "lodash": "^4.17.4",
     "nock": "^9.3.2",
