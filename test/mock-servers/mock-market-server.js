@@ -58,8 +58,45 @@ let mockServer = () => {
       ]
     })
 
+  let marketTickers = nock('https://test.bitex.la')
+    .get('/api/tickers/')
+    .reply(200, {
+      "data": [
+        {
+          "id": "btc_usd",
+          "type": "tickers",
+          "attributes": {
+            "last": 200,
+            "open": 100,
+            "high": 300,
+            "low": 50,
+            "vwap": null,
+            "volume": 0,
+            "bid": 10,
+            "ask": 0,
+            "price_before_last": 0
+          }
+        },
+        {
+          "id": "btc_ars",
+          "type": "tickers",
+          "attributes": {
+            "last": 400,
+            "open": 100,
+            "high": 500,
+            "low": 50,
+            "vwap": null,
+            "volume": 0,
+            "bid": 10,
+            "ask": 0,
+            "price_before_last": 0
+          }
+        }
+      ]
+    })
+
   let marketTicker = nock('https://test.bitex.la')
-    .get('/api/markets/btc_usd/?scope=ticker')
+    .get('/api/tickers/btc_usd/')
     .reply(200, {
       "data": {
         "id": "btc_usd",
