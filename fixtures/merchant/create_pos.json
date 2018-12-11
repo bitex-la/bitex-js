@@ -1,0 +1,61 @@
+{
+  "d7ece339977316c5872a145a1e4fb021": {
+    "meta": {
+      "url": "https://localhost:3000/api/merchants/pos/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"pos\",\"attributes\":{\"merchant_keep\":10,\"merchant_logo\":\"https://mystore.com/logo.png\",\"merchant_name\":\"My Store\",\"merchant_site\":\"https://mystore.com\",\"merchant_slug\":\"my-store\"}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 196
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"16b76b8ed17d74afed7f78d62f2cd88a\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=YkNtRTlwZG53MW1UWDF3Q0Q0WmVRdHB3UnplYVFEQkRsZXZSNnQ0NDZLMWZpdWh5VFZjUUFBRStldFVMR0FSbjZ0SW1Wb25NbjN6WURpM3I2WUx4ZEZTTTdpbmg0bHdEZWtMZ2FuK2EwRHBEajVXSXNoMmRQTmlvNlIrN051dEVsV0NYRzN1NURqVk9aQkpLZklSVGZ0WnJURzBDWGpNQnRkaWNwY1p3ZFNBPS0tVmlxemFPOVdZcGVaamJXWEtRWk1BQT09--b59c82253fe5857505cfb9e6a5769bad7a78b640; path=/; HttpOnly"
+        ],
+        "x-request-id": "0a39d973-0ad2-47ca-8486-5db0605e4dfa",
+        "x-runtime": "0.294792",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "5",
+          "type": "pos",
+          "attributes": {
+            "merchant_slug": "my-store",
+            "merchant_keep": 10,
+            "merchant_name": "My Store",
+            "merchant_logo": "https://mystore.com/logo.png",
+            "merchant_site": "https://mystore.com"
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/merchants/pos/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"pos\",\"attributes\":{\"merchant_keep\":10,\"merchant_logo\":\"https://mystore.com/logo.png\",\"merchant_name\":\"My Store\",\"merchant_site\":\"https://mystore.com\",\"merchant_slug\":\"my-store\"}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 196
+        }
+      }
+    }
+  }
+}
