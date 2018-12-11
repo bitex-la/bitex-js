@@ -224,12 +224,9 @@ export default class Bitex {
     return this.client.find({type: BuyingBot, id})
   }
 
-  async createBuyingBot(amount, orderbookId){
+  async createBuyingBot(amount, orderbook_code){
     let buyingBot = new BuyingBot()
-    buyingBot.amount = amount
-    let orderbook = new Orderbook()
-    orderbook.id = orderbookId
-    buyingBot.orderbook = orderbook
+    Object.assign(buyingBot, {amount, orderbook_code})
 
     return this.client.create({resource: buyingBot})
   }
@@ -237,7 +234,7 @@ export default class Bitex {
   async cancelBuyingBot(buyingBotId){
     let buyingBot = new BuyingBot()
     buyingBot.id = buyingBotId
-    return this.client.customAction({resource: buyingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
+    return this.client.customAction({resource: buyingBot, action: 'cancel'})
   }
 
   async getSellingBots(){
@@ -248,12 +245,9 @@ export default class Bitex {
     return this.client.find({type: SellingBot, id})
   }
 
-  async createSellingBot(amount, orderbookId){
+  async createSellingBot(amount, orderbook_code){
     let sellingBot = new SellingBot()
-    sellingBot.amount = amount
-    let orderbook = new Orderbook()
-    orderbook.id = orderbookId
-    sellingBot.orderbook = orderbook
+    Object.assign(sellingBot, {amount, orderbook_code})
 
     return this.client.create({resource: sellingBot})
   }
@@ -261,7 +255,7 @@ export default class Bitex {
   async cancelSellingBot(sellingBotId){
     let sellingBot = new SellingBot()
     sellingBot.id = sellingBotId
-    return this.client.customAction({resource: sellingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
+    return this.client.customAction({resource: sellingBot, action: 'cancel'})
   }
 
   async getPayments(){

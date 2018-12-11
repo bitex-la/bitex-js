@@ -1,0 +1,69 @@
+{
+  "f01b05bf480046632742522ccdc7bbb7": {
+    "meta": {
+      "url": "https://localhost:3000/api/selling_bots/1/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"5bb9460a45cbaf473cba06037a21c813\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=eDRHMmovb2xGNEUwdWxnRFVRdC9OOHVBdnl4NmhKaXViRFFTNUZ0SzREd21PamxTcWlnUm5JamxlN2xXNDViQW82dVNjVTBzTUxGU2M5RkMrTzRuTG1sc2IvMzhPeklrWEFjUVY4dXZLRDVGQW43SUQ4UlYydGxhRTJISWcrdml2S29WYy91SU1xQnJFVXFrVkRtVEQ3K2RqY0orOFFNNkFtVFovV2tkTWlBPS0tY3RYYVVoazkreUlkY0x4R3huZURBdz09--c6c410c4de95841f24a15e6b8d0526a6d5be37e3; path=/; HttpOnly"
+        ],
+        "x-request-id": "fc9632df-09a2-4da0-9836-b411d7e739b3",
+        "x-runtime": "0.317747",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "1",
+          "type": "selling_bots",
+          "attributes": {
+            "amount": 1,
+            "remaining_amount": 1,
+            "chunk_size": 0.5,
+            "eta": "2018-12-11T18:00:30.352Z",
+            "executing": true,
+            "to_cancel": false,
+            "orderbook_code": "btc_usd"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "5",
+                "type": "users"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/selling_bots/1/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

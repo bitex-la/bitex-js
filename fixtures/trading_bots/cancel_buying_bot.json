@@ -1,0 +1,90 @@
+{
+  "d75e919b01fdb3cfafe0cd14761aae64": {
+    "meta": {
+      "url": "https://localhost:3000/api/buying_bots/1/cancel/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"buying_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 183
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=N25rQzBoK2czOXFUbDRJcXVkdVh0WGVNNnZJMitTVUZlVG1nRU1SYWorTHREWkNFKzNzVlNuK3hoSkFqbW5CMXZyeXRsaE5EQnNQZGZSUjlGallQaTBhR2dkVXFXQ3dQTzV4VTVVdUxFNzI0K3d6Z0czajVnYWduMm51MlZQck9mNTRQaWM0ZFEvMlVlTXdXd0dPanVESmtYSnNWVEFWbEpESHljZlNOSUJNPS0tcnZ5aHY2RWJCVGpxNVJ2dDlXMnFKUT09--8c7fddadba612f8c5acd8c7a2d5380def14423ec; path=/; HttpOnly"
+        ],
+        "x-request-id": "0292e2ab-5533-4206-a119-9f35ddef9fa3",
+        "x-runtime": "0.303542",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/buying_bots/1/cancel/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"buying_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 183
+        }
+      }
+    }
+  },
+  "81a7d6d3ecde10ba36827d97abf64562": {
+    "meta": {
+      "url": "https://localhost:3000/api/buying_bots/1/cancel/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"buying_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook_code\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 188
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=YWs4aCtjd0cyUXdaQ0hGVUZnOCtnaE1rU3VhSmlzNCtXRXQ3R3RuOXppMVlzY2tMdFc2WElweGZjWnBXSzF3bnNaSmhPaXkxeklDR2tDclVOdzNwdVRUN3Mrd1gyRFZVVlpqdHBDNzlHVTRzMjA0Tm9VaXRVeHMvRm5ZOWgxNzduYU93M0VncG9JMEtUTEc1NXJBZGwxZXFZcFYzUzJIWHlHaTdqTXpDclB3PS0tdEFmTnFjejhBSVUrT0Q0SGozbTM4QT09--2d7ccf8a73b8e530da712a626bc7d3b867cca0fb; path=/; HttpOnly"
+        ],
+        "x-request-id": "8701727d-34b5-487f-9e68-e93de83a472b",
+        "x-runtime": "0.253148",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/buying_bots/1/cancel/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"buying_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook_code\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 188
+        }
+      }
+    }
+  }
+}

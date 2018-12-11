@@ -64,7 +64,7 @@ export class BuyingBot {
     this.executing = null
     this.to_cancel = null
     this.user = null
-    this.orderbook = null
+    this.orderbook_code = null
   }
 }
 
@@ -289,7 +289,7 @@ export class SellingBot {
     this.executing = null
     this.to_cancel = null
     this.user = null
-    this.orderbook = null
+    this.orderbook_code = null
   }
 }
 
