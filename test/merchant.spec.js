@@ -33,7 +33,6 @@ describe('Merchant', () => {
       expect(p).to.be.an.instanceof(Payment) &&
       expect(p.address).to.be.an.instanceof(BitcoinAddress)
       p.coin_deposits.every(cd => {
-        console.log(cd)
         return expect(cd).to.be.an.instanceof(CoinDeposit)
       })
     })

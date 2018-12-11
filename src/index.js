@@ -1,43 +1,28 @@
 import axios from 'axios'
 import _ from 'lodash'
 import JsonapiClient from 'heather-js'
-import {
+import * as models from './models'
+const {
   Account,
   Ask,
   AssetWallet,
-  Bank,
   Bid,
-  BitcoinAddress,
   BuyingBot,
-  CancelStatus,
   Candle,
   CashDeposit,
-  CashDepositMethod,
   CashWithdrawal,
-  CoinDeposit,
   CoinWithdrawal,
-  ContactRequest,
-  Country,
-  Emission,
   Market,
   Movement,
-  Notification,
   Order,
   Orderbook,
-  OrderGroup,
   Payment,
   POS,
-  Purchase,
-  PurchaseIntention,
-  Reception,
-  Sale,
   SellingBot,
   Ticker,
   Transaction,
-  User,
-  UserCoinAddressBookEntry,
   WithdrawalInstruction
-} from './models'
+} = models
 
 export default class Bitex {
   constructor({apiKey, environment = 'production'}){
@@ -55,41 +40,7 @@ export default class Bitex {
   }
 
   defineModels(){
-    this.client.define(Account)
-    this.client.define(Ask)
-    this.client.define(AssetWallet)
-    this.client.define(Bank)
-    this.client.define(Bid)
-    this.client.define(BitcoinAddress)
-    this.client.define(BuyingBot)
-    this.client.define(CancelStatus)
-    this.client.define(Candle)
-    this.client.define(CashDeposit)
-    this.client.define(CashDepositMethod)
-    this.client.define(CashWithdrawal)
-    this.client.define(CoinDeposit)
-    this.client.define(CoinWithdrawal)
-    this.client.define(ContactRequest)
-    this.client.define(Country)
-    this.client.define(Emission)
-    this.client.define(Market)
-    this.client.define(Movement)
-    this.client.define(Notification)
-    this.client.define(Order)
-    this.client.define(Orderbook)
-    this.client.define(OrderGroup)
-    this.client.define(Payment)
-    this.client.define(POS)
-    this.client.define(Purchase)
-    this.client.define(PurchaseIntention)
-    this.client.define(Reception)
-    this.client.define(Sale)
-    this.client.define(SellingBot)
-    this.client.define(Ticker)
-    this.client.define(Transaction)
-    this.client.define(User)
-    this.client.define(UserCoinAddressBookEntry)
-    this.client.define(WithdrawalInstruction)
+    _.forEach(models, (model) => this.client.define(model))
   }
 
   async getMarket(code){
