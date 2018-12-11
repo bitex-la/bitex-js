@@ -118,6 +118,15 @@ export class CashWithdrawal {
   }
 }
 
+export class CoinDeposit {
+  constructor(){
+    this.address = null
+    this.coin = null
+    this.amount = null
+    this.created_at = null
+  }
+}
+
 export class CoinWithdrawal {
   constructor(){
     this.currency = null
@@ -203,7 +212,7 @@ export class Payment {
   constructor(){
     this.amount = null
     this.confirmed_quantity = null
-    this.currency = null
+    this.currency_code = null
     this.customer_reference = null
     this.expected_quantity = null
     this.keep = null
@@ -218,6 +227,7 @@ export class Payment {
     this.unconfirmed_quantity = null
     this.valid_until = null
     this.address = null
+    this.coin_deposits = []
   }
 
   static path(){

@@ -24,10 +24,10 @@
         "etag": "W/\"16b76b8ed17d74afed7f78d62f2cd88a\"",
         "cache-control": "max-age=0, private, must-revalidate",
         "set-cookie": [
-          "_bitex_la_session=YkNtRTlwZG53MW1UWDF3Q0Q0WmVRdHB3UnplYVFEQkRsZXZSNnQ0NDZLMWZpdWh5VFZjUUFBRStldFVMR0FSbjZ0SW1Wb25NbjN6WURpM3I2WUx4ZEZTTTdpbmg0bHdEZWtMZ2FuK2EwRHBEajVXSXNoMmRQTmlvNlIrN051dEVsV0NYRzN1NURqVk9aQkpLZklSVGZ0WnJURzBDWGpNQnRkaWNwY1p3ZFNBPS0tVmlxemFPOVdZcGVaamJXWEtRWk1BQT09--b59c82253fe5857505cfb9e6a5769bad7a78b640; path=/; HttpOnly"
+          "_bitex_la_session=a3lDK2JTeXVjV0txajh3ejA1WjliQnRaMVc1SEYyR1hzcWRqSkF0S0NpaUpmUWY5UW5NcEt4RXY3T2t1SjM2TUNKbXh0US9veXkvR0FkQzIrQm5scytTU3ZwNW1mY2l2OGRGWjBhS2wvalc5N2RsMUxCQ05pT3pCOVQ0VngzTW9ORGFJUlVPUHZPbjdVcHRaVmhzMFNwTVNiWk1rMVA3SVBvWm1xTkp0cFUwPS0tVXhFZmF6ZXFvNGhyeHJzaUtwZXAvUT09--a92772e827f39e86500acb32bd50cd94e8f4f727; path=/; HttpOnly"
         ],
-        "x-request-id": "0a39d973-0ad2-47ca-8486-5db0605e4dfa",
-        "x-runtime": "0.294792",
+        "x-request-id": "e31b83f7-eac5-46dd-a60e-8feba247697e",
+        "x-runtime": "0.409641",
         "connection": "close",
         "transfer-encoding": "chunked"
       },

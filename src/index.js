@@ -14,6 +14,7 @@ import {
   CashDeposit,
   CashDepositMethod,
   CashWithdrawal,
+  CoinDeposit,
   CoinWithdrawal,
   ContactRequest,
   Country,
@@ -66,6 +67,7 @@ export default class Bitex {
     this.client.define(CashDeposit)
     this.client.define(CashDepositMethod)
     this.client.define(CashWithdrawal)
+    this.client.define(CoinDeposit)
     this.client.define(CoinWithdrawal)
     this.client.define(ContactRequest)
     this.client.define(Country)
@@ -266,25 +268,25 @@ export default class Bitex {
     return this.client.find({type: Payment, id})
   }
 
-  async createPayment(amount, keep, currency, callback_url, customer_reference, merchant_reference){
+  async createPayment(amount, keep, currency_code, callback_url,
+    customer_reference, merchant_reference
+  ){
     let payment = new Payment()
-    payment.amount = amount
-    payment.keep = keep
-    payment.currency = currency
-    payment.callback_url = callback_url
-    payment.customer_reference = customer_reference
-    payment.merchant_reference = merchant_reference
+    Object.assign(payment, {
+      amount, keep, currency_code, callback_url, customer_reference, 
+      merchant_reference
+    })
 
     return this.client.create({resource: payment})
   }
 
-  async createPOS(merchant_keep, merchant_logo, merchant_name, merchant_site, merchant_slug){
+  async createPOS(
+    merchant_keep, merchant_logo, merchant_name, merchant_site, merchant_slug
+  ){
     let pos = new POS()
-    pos.merchant_keep = merchant_keep
-    pos.merchant_logo = merchant_logo
-    pos.merchant_name = merchant_name
-    pos.merchant_site = merchant_site
-    pos.merchant_slug = merchant_slug
+    Object.assign(pos, {
+      merchant_keep, merchant_logo, merchant_name, merchant_site, merchant_slug
+    })
 
     return this.client.create({resource: pos})
   }

@@ -1,15 +1,15 @@
 {
-  "cf830554f9b4b4579c40e0aa791bf93c": {
+  "7d2abed37ba261f64017731bb00ac27c": {
     "meta": {
       "url": "https://localhost:3000/api/merchants/payments/",
       "method": "post",
-      "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency\":\"1\",\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"callback_url\":\"https://mystore.com/webhook\"}}}",
+      "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency\":null,\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"currency_code\":\"usd\",\"callback_url\":\"https://mystore.com/webhook\"}}}",
       "headers": {
         "Accept": "application/json, text/plain, */*",
         "Content-Type": "application/vnd.api+json",
         "Authorization": "valid_api_key",
         "User-Agent": "axios-vcr",
-        "Content-Length": 461
+        "Content-Length": 484
       }
     },
     "fixture": true,
@@ -21,43 +21,43 @@
         "x-xss-protection": "1; mode=block",
         "x-content-type-options": "nosniff",
         "content-type": "application/vnd.api+json; charset=utf-8",
-        "etag": "W/\"870bea437088300bce73d735bd7cb627\"",
+        "etag": "W/\"306d2c4ad77f53d75149305bf2ce16be\"",
         "cache-control": "max-age=0, private, must-revalidate",
         "set-cookie": [
-          "_bitex_la_session=Z2RMSmhGSW1JR09IMkpXSWlPYkhEbDBES3Y4Umd5TEpTMTFibmNsTEI2MWVVcWdqL25FYTBLTW9aT2h0SGVKQWVTbVdlUUhLb0hIRGw5dE8xVmNlK1pIcXo2VCtyWVZHUUJFQ2MzTktBN3VGY2tzRmlHemlxaU5KMlMwWkJ4VWFmKzJQTkluL2pFMFlxYWFiazZqczA2VHVUdUM0RnJ3cXR3ejg1UXJoeUVzPS0tcHYyeFFIKzFHUkZuR3kzYmdrcEJuUT09--9a1f651abef4c5ffc87ba0422e01bbeb49eb7f44; path=/; HttpOnly"
+          "_bitex_la_session=NU9tN0o5Wk1QWGRZeEdOYUNJeUJjcEVpWW5raVZKSUZ6emU1QXNveG05VFVCV1A5dkwrd1pnaU9pbmZTZUZXSGtvUlpGV1M1OS8rWStPWTFsNGpmc3FrNnhZSUxCUmZOdmRaWGdOWmNFcFZEUTk4ZW95c1grS1o4aEZoWUVQa3BjV3VWUnU3c085R0FhTHBSOHdoZ2tRMUxHTVBWMkl1N21WSUN4elhTcXJJPS0tSXVoL2tOZVR5eGl2RFZKVHFnTmZaUT09--54eef5e96ad322f2de111fb497d64d70082f08e4; path=/; HttpOnly"
         ],
-        "x-request-id": "dfef0ff0-04d9-4c6b-9f66-a52e0e1482c3",
-        "x-runtime": "0.349640",
+        "x-request-id": "83c6b087-4d1b-4c9c-b7ce-780966fdf451",
+        "x-runtime": "0.486552",
         "connection": "close",
         "transfer-encoding": "chunked"
       },
       "data": {
         "data": {
-          "id": "2",
+          "id": "6",
           "type": "payments",
           "attributes": {
             "amount": 200,
             "callback_url": "https://mystore.com/webhook",
             "confirmed_quantity": 0,
-            "currency": "btc",
+            "currency_code": "usd",
             "customer_reference": "Purchase at My Store",
-            "expected_quantity": 200,
+            "expected_quantity": 0.03100775,
             "keep": 10,
             "kept": null,
-            "last_quoted_on": "2018-12-11T18:06:15.341Z",
+            "last_quoted_on": "2018-12-11T18:48:33.714Z",
             "merchant_reference": "Sale id: 2212",
             "overpaid": null,
-            "quote_valid_until": "2018-12-11T19:06:15.320Z",
+            "quote_valid_until": "2018-12-11T18:49:33.713Z",
             "settlement_amount": null,
             "settlement_currency": null,
             "status": "pending",
             "unconfirmed_quantity": 0,
-            "valid_until": "2018-12-11T19:06:15.320Z"
+            "valid_until": "2018-12-11T19:48:33.683Z"
           },
           "relationships": {
             "address": {
               "data": {
-                "id": "34",
+                "id": "38",
                 "type": "bitcoin_addresses"
               }
             },
@@ -68,11 +68,11 @@
         },
         "included": [
           {
-            "id": "34",
+            "id": "38",
             "type": "bitcoin_addresses",
             "attributes": {
               "auto_sell": false,
-              "public_address": "mhhmwu8a7ZRn8HpFyAKUQjWwRv9hCFN84r"
+              "public_address": "mpTrYgPXSsAoBAsa2UDBpfhJCNLWTS1TY2"
             },
             "relationships": {
               "user": {
@@ -83,7 +83,7 @@
               },
               "payment": {
                 "data": {
-                  "id": "2",
+                  "id": "6",
                   "type": "payments"
                 }
               }
@@ -94,13 +94,119 @@
       "config": {
         "url": "https://localhost:3000/api/merchants/payments/",
         "method": "post",
-        "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency\":\"1\",\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"callback_url\":\"https://mystore.com/webhook\"}}}",
+        "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency\":null,\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"currency_code\":\"usd\",\"callback_url\":\"https://mystore.com/webhook\"}}}",
         "headers": {
           "Accept": "application/json, text/plain, */*",
           "Content-Type": "application/vnd.api+json",
           "Authorization": "valid_api_key",
           "User-Agent": "axios-vcr",
-          "Content-Length": 461
+          "Content-Length": 484
+        }
+      }
+    }
+  },
+  "f4f3db9ef35cb03ac13a7e5025abefcf": {
+    "meta": {
+      "url": "https://localhost:3000/api/merchants/payments/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency\":null,\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"coin_deposits\":[],\"currency_code\":\"usd\",\"callback_url\":\"https://mystore.com/webhook\"}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 503
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"3c132d94d021560fffc4ea2cbeef6ce4\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=aTVOMlpEcHcyMHkzZkhidWhpYkJpa2E2T1NnMTJrVERwQTBaejRycWcxOFpGTGlLWjRsMjA1bno2dUtMZXBlSGJrelozN2R6akh1WitnMDlxVng4VmNySEVLWDVGc1FSTUQvcEZJLy9CeGV0Q205RzZpVmh2TTN0bzFnaXhnOEJGdVNDOEFvQWptdHNsRjRpOHo3aXowN3czY1BuWWlhRWkxTDN0VEZVYU1jPS0tb001U0c3RHdSd2pxcGRUVm1pTEtYZz09--4f74ae9338f590aaa0b086c3afd1e12e3b498a6a; path=/; HttpOnly"
+        ],
+        "x-request-id": "cb4584fc-d8a0-4f21-8db8-36b194245a92",
+        "x-runtime": "1.121920",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "7",
+          "type": "payments",
+          "attributes": {
+            "amount": 200,
+            "callback_url": "https://mystore.com/webhook",
+            "confirmed_quantity": 0,
+            "currency_code": "usd",
+            "customer_reference": "Purchase at My Store",
+            "expected_quantity": 0.03100775,
+            "keep": 10,
+            "kept": null,
+            "last_quoted_on": "2018-12-11T19:12:22.897Z",
+            "merchant_reference": "Sale id: 2212",
+            "overpaid": null,
+            "quote_valid_until": "2018-12-11T19:13:22.896Z",
+            "settlement_amount": null,
+            "settlement_currency": null,
+            "status": "pending",
+            "unconfirmed_quantity": 0,
+            "valid_until": "2018-12-11T20:12:22.840Z"
+          },
+          "relationships": {
+            "address": {
+              "data": {
+                "id": "39",
+                "type": "bitcoin_addresses"
+              }
+            },
+            "coin_deposits": {
+              "data": []
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "39",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "msBNCehv7fBt5taUvsJeKxNXXgs3BCgaxc"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "7",
+                  "type": "payments"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/merchants/payments/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency\":null,\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"coin_deposits\":[],\"currency_code\":\"usd\",\"callback_url\":\"https://mystore.com/webhook\"}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 503
         }
       }
     }

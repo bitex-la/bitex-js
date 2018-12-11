@@ -6,8 +6,9 @@ import VCR from 'axios-vcr'
 
 import Bitex from '../src'
 import {
-  Payment,
   BitcoinAddress,
+  CoinDeposit,
+  Payment,
   POS
 } from '../src/models'
 
@@ -31,6 +32,10 @@ describe('Merchant', () => {
     payments.every(p => {
       expect(p).to.be.an.instanceof(Payment) &&
       expect(p.address).to.be.an.instanceof(BitcoinAddress)
+      p.coin_deposits.every(cd => {
+        console.log(cd)
+        return expect(cd).to.be.an.instanceof(CoinDeposit)
+      })
     })
   })
 
@@ -42,12 +47,12 @@ describe('Merchant', () => {
 
   it('create payment', async () => {
     const payment = await client.createPayment(
-      200,
-      10,
-      '1',
-      'https://mystore.com/webhook',
-      'Purchase at My Store',
-      'Sale id: 2212'
+      200, //amount
+      10, //keep
+      'usd', //currency_code
+      'https://mystore.com/webhook', //callback_url
+      'Purchase at My Store', //customer_reference
+      'Sale id: 2212' //merchant_reference
     )
     expect(payment).to.be.an.instanceof(Payment)
     expect(payment.id).to.not.be.empty
