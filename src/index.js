@@ -108,6 +108,10 @@ export default class Bitex {
     }})
   }
 
+  async getTransaction(id){
+    return this.client.findAll({type: Transaction, id})
+  }
+
   async getCandles(code){
     return this.client.findAll({type: Candle, filter: {
       orderbook_code: code

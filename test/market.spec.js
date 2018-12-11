@@ -1,4 +1,4 @@
-import chai, { expect } from 'chai'
+import chai, { expect, assert } from 'chai'
 
 import _ from 'lodash'
 
@@ -8,6 +8,7 @@ import Bitex from '../src'
 import {
   Candle,
   Market,
+  Orderbook,
   OrderGroup,
   Ticker,
   Transaction
@@ -59,9 +60,21 @@ describe('Market', () => {
     })
   })
 
+  it('get transaction', async () => {
+    const transaction = await client.getTransaction(70)
+    expect(transaction).to.be.an.instanceof(Transaction)
+    assert.equal(transaction.id, 70)
+  })
+
   it('get candles', async () => {
     const candles = await client.getCandles('btc_usd')
     expect(candles.length).to.equal(2)
     candles.every(c => expect(c).to.be.an.instanceof(Candle))
+  })
+
+  it('get orderbooks', async () => {
+    const orderbooks = await client.getOrderbooks()
+    expect(orderbooks.length).to.equal(5)
+    orderbooks.every(o => expect(o).to.be.an.instanceof(Orderbook))
   })
 })

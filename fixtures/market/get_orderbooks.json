@@ -1,0 +1,122 @@
+{
+  "703102392ec25d9ba5a0db0b0fae8699": {
+    "meta": {
+      "url": "https://localhost:3000/api/orderbooks/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"fcb45522326fcba66029d04a8fe7b4aa\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-request-id": "39218524-4f67-4f3b-9523-9251869c8b05",
+        "x-runtime": "0.849463",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_usd",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "usd",
+                "decimals": 2
+              }
+            }
+          },
+          {
+            "id": "5",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_ars",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "ars",
+                "decimals": 2
+              }
+            }
+          },
+          {
+            "id": "11",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_clp",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "clp",
+                "decimals": 2
+              }
+            }
+          },
+          {
+            "id": "10",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_pyg",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "pyg",
+                "decimals": 2
+              }
+            }
+          },
+          {
+            "id": "12",
+            "type": "orderbooks",
+            "attributes": {
+              "code": "btc_uyu",
+              "base": {
+                "code": "btc",
+                "decimals": 8
+              },
+              "quote": {
+                "code": "uyu",
+                "decimals": 2
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/orderbooks/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}
