@@ -102,74 +102,56 @@ export default class Bitex {
     return this.client.find({type: Ticker, id: code})
   }
 
-  async getTransactions(code){
-    return this.client.findAll({type: Transaction, filter: {
-      orderbook_code: code
-    }})
+  async getTransactions(orderbook_code){
+    return this.client.findAll({type: Transaction, filter: { orderbook_code }})
   }
 
   async getTransaction(id){
     return this.client.findAll({type: Transaction, id})
   }
 
-  async getCandles(code){
-    return this.client.findAll({type: Candle, filter: {
-      orderbook_code: code
-    }})
+  async getCandles(orderbook_code){
+    return this.client.findAll({type: Candle, filter: { orderbook_code }})
   }
 
-  async createAsk(orderbookCode, price, amount){
+  async createAsk(orderbook_code, price, amount){
     let ask = new Ask()
-    ask.price = price
-    ask.amount = amount
+    Object.assign(ask, {price, amount, orderbook_code})
 
-    return this.client.create({resource: ask, orderbookCode})
+    return this.client.create({resource: ask})
   }
 
-  async cancelAsk(ids){
-    const asks = ids.map((id) => {
-      let ask = new Ask()
-      ask.id = id
-      return ask
-    })
+  async cancelAsk(id){
+    let ask = new Ask()
+    ask.id = id
 
-    //This parameter is ignored by the controller. In case this changes, we should
-    //add the orderbook code as a parameter to this method.
-    const orderbookCode = 'btc_usd'
-
-    return this.client.customAction({type: Ask, action: 'cancel', resource: asks, orderbookCode})
+    return this.client.customAction({action: 'cancel', resource: ask})
   }
 
-  async createBid(orderbookCode, price, amount){
+  async createBid(orderbook_code, price, amount){
     let bid = new Bid()
-    bid.price = price
-    bid.amount = amount
+    Object.assign(bid, {price, amount, orderbook_code})
 
-    return this.client.create({resource: bid, orderbookCode})
+    return this.client.create({resource: bid})
   }
 
-  async cancelBid(ids){
-    const bids = ids.map((id) => {
-      let bid = new Bid()
-      bid.id = id
-      return bid
-    })
+  async cancelBid(id){
+    let bid = new Bid()
+    bid.id = id
 
-    //This parameter is ignored by the controller. In case this changes, we should
-    //add the orderbook code as a parameter to this method.
-    const orderbookCode = 'btc_usd'
-
-    return this.client.customAction({type: Bid, action: 'cancel', resource: bids, orderbookCode})
+    return this.client.customAction({action: 'cancel', resource: bid})
   }
 
   async getOrders(){
     return this.client.findAll({type: Order})
   }
 
-  async cancelOrders(orderbookCode){
-    let order = new Order()
-    order.id = orderbookCode || 'all'
-    return this.client.customAction({resource: order, action: 'cancel'})
+  async cancelOrders(orderbook_code){
+    let actionParams = {action: 'cancel', type: Order}
+    if (orderbook_code) {
+      Object.assign(actionParams, {filter: {orderbook_code}})
+    }
+    return this.client.customAction(actionParams)
   }
 
   async getOrderbooks(){

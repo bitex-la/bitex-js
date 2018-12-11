@@ -27,7 +27,7 @@
   "homepage": "https://github.com/bitex-la/bitex-js#readme",
   "dependencies": {
     "axios": "0.17.1",
-    "heather-js": "^0.2.3",
+    "heather-js": "^0.2.4",
     "immutable": "^3.8.2",
     "lodash": "^4.17.4",
     "nock": "^9.3.2",

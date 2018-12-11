@@ -1,0 +1,88 @@
+{
+  "73d65c50c704560af69f07865f5c15fe": {
+    "meta": {
+      "url": "https://localhost:3000/api/orders/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"aff7a56ee9b21297b5ee420a855b2195\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=OVRxcEJJUWRFZzR6VGtha21Ed28wYjRGU3EyMUNTR0hlbGNZVCtTWTh5SzBibjg2Zld3cXM1V3NkdVZ5b3c1NVFCSGxhOFNkdC9tL1BIMDFBQnllZjhVU2JoY2RsMmJUa2dUOHFQZUF2eG1ZL1NpZFRXeHYzVjlGWVEwcTRaRmpXV1dEcC8zaEhhV2lKK1k0YU0wT2tOd0M3cnhlaCtXTzBLL3lOakF1Q2l3PS0tdkZ3VkcwUE5RbXhtbDdLclFJUFpadz09--c2914ae0b7147ff172a07c45b8fd14f8b23512cc; path=/; HttpOnly"
+        ],
+        "x-request-id": "b2fbd760-6251-4ff6-98c5-3acffa9eedd3",
+        "x-runtime": "0.416349",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "33",
+            "type": "bids",
+            "attributes": {
+              "amount": 100,
+              "remaining_amount": 100,
+              "price": 12,
+              "status": "executing",
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          },
+          {
+            "id": "15",
+            "type": "asks",
+            "attributes": {
+              "amount": 1.2,
+              "remaining_amount": 1.2,
+              "price": 150,
+              "status": "executing",
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/orders/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

@@ -15,12 +15,8 @@ export class Ask {
     this.amount = null
     this.remaining_amount = null
     this.price = null,
-    this.orderbook = null
+    this.orderbook_code = null
     this.user = null
-  }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/asks`
   }
 }
 
@@ -47,12 +43,8 @@ export class Bid {
     this.amount = null
     this.remaining_amount = null
     this.price = null,
-    this.orderbook = null
+    this.orderbook_code = null
     this.user = null
-  }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/bids`
   }
 }
 

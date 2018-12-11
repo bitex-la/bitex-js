@@ -1,0 +1,69 @@
+{
+  "903c022b64cb83a4244a2b41600f837f": {
+    "meta": {
+      "url": "https://localhost:3000/api/asks/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"asks\",\"attributes\":{\"amount\":1.2,\"remaining_amount\":null,\"price\":150,\"orderbook_code\":\"btc_usd\",\"user\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 127
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"882fa85c14d5af44e141cf4527bb848e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=eUVGM0poQWxvOHJSRC9ndmpYVmRtWFNpeTdld0VGWkl2dmVQbnYwYkpMNHVsVktIVzVGUzJsT25kME16dnhGZzFFMDFpaGlsdW5UQjF3cWE3QVJsVzZCT05oZC8zd3lUTHI2MEo0YlA1MzRiSjdXZHdzVHJrRkVBcmpLdkxEY1piUVdWQWNlc3I0cXowTDBPMFdEM1E5MUtwR2FJeWlCSTk1M0JOVjM3NXpFPS0tRGRqZ0ZJNm9WWHdnNTRJSHV3Mitqdz09--b4e608cebe311b2f5218ab520421d0fa20b1109d; path=/; HttpOnly"
+        ],
+        "x-request-id": "19328b43-8090-4b1d-a59d-d7ccc553abe2",
+        "x-runtime": "0.453535",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "15",
+          "type": "asks",
+          "attributes": {
+            "amount": 1.2,
+            "remaining_amount": 1.2,
+            "price": 150,
+            "status": "pending",
+            "orderbook_code": "btc_usd"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "5",
+                "type": "users"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/asks/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"asks\",\"attributes\":{\"amount\":1.2,\"remaining_amount\":null,\"price\":150,\"orderbook_code\":\"btc_usd\",\"user\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 127
+        }
+      }
+    }
+  }
+}

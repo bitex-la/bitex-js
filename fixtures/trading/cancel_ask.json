@@ -1,0 +1,46 @@
+{
+  "869de9a8a7e3ef15b896df9c3273b4ae": {
+    "meta": {
+      "url": "https://localhost:3000/api/asks/13/cancel/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"asks\",\"id\":13,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"price\":null,\"orderbook_code\":null,\"user\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 132
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=ekEwb0NuWHVURFFwek11RFdnWDBQWDdEb1ZKZGFQOUI0dG4zbDVKSmxKSWNSRE9MNHkxSC9IYmQ4dDNFdVp3d2tJZVZvMEFUN1E1bXMyenpCbXZEeXVOZlZQaVBjN2dnRWtiWW9yWVdtUmtzUUkybitJd3Z3bnAvZTFEMVZMdTRvNWhsNkQ2TWhndnVQL2tudkNtNlZwL1dPeFlFK3VGLzQ3THVRV0NhNXo0PS0tTUJncHhaOW9aSjlzaFZvcjZUOU5adz09--4c3a3d2226ff2e42d32217d6b070783aa803339e; path=/; HttpOnly"
+        ],
+        "x-request-id": "05e17ac3-a1ec-405e-a58a-a65797f19e91",
+        "x-runtime": "0.325623",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/asks/13/cancel/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"asks\",\"id\":13,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"price\":null,\"orderbook_code\":null,\"user\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 132
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "5580764f4fca392b095140c1d5a90465": {
+    "meta": {
+      "url": "https://localhost:3000/api/bids/32/cancel/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"bids\",\"id\":32,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"price\":null,\"orderbook_code\":null,\"user\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 132
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=bGVsTzVQS29ZTFZLMU5LelZYSDVvOVR1QWo0VjV0UlY2WmR5SFNYQXk5dUVUeFR4LytIWU1ZekxRaEVBSEZFajJkcjBVVWhtcUJtZnBpQkRaWUI1eWlUV2VvOFdXd29sQjNCZkVINWExWGtkWmxjMmRzSW1abDRMN1FrN3J0aExzTEZZV3dDSnAzQkt2bCtPY29jMXdhZDY4U1BndkZGUHp4emRvWkhiSWZvPS0tLzJOZWp2UWFNWDBMZnFLRVBRMXcyUT09--4a8d09764728191dbd57f7e27a8cc91baea7f3d4; path=/; HttpOnly"
+        ],
+        "x-request-id": "b97696d8-e4fd-4779-9a83-40561d5da577",
+        "x-runtime": "0.363297",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/bids/32/cancel/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"bids\",\"id\":32,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"price\":null,\"orderbook_code\":null,\"user\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 132
+        }
+      }
+    }
+  }
+}

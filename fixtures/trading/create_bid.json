@@ -1,0 +1,69 @@
+{
+  "ee2ae6002618a569eb148442d1bf736b": {
+    "meta": {
+      "url": "https://localhost:3000/api/bids/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"bids\",\"attributes\":{\"amount\":100,\"remaining_amount\":null,\"price\":12,\"orderbook_code\":\"btc_usd\",\"user\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 126
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"53b3fccfd6c926dbfbbfdfc8d4f492d9\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=ZFROUCtNRU4vWms2RVJxdG4rQlh4RXZxRmtuNDhaaUFOc1lXUXhoSkhHVHFkbTNDSEMvcUlpUTB0VUFVb3NldmpJLzFEUzNzYXBNWFd5TGY3dnIrREh0c005aGNtY1V6OWRDVXUxdUU1QjhGb2dyYlkzWE1ReVM1SklVTjhoMDcveTBGQS9pa2d5ejkzZnkraFV2NW1lMHBtNGRtb2pkN1hRRFg3YlhFSURJPS0tc3JMU2FLOHVEQS9Md3o4OFdUa0Y2QT09--5a164dd3355ce624c4e74c3005e23a0bbc3b5da5; path=/; HttpOnly"
+        ],
+        "x-request-id": "e90a9db9-0555-41f3-bba5-56de215b61b9",
+        "x-runtime": "0.304675",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "33",
+          "type": "bids",
+          "attributes": {
+            "amount": 100,
+            "remaining_amount": 100,
+            "price": 12,
+            "status": "pending",
+            "orderbook_code": "btc_usd"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "5",
+                "type": "users"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/bids/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"bids\",\"attributes\":{\"amount\":100,\"remaining_amount\":null,\"price\":12,\"orderbook_code\":\"btc_usd\",\"user\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 126
+        }
+      }
+    }
+  }
+}

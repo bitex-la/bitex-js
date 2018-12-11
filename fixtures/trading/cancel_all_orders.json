@@ -1,0 +1,46 @@
+{
+  "e3cfdc6c5bb9b749164b6ab81f2f67f8": {
+    "meta": {
+      "url": "https://localhost:3000/api/orders/cancel/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"\"}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 20
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=RHhUZWRlU0twU0RjYzBuM2UvVXJRRUJPWlQ3R0t1RUNZdWRvQXRCYSt5ZWN0enp1M0dBcHJYWnFLMUdMRTlIVVpZdTZMRVpvUjV6RnBwblVEQWxRM0pCajlETkwxMzNWR1BXVGZ4cWVJNkdRaWcxWWVWOHpPRWtWQnZvTkdGWjBEMWZwOHcySmFCcy9aWGRUVFA2NDAwbGRjdlRQNk5jNGRtekZtRmxHWTVvPS0temxqQUsvbklSWS9ySWFnQzh4WWRrQT09--3d87ef53f311e411bf94f4a6498a7c1a8bb66e4d; path=/; HttpOnly"
+        ],
+        "x-request-id": "ac74d70c-4738-4d36-936f-8f67581cb966",
+        "x-runtime": "0.424945",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/orders/cancel/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"\"}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 20
+        }
+      }
+    }
+  }
+}
