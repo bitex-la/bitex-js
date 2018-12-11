@@ -28,6 +28,7 @@ describe('Trading', () => {
   it('create ask', async () => {
     const newAsk = await client.createAsk('btc_usd', 150, 1.2)
     expect(newAsk).to.be.an.instanceof(Ask)
+    expect(newAsk.id).to.not.be.null
   })
 
   it('cancel ask', async () => {
@@ -38,6 +39,7 @@ describe('Trading', () => {
   it('create bid', async () => {
     const newBid = await client.createBid('btc_usd', 12, 100)
     expect(newBid).to.be.an.instanceof(Bid)
+    expect(newBid.id).to.not.be.null
   })
 
   it('cancel bid', async () => {
