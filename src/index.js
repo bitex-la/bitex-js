@@ -41,9 +41,13 @@ import {
 export default class Bitex {
   constructor({apiKey, environment = 'production'}){
     const prefix = (environment !== 'production') ? environment + '.' : ''
-    if(environment === 'test') process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+    let url = `https://${prefix}bitex.la/api`
+    if(environment === 'test'){
+      process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+      url = 'https://localhost:3000/api'
+    }
 
-    this.client = new JsonapiClient(`https://${prefix}bitex.la/api`)
+    this.client = new JsonapiClient(url)
     this.client.setHeader('Authorization', apiKey)
 
     this.defineModels()
@@ -99,17 +103,15 @@ export default class Bitex {
   }
 
   async getTransactions(code){
-    return this.client.findAll({type: Transaction, orderbookCode: code}).then(
-      (market) => {
-        return market.transactions
-      }
-    )
+    return this.client.findAll({type: Transaction, filter: {
+      orderbook_code: code
+    }})
   }
 
   async getCandles(code){
-    return this.client.findAll({type: Candle, orderbookCode: code}).then(
-      (market) => market.candles
-    )
+    return this.client.findAll({type: Candle, filter: {
+      orderbook_code: code
+    }})
   }
 
   async createAsk(orderbookCode, price, amount){

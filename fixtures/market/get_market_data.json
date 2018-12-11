@@ -1,0 +1,332 @@
+{
+  "9337f71f874a0e49a1bf7ebe17f8b7bf": {
+    "meta": {
+      "url": "https://localhost:3000/api/markets/btc_usd/",
+      "method": "get",
+      "data": "{\"data\":{\"type\":\"objects\",\"id\":\"btc_usd\",\"attributes\":{}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 58
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"2f4774732c53266d12f68e3767838503\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-request-id": "fcfac627-12a7-42e3-8e79-d900a5fec9a6",
+        "x-runtime": "0.274777",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "btc_usd",
+          "type": "markets",
+          "relationships": {
+            "candles": {
+              "data": [
+                {
+                  "id": "1544446800_1",
+                  "type": "candles"
+                },
+                {
+                  "id": "1544450400_1",
+                  "type": "candles"
+                }
+              ]
+            },
+            "transactions": {
+              "data": []
+            },
+            "bids": {
+              "data": [
+                {
+                  "id": "122.8",
+                  "type": "order_groups"
+                },
+                {
+                  "id": "111.0",
+                  "type": "order_groups"
+                }
+              ]
+            },
+            "asks": {
+              "data": [
+                {
+                  "id": "123.0",
+                  "type": "order_groups"
+                },
+                {
+                  "id": "125.0",
+                  "type": "order_groups"
+                },
+                {
+                  "id": "126.0",
+                  "type": "order_groups"
+                }
+              ]
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "1544446800_1",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1544446800,
+              "low": 123,
+              "open": 123,
+              "close": 123,
+              "high": 123,
+              "volume": 0.19512194,
+              "price_before_last": 123,
+              "vwap": 123,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "1544450400_1",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1544450400,
+              "low": 123,
+              "open": 123,
+              "close": 123,
+              "high": 123,
+              "volume": 0.09756097,
+              "price_before_last": 123,
+              "vwap": 123,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "122.8",
+            "type": "order_groups",
+            "attributes": {
+              "price": 122.8,
+              "amount": 0.68
+            }
+          },
+          {
+            "id": "111.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 111,
+              "amount": 12.101171171171
+            }
+          },
+          {
+            "id": "123.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 123,
+              "amount": 1.44471549
+            }
+          },
+          {
+            "id": "125.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 125,
+              "amount": 0.01
+            }
+          },
+          {
+            "id": "126.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 126,
+              "amount": 0.01
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/markets/btc_usd/",
+        "method": "get",
+        "data": "{\"data\":{\"type\":\"objects\",\"id\":\"btc_usd\",\"attributes\":{}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 58
+        }
+      }
+    }
+  },
+  "db2d7d3cfd6ebedf549bb929530b341e": {
+    "meta": {
+      "url": "https://localhost:3000/api/markets/btc_usd/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"2f4774732c53266d12f68e3767838503\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-request-id": "ca9797e1-0422-4cde-bf40-5d6098f5e939",
+        "x-runtime": "0.423787",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "btc_usd",
+          "type": "markets",
+          "relationships": {
+            "candles": {
+              "data": [
+                {
+                  "id": "1544446800_1",
+                  "type": "candles"
+                },
+                {
+                  "id": "1544450400_1",
+                  "type": "candles"
+                }
+              ]
+            },
+            "transactions": {
+              "data": []
+            },
+            "bids": {
+              "data": [
+                {
+                  "id": "122.8",
+                  "type": "order_groups"
+                },
+                {
+                  "id": "111.0",
+                  "type": "order_groups"
+                }
+              ]
+            },
+            "asks": {
+              "data": [
+                {
+                  "id": "123.0",
+                  "type": "order_groups"
+                },
+                {
+                  "id": "125.0",
+                  "type": "order_groups"
+                },
+                {
+                  "id": "126.0",
+                  "type": "order_groups"
+                }
+              ]
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "1544446800_1",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1544446800,
+              "low": 123,
+              "open": 123,
+              "close": 123,
+              "high": 123,
+              "volume": 0.19512194,
+              "price_before_last": 123,
+              "vwap": 123,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "1544450400_1",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1544450400,
+              "low": 123,
+              "open": 123,
+              "close": 123,
+              "high": 123,
+              "volume": 0.09756097,
+              "price_before_last": 123,
+              "vwap": 123,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "122.8",
+            "type": "order_groups",
+            "attributes": {
+              "price": 122.8,
+              "amount": 0.68
+            }
+          },
+          {
+            "id": "111.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 111,
+              "amount": 12.101171171171
+            }
+          },
+          {
+            "id": "123.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 123,
+              "amount": 1.44471549
+            }
+          },
+          {
+            "id": "125.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 125,
+              "amount": 0.01
+            }
+          },
+          {
+            "id": "126.0",
+            "type": "order_groups",
+            "attributes": {
+              "price": 126,
+              "amount": 0.01
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/markets/btc_usd/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

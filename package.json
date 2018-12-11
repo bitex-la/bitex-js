@@ -8,7 +8,7 @@
     "build:main": "babel --out-dir dist --ignore test src",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-    "test": "mocha --require babel-polyfill --require babel-register -R spec"
+    "test": "mocha --require babel-polyfill --require babel-register -R spec 'test/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -27,13 +27,14 @@
   "homepage": "https://github.com/bitex-la/bitex-js#readme",
   "dependencies": {
     "axios": "0.17.1",
-    "heather-js": "^0.1.0",
+    "heather-js": "^0.2.3",
     "immutable": "^3.8.2",
     "lodash": "^4.17.4",
     "nock": "^9.3.2",
     "pluralize": "^7.0.0"
   },
   "devDependencies": {
+    "axios-vcr": "git+https://github.com/bitex-la/axios-vcr.git",
     "babel-cli": "^6.26.0",
     "babel-loader": "7.1.2",
     "babel-polyfill": "6.26.0",

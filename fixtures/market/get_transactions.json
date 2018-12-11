@@ -1,0 +1,67 @@
+{
+  "030de8ed55212fa33a2d5cd0c2d31b06": {
+    "meta": {
+      "url": "https://localhost:3000/api/transactions/?filter[orderbook_code]=btc_usd",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"e0234245cb00aa260ccfa99a9a0b235e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-request-id": "e288d427-c60d-40e5-b3d3-1445f25ea94c",
+        "x-runtime": "0.239110",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "70",
+            "type": "transactions",
+            "attributes": {
+              "timestamp": 1535396216,
+              "price": 123,
+              "amount": 0.00162601,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "69",
+            "type": "transactions",
+            "attributes": {
+              "timestamp": 1535396151,
+              "price": 123,
+              "amount": 0.000813,
+              "orderbook_code": "btc_usd"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/transactions/?filter[orderbook_code]=bch_usd",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

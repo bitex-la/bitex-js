@@ -1,0 +1,61 @@
+{
+  "aff48024270b668ae4423fdda26aaca9": {
+    "meta": {
+      "url": "https://localhost:3000/api/tickers/btc_usd/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"f9abc52a0b69dbfb52fbc4e5d85848b0\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-request-id": "37fc0d74-9f82-4815-9050-2d01ff707d8e",
+        "x-runtime": "0.327862",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "btc_usd",
+          "type": "tickers",
+          "attributes": {
+            "last": 120,
+            "open": 100,
+            "high": 150,
+            "low": 90,
+            "vwap": 101,
+            "volume": 0.29268291,
+            "bid": 122.8,
+            "ask": 123,
+            "price_before_last": 122
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/tickers/btc_usd/",
+        "method": "get",
+        "data": "{\"data\":{\"type\":\"objects\",\"id\":\"btc_usd\",\"attributes\":{}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 58
+        }
+      }
+    }
+  }
+}

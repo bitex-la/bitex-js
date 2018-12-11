@@ -94,10 +94,6 @@ export class Candle {
     this.volume = null
     this.price_before_last = null
   }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/candles`
-  }
 }
 
 export class CashDeposit {
@@ -324,10 +320,6 @@ export class Transaction {
     this.timestamp = null
     this.amount = null
     this.price = null
-  }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/transactions`
   }
 }
 
