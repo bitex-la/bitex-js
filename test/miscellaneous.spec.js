@@ -28,16 +28,7 @@ describe('Miscellaneous', () => {
   it('get movements', async () => {
     const movements = await client.getMovements()
     expect(movements.length).to.equal(5)
-    expect(movements[0]).to.be.an.instanceof(Movement)
-    expect(movements[0].kind).to.equal('Buy')
-    expect(movements[1]).to.be.an.instanceof(Movement)
-    expect(movements[1].kind).to.equal('Sell')
-    expect(movements[2]).to.be.an.instanceof(Movement)
-    expect(movements[2].kind).to.equal('CashDeposit')
-    expect(movements[3]).to.be.an.instanceof(Movement)
-    expect(movements[3].kind).to.equal('CoinWithdrawal')
-    expect(movements[4]).to.be.an.instanceof(Movement)
-    expect(movements[4].kind).to.equal('CoinDeposit')
+    movements.every(m => expect(m).to.be.an.instanceof(Movement))
   })
 
   it('get account', async () => {
@@ -45,7 +36,5 @@ describe('Miscellaneous', () => {
     expect(account).to.be.an.instanceof(Account)
     expect(_.keys(account.balances)).to.eql(
       ['btc', 'usd', 'ars', 'clp', 'bch', 'pyg', 'uyu'])
-    expect(account.movements.length).to.equal(0)
-    expect(account.pending_movements.length).to.equal(0)
   })
 })

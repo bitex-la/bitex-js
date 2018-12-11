@@ -32,17 +32,14 @@ describe('Market', () => {
   it('get market data', async () => {
     const market = await client.getMarket('btc_usd')
     expect(market).to.be.an.instanceof(Market)
-    expect(market.candles.length).to.equal(2)
     market.candles.every(candle => expect(candle).to.be.an.instanceof(Candle))
-    expect(market.bids.length).to.equal(2)
     market.bids.every(bid => expect(bid).to.be.an.instanceof(OrderGroup))
-    expect(market.asks.length).to.equal(3)
     market.asks.every(ask => expect(ask).to.be.an.instanceof(OrderGroup))
   })
 
   it('get all tickers', async () => {
     const tickers = await client.getTickers()
-    expect(tickers.length).to.equal(6)
+    expect(tickers.length).to.equal(6) //One for each active orderbook
     tickers.every(ticker => expect(ticker).to.be.an.instanceof(Ticker))
   })
 
@@ -68,13 +65,11 @@ describe('Market', () => {
 
   it('get candles', async () => {
     const candles = await client.getCandles('btc_usd')
-    expect(candles.length).to.equal(2)
     candles.every(c => expect(c).to.be.an.instanceof(Candle))
   })
 
   it('get orderbooks', async () => {
     const orderbooks = await client.getOrderbooks()
-    expect(orderbooks.length).to.equal(5)
     orderbooks.every(o => expect(o).to.be.an.instanceof(Orderbook))
   })
 })

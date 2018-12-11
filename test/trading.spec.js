@@ -48,8 +48,9 @@ describe('Trading', () => {
   it('get all orders', async () => {
     const orders = await client.getOrders()
     expect(orders.length).to.equal(2)
-    expect(orders[0]).to.be.an.instanceof(Bid)
-    expect(orders[1]).to.be.an.instanceof(Ask)
+    orders.every(o => expect(o).to.satisfy(
+      o => o instanceof Bid || o instanceof Ask
+    ))
   })
 
   it('cancel all orders', async () => {
