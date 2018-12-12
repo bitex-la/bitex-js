@@ -5,12 +5,13 @@ import * as models from './models'
 const {
   Account,
   Ask,
-  AssetWallet,
   Bid,
   BuyingBot,
   Candle,
   CashDeposit,
+  CashWallet,
   CashWithdrawal,
+  CoinWallet,
   CoinWithdrawal,
   Market,
   Movement,
@@ -119,32 +120,25 @@ export default class Bitex {
     return this.client.findAll({type: Account}).then((accounts) => accounts[0])
   }
 
-  async createCashDeposit(currency, amount, method){
-    let cashDeposit = new CashDeposit()
-    cashDeposit.requested_amount = amount
-    cashDeposit.requested_currency = currency
-    cashDeposit.deposit_method = method
-
-    return this.client.create({resource: cashDeposit})
+  async getCashWallets(){
+    return this.client.findAll({type: CashWallet})
   }
 
-  async getAssetWallets(){
-    return this.client.findAll({type: AssetWallet, customParams: {scope: 'exchange'}})
+  async getCoinWallets(){
+    return this.client.findAll({type: CoinWallet})
   }
 
-  async createCashWithdrawal(currency, amount, instructions){
+  async createCashWithdrawal(fiat_code, amount, withdrawal_instruction, otp){
     let cashWithdrawal = new CashWithdrawal()
-    cashWithdrawal.amount = amount
-    cashWithdrawal.fiat = currency
-    cashWithdrawal.withdrawal_instruction = instructions
+    Object.assign(cashWithdrawal, { fiat_code, amount, withdrawal_instruction })
 
+    this.client.setHeader('One-Time-Password', otp)
     return this.client.create({resource: cashWithdrawal})
   }
 
   async createWithdrawalInstructions(label, body){
     let withdrawalInstruction = new WithdrawalInstruction()
-    withdrawalInstruction.label = label
-    withdrawalInstruction.body = body
+    Object.assign(withdrawalInstruction, { label, body })
 
     return this.client.create({resource: withdrawalInstruction})
   }
@@ -159,13 +153,11 @@ export default class Bitex {
     return this.client.delete({resource: withdrawalInstruction})
   }
 
-  async createCoinWithdrawal(currency, amount, label, address){
+  async createCoinWithdrawal(coin_code, amount, label, to_addresses, otp){
     let coinWithdrawal = new CoinWithdrawal()
-    coinWithdrawal.amount = amount
-    coinWithdrawal.currency = currency
-    coinWithdrawal.label = label
-    coinWithdrawal.to_addresses = address
+    Object.assign(coinWithdrawal, { coin_code, amount, label, to_addresses })
 
+    this.client.setHeader('One-Time-Password', otp)
     return this.client.create({resource: coinWithdrawal})
   }
 

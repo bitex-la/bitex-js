@@ -20,16 +20,6 @@ export class Ask {
   }
 }
 
-export class AssetWallet {
-  constructor(){
-    this.address = null
-    this.auto_sell_address = null
-    this.balance = null
-    this.available = null
-    this.currency = null
-  }
-}
-
 export class Bank {
   constructor(){
     this.name = null
@@ -106,6 +96,14 @@ export class CashDepositMethod {
   }
 }
 
+export class CashWallet {
+  constructor(){
+    this.balance = null
+    this.available = null
+    this.currency = null
+  }
+}
+
 export class CashWithdrawal {
   constructor(){
     this.amount = null
@@ -124,6 +122,16 @@ export class CoinDeposit {
     this.coin = null
     this.amount = null
     this.created_at = null
+  }
+}
+
+export class CoinWallet {
+  constructor(){
+    this.address = null
+    this.auto_sell_address = null
+    this.balance = null
+    this.available = null
+    this.currency = null
   }
 }
 
