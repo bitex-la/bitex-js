@@ -1,4 +1,4 @@
-import chai, { expect, assert } from 'chai'
+import { expect } from 'chai'
 
 import _ from 'lodash'
 
@@ -30,8 +30,8 @@ describe('Merchant', () => {
   it('get payments', async () => {
     const payments = await client.getPayments()
     payments.every(p => {
-      expect(p).to.be.an.instanceof(Payment) &&
-      expect(p.address).to.be.an.instanceof(BitcoinAddress)
+      return expect(p).to.be.an.instanceof(Payment) &&
+      expect(p.address).to.be.an.instanceof(BitcoinAddress) &&
       p.coin_deposits.every(cd => {
         return expect(cd).to.be.an.instanceof(CoinDeposit)
       })
@@ -59,7 +59,8 @@ describe('Merchant', () => {
   })
 
   it('create POS', async () => {
-    const pos = await client.createPOS(10, 'https://mystore.com/logo.png', 'My Store', 'https://mystore.com', 'my-store')
+    const pos = await client.createPOS(10, 'https://mystore.com/logo.png',
+      'My Store', 'https://mystore.com', 'my-store')
     expect(pos).to.be.an.instanceof(POS)
     expect(pos.id).to.not.be.empty
   })

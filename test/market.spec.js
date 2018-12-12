@@ -1,4 +1,4 @@
-import chai, { expect, assert } from 'chai'
+import { expect, assert } from 'chai'
 
 import _ from 'lodash'
 
@@ -52,7 +52,7 @@ describe('Market', () => {
     const transactions = await client.getTransactions('btc_usd')
     expect(transactions.length).to.equal(2)
     transactions.every(t => {
-      expect(t).to.be.an.instanceof(Transaction) &&
+      return expect(t).to.be.an.instanceof(Transaction) &&
       expect(t.orderbook_code).to.eq('btc_usd')
     })
   })

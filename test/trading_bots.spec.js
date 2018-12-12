@@ -1,4 +1,4 @@
-import chai, { expect, assert } from 'chai'
+import { expect } from 'chai'
 
 import _ from 'lodash'
 

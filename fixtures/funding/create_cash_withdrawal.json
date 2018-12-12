@@ -8,7 +8,7 @@
         "Accept": "application/json, text/plain, */*",
         "Content-Type": "application/vnd.api+json",
         "Authorization": "valid_api_key",
-        "One-Time-Password": "valid_otp",
+        "One-Time-Password": "otp",
         "User-Agent": "axios-vcr",
         "Content-Length": 295
       }

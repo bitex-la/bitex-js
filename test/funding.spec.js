@@ -1,4 +1,4 @@
-import chai, { expect, assert } from 'chai'
+import { expect } from 'chai'
 
 import _ from 'lodash'
 
@@ -43,7 +43,7 @@ describe('Funding', () => {
     instructions.id = 2
 
     const newCashWithdrawal = await client.createCashWithdrawal(
-      'ars', 100, instructions, 'valid_otp'
+      'ars', 100, instructions, 'otp'
     )
     expect(newCashWithdrawal).to.be.an.instanceof(CashWithdrawal)
     expect(newCashWithdrawal.id).to.not.be.empty
@@ -52,18 +52,18 @@ describe('Funding', () => {
   it('create withdrawal instructions', async () => {
     const label = 'Local Bank'
     const body = {
-      name: "John Doe",
-      city: "Buenos Aires",
-      phone: "12341234",
-      cuit: "12341234",
-      address: "My Address 123",
-      bank: "hsbc",
-      bank_account_number: "12341234",
-      cbu: "1234123412341234",
-      account_type: "savings",
-      currency: "ARS",
-      country: "AR",
-      payment_method: "domestic_bank"
+      name: 'John Doe',
+      city: 'Buenos Aires',
+      phone: '12341234',
+      cuit: '12341234',
+      address: 'My Address 123',
+      bank: 'hsbc',
+      bank_account_number: '12341234',
+      cbu: '1234123412341234',
+      account_type: 'savings',
+      currency: 'ARS',
+      country: 'AR',
+      payment_method: 'domestic_bank'
     }
 
     const newWithdrawalInstruction = await client.createWithdrawalInstructions(
@@ -89,7 +89,7 @@ describe('Funding', () => {
 
   it('create coin withdrawal', async () => {
     const newCoinWithdrawal = await client.createCoinWithdrawal(
-      'btc', 12.3456789, 'Trezor', 'mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb', 'valid_otp'
+      'btc', 12.3456789, 'Trezor', 'mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb', 'otp'
     )
     expect(newCoinWithdrawal).to.be.an.instanceof(CoinWithdrawal)
     expect(newCoinWithdrawal.id).to.not.be.empty

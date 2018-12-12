@@ -1,4 +1,3 @@
-import axios from 'axios'
 import _ from 'lodash'
 import JsonapiClient from 'heather-js'
 import * as models from './models'
@@ -8,7 +7,6 @@ const {
   Bid,
   BuyingBot,
   Candle,
-  CashDeposit,
   CashWallet,
   CashWithdrawal,
   CoinWallet,
@@ -30,7 +28,7 @@ export default class Bitex {
     const prefix = (environment !== 'production') ? environment + '.' : ''
     let url = `https://${prefix}bitex.la/api`
     if(environment === 'test'){
-      process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+      process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
       url = 'https://localhost:3000/api'
     }
 
