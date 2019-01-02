@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import VCR from 'axios-vcr'
 
-import Bitex from '../src'
+import Bitex, { Orderbooks } from '../src'
 import {
   Candle,
   Market,
@@ -30,7 +30,7 @@ describe('Market', () => {
   })
 
   it('get market data', async () => {
-    const market = await client.getMarket('btc_usd')
+    const market = await client.getMarket(Orderbooks.BTCUSD)
     expect(market).to.be.an.instanceof(Market)
     market.candles.every(candle => expect(candle).to.be.an.instanceof(Candle))
     market.bids.every(bid => expect(bid).to.be.an.instanceof(OrderGroup))
@@ -44,16 +44,16 @@ describe('Market', () => {
   })
 
   it('get ticker', async () => {
-    const ticker = await client.getTicker('btc_usd')
+    const ticker = await client.getTicker(Orderbooks.BTCUSD)
     expect(ticker).to.be.an.instanceof(Ticker)
   })
 
   it('get transactions', async () => {
-    const transactions = await client.getTransactions('btc_usd')
+    const transactions = await client.getTransactions(Orderbooks.BTCUSD)
     expect(transactions.length).to.equal(2)
     transactions.every(t => {
       return expect(t).to.be.an.instanceof(Transaction) &&
-      expect(t.orderbook_code).to.eq('btc_usd')
+      expect(t.orderbook_code).to.eq(Orderbooks.BTCUSD)
     })
   })
 
@@ -64,7 +64,7 @@ describe('Market', () => {
   })
 
   it('get candles', async () => {
-    const candles = await client.getCandles('btc_usd')
+    const candles = await client.getCandles(Orderbooks.BTCUSD)
     candles.every(c => expect(c).to.be.an.instanceof(Candle))
   })
 

@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import VCR from 'axios-vcr'
 
-import Bitex from '../src'
+import Bitex, { Orderbooks } from '../src'
 import {
   Ask,
   Bid
@@ -26,7 +26,7 @@ describe('Trading', () => {
   })
 
   it('create ask', async () => {
-    const newAsk = await client.createAsk('btc_usd', 150, 1.2)
+    const newAsk = await client.createAsk(Orderbooks.BTCUSD, 150, 1.2)
     expect(newAsk).to.be.an.instanceof(Ask)
     expect(newAsk.id).to.not.be.null
   })
@@ -37,7 +37,7 @@ describe('Trading', () => {
   })
 
   it('create bid', async () => {
-    const newBid = await client.createBid('btc_usd', 12, 100)
+    const newBid = await client.createBid(Orderbooks.BTCUSD, 12, 100)
     expect(newBid).to.be.an.instanceof(Bid)
     expect(newBid.id).to.not.be.null
   })
@@ -61,7 +61,7 @@ describe('Trading', () => {
   })
 
   it('cancel all orders in an orderbook', async () => {
-    const response = await client.cancelOrders('btc_usd')
+    const response = await client.cancelOrders(Orderbooks.BTCUSD)
     expect(response).to.be.empty
   })
 })

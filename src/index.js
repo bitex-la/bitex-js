@@ -23,6 +23,15 @@ const {
   WithdrawalInstruction
 } = models
 
+export const Orderbooks = {
+  BTCUSD: 'btc_usd',
+  BTCARS: 'btc_ars',
+  BTCCLP: 'btc_clp',
+  BTCPYG: 'btc_pyg',
+  BTCUYU: 'btc_uyu',
+  BCHUSD: 'bch_usd'
+}
+
 export default class Bitex {
   constructor({apiKey, environment = 'production'}){
     const prefix = (environment !== 'production') ? environment + '.' : ''

@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import VCR from 'axios-vcr'
 
-import Bitex from '../src'
+import Bitex, { Orderbooks } from '../src'
 import {
   BuyingBot,
   SellingBot
@@ -36,7 +36,7 @@ describe('Trading Bots', () => {
   })
 
   it('create buying bot', async () => {
-    const buyingBot = await client.createBuyingBot(100, 'btc_usd')
+    const buyingBot = await client.createBuyingBot(100, Orderbooks.BTCUSD)
     expect(buyingBot).to.be.an.instanceof(BuyingBot)
     expect(buyingBot.id).to.not.be.empty
   })
@@ -57,7 +57,7 @@ describe('Trading Bots', () => {
   })
 
   it('create selling bot', async () => {
-    const sellingBot = await client.createSellingBot(1, 'btc_usd')
+    const sellingBot = await client.createSellingBot(1, Orderbooks.BTCUSD)
     expect(sellingBot).to.be.an.instanceof(SellingBot)
     expect(sellingBot.id).to.not.be.empty
   })
