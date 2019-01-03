@@ -35,13 +35,11 @@ describe('Trading', () => {
 
   it('get asks', async () => {
     const asks = await client.getAsks()
-    expect(asks.length).to.equal(3)
     asks.every(a => expect(a).to.be.an.instanceof(Ask))
   })
 
   it('get asks btcusd', async () => {
     const asks = await client.getAsks(Orderbooks.BTCUSD)
-    expect(asks.length).to.equal(2)
     asks.every(a => expect(a).to.be.an.instanceof(Ask))
   })
 
@@ -63,13 +61,11 @@ describe('Trading', () => {
 
   it('get bids', async () => {
     const bids = await client.getBids()
-    expect(bids.length).to.equal(2)
     bids.every(b => expect(b).to.be.an.instanceof(Bid))
   })
 
   it('get bids btcars', async () => {
     const bids = await client.getBids(Orderbooks.BTCARS)
-    expect(bids.length).to.equal(1)
     bids.every(b => expect(b).to.be.an.instanceof(Bid))
   })
 
@@ -85,7 +81,6 @@ describe('Trading', () => {
 
   it('get all orders', async () => {
     const orders = await client.getOrders()
-    expect(orders.length).to.equal(2)
     orders.every(o => expect(o).to.satisfy(
       o => o instanceof Bid || o instanceof Ask
     ))
@@ -103,7 +98,6 @@ describe('Trading', () => {
 
   it('get all trades', async () => {
     const trades = await client.getTrades()
-    expect(trades.length).to.equal(5)
     trades.every(o => expect(o).to.satisfy(
       o => o instanceof Buy || o instanceof Sell
     ))
@@ -111,7 +105,6 @@ describe('Trading', () => {
 
   it('get all trades in an orderbook', async () => {
     const trades = await client.getTrades(Orderbooks.BTCUSD)
-    expect(trades.length).to.equal(2)
     trades.every(o => expect(o.orderbook_code).to.equal(Orderbooks.BTCUSD))
   })
 
@@ -127,19 +120,17 @@ describe('Trading', () => {
 
   it('get all buys', async () => {
     const buys = await client.getBuys()
-    expect(buys.length).to.equal(5)
     buys.every(b => expect(b).to.be.an.instanceof(Buy))
   })
 
   it('get all buys in an orderbook', async () => {
     const buys = await client.getBuys(Orderbooks.BTCUSD)
-    expect(buys.length).to.equal(2)
     buys.every(o => expect(o.orderbook_code).to.equal(Orderbooks.BTCUSD))
   })
 
   it('get all buys from thirty days ago', async () => {
     const buys = await client.getBuys(null, 30)
-    expect(buys.length).to.equal(4)
+    buys.every(s => expect(s).to.be.an.instanceof(Buy))
   })
 
   it('get last two buys', async () => {
@@ -149,19 +140,17 @@ describe('Trading', () => {
 
   it('get all sells', async () => {
     const sells = await client.getSells()
-    expect(sells.length).to.equal(5)
     sells.every(s => expect(s).to.be.an.instanceof(Sell))
   })
 
   it('get all sells in an orderbook', async () => {
     const sells = await client.getSells(Orderbooks.BTCUSD)
-    expect(sells.length).to.equal(2)
     sells.every(o => expect(o.orderbook_code).to.equal(Orderbooks.BTCUSD))
   })
 
   it('get all sells from thirty days ago', async () => {
     const sells = await client.getSells(null, 30)
-    expect(sells.length).to.equal(4)
+    sells.every(s => expect(s).to.be.an.instanceof(Sell))
   })
 
   it('get last two sells', async () => {

@@ -27,7 +27,6 @@ describe('Miscellaneous', () => {
 
   it('get movements', async () => {
     const movements = await client.getMovements()
-    expect(movements.length).to.equal(5)
     movements.every(m => expect(m).to.be.an.instanceof(Movement))
   })
 
