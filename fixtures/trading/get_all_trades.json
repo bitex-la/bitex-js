@@ -1,0 +1,160 @@
+{
+  "8b3eb9e6f5c140436e24029ccea343f1": {
+    "meta": {
+      "url": "https://localhost:3000/api/trades/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"70618d5363c084be3215d752f70c248e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=c3BGM1U2Y0hXblBXMFhKc0JvMjJWSkx2UUc3ZlFBMEFweU1aQmxDbi9vbjFBWlhqTEw2ZjVGeVQzMTU3MVRNcWNoV3pRZGNYeUpqQjlUbk1LRlNsa2ovTXl6SkIyN0NlZVdUSGgvbUtOSFQ4MG05TGhlTVR5S1NyelJJMm13b2JDb3oySEtzSExmcUo4TjRSdlRrcW90eVBteTF3YUVZdmVZM3BacFZibTI0PS0tMUpKTlc2NHlBYWpKNGEyZ2p3T3NVZz09--8f7c0af7ddbe378b5438dfc2408b238ed8583629; path=/; HttpOnly"
+        ],
+        "x-request-id": "0c36f2a0-d7e9-44b5-8669-c8d41dbad711",
+        "x-runtime": "0.908467",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "19",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-12-10T16:41:39.792Z",
+              "coin_amount": 1,
+              "cash_amount": 500,
+              "fee": 0,
+              "price": 500,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "31",
+                  "type": "bids"
+                }
+              }
+            }
+          },
+          {
+            "id": "17",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-12-10T13:50:02.957Z",
+              "coin_amount": 0.09707317,
+              "cash_amount": 12,
+              "fee": 0.0004878,
+              "price": 123,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "29",
+                  "type": "bids"
+                }
+              }
+            }
+          },
+          {
+            "id": "14",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-12-06T18:28:18.156Z",
+              "coin_amount": 0.09723127,
+              "cash_amount": 12,
+              "fee": 0.00048859,
+              "price": 122.8,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "26",
+                  "type": "bids"
+                }
+              }
+            }
+          },
+          {
+            "id": "11",
+            "type": "sells",
+            "attributes": {
+              "created_at": "2018-11-26T21:20:03.138Z",
+              "coin_amount": 0.03399999,
+              "cash_amount": 3.3829997,
+              "fee": 0.01699999,
+              "price": 100,
+              "fee_currency": "ARS",
+              "fee_decimals": 2,
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "8",
+                  "type": "asks"
+                }
+              }
+            }
+          },
+          {
+            "id": "6",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-11-23T19:27:10.576Z",
+              "coin_amount": 0.09849496,
+              "cash_amount": 9.8000001,
+              "fee": 0.00049494,
+              "price": 99,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "12",
+                  "type": "bids"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/trades/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

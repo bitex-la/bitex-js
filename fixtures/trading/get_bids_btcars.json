@@ -1,0 +1,69 @@
+{
+  "61d7b176c0f966f7d0d37037494830e0": {
+    "meta": {
+      "url": "https://localhost:3000/api/bids/?filter[orderbook_code]=btc_ars",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"bd99924ad9fd0c56c0ba170b450b8edd\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=ZWtZNzJKaXdYeDYrVHAvZVpUKzUrYlhZWVZUa0U1dXZiRnprcGhqQys2QmdBQUpCSWdMQ2VWeWVzVDdTaENJRTBRM3JtRDJ5Y01OQktXRXRMbU5jdU9rUWZVSDRZV1N2SWpML0Q2RGYrSWhneTh6VmE3NGEwc3k0bDdvZEFJZ0c2N1BiMnk1WDVOLzMzT3dTeXhZNUNRY3lpM0s5VjBleTdwWWMzeitNRkJFPS0tSHdySGhwQk9DQzNJSDNqRWlRa2xwZz09--21a455f6b0d465cb418440d76b13d0b359e4c40d; path=/; HttpOnly"
+        ],
+        "x-request-id": "bc3de35c-69b0-4bd8-abf0-6b88e8ab02d7",
+        "x-runtime": "1.544194",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "35",
+            "type": "bids",
+            "attributes": {
+              "amount": 123,
+              "remaining_amount": 123,
+              "price": 74,
+              "status": "executing",
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/bids/?filter[orderbook_code]=btc_ars",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

@@ -45,6 +45,20 @@ export class BitcoinAddress {
   }
 }
 
+export class Buy {
+  constructor(){
+    this.created_at = null
+    this.coin_amount = null
+    this.cash_amount = null
+    this.fee = null
+    this.price = null
+    this.fee_currency = null
+    this.fee_decimals = null
+    this.orderbook_code = null
+    this.order = null
+  }
+}
+
 export class BuyingBot {
   constructor(){
     this.amount = null
@@ -295,6 +309,20 @@ export class Sale {
     this.currency = null
     this.date = null
     this.broker = null
+  }
+}
+
+export class Sell {
+  constructor(){
+    this.created_at = null
+    this.coin_amount = null
+    this.cash_amount = null
+    this.fee = null
+    this.price = null
+    this.fee_currency = null
+    this.fee_decimals = null
+    this.orderbook_code = null
+    this.order = null
   }
 }
 

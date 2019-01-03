@@ -1,10 +1,10 @@
-import _ from 'lodash'
 import JsonapiClient from 'heather-js'
 import * as models from './models'
 const {
   Account,
   Ask,
   Bid,
+  Buy,
   BuyingBot,
   Candle,
   CashWallet,
@@ -17,6 +17,7 @@ const {
   Orderbook,
   Payment,
   POS,
+  Sell,
   SellingBot,
   Ticker,
   Transaction,
@@ -59,7 +60,10 @@ export default class Bitex {
    * Define Bitex models
    */
   defineModels(){
-    _.forEach(models, (model) => this.client.define(model))
+    for(let key in models){
+      const model = models[key]
+      this.client.define(model)
+    }
   }
 
   /**
@@ -124,6 +128,26 @@ export default class Bitex {
   }
 
   /**
+   * Get all own Asks.
+   * @param {string} [orderbook_code]
+   */
+  async getAsks(orderbook_code){
+    let query = {type: Ask}
+    if (orderbook_code) {
+      Object.assign(query, {filter: {orderbook_code}})
+    }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Get a specific Ask.
+   * @param {number} id 
+   */
+  async getAsk(id){
+    return this.client.find({type: Ask, id})
+  }
+
+  /**
    * Cancel an Ask.
    * @param {number} id 
    */
@@ -146,6 +170,26 @@ export default class Bitex {
     Object.assign(bid, {orderbook_code, price, amount})
 
     return this.client.create({resource: bid})
+  }
+
+  /**
+   * Get all own Bids.
+   * @param {string} [orderbook_code]
+   */
+  async getBids(orderbook_code){
+    let query = {type: Bid}
+    if (orderbook_code) {
+      Object.assign(query, {filter: {orderbook_code}})
+    }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Get a specific Bid.
+   * @param {number} id 
+   */
+  async getBid(id){
+    return this.client.find({type: Bid, id})
   }
 
   /**
@@ -183,6 +227,48 @@ export default class Bitex {
       Object.assign(actionParams, {filter: {orderbook_code}})
     }
     return this.client.customAction(actionParams)
+  }
+
+  /**
+   * Get own trades (Buys & Sells).
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to get the trades from.
+   * @param {number} [limit] - Max quantity of trades to retrieve.
+   */
+  async getTrades(orderbook_code, days, limit){
+    let query = {type: 'trades', filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(limit) query.customParams = { limit }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Get own buys.
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to get the trades from.
+   * @param {number} [limit] - Max quantity of trades to retrieve.
+   */
+  async getBuys(orderbook_code, days, limit){
+    let query = {type: Buy, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(limit) query.customParams = { limit }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Get own sells.
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to get the trades from.
+   * @param {number} [limit] - Max quantity of trades to retrieve.
+   */
+  async getSells(orderbook_code, days, limit){
+    let query = {type: Sell, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(limit) query.customParams = { limit }
+    return this.client.findAll(query)
   }
 
   /**
