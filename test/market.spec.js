@@ -49,8 +49,20 @@ describe('Market', () => {
   })
 
   it('get transactions', async () => {
+    const transactions = await client.getTransactions()
+    transactions.every(t => expect(t).to.be.an.instanceof(Transaction))
+  })
+
+  it('get transactions of one orderbook', async () => {
     const transactions = await client.getTransactions(Orderbooks.BTCUSD)
-    expect(transactions.length).to.equal(2)
+    transactions.every(t => {
+      return expect(t).to.be.an.instanceof(Transaction) &&
+      expect(t.orderbook_code).to.eq(Orderbooks.BTCUSD)
+    })
+  })
+
+  it('get transactions in btcusd of last hour', async () => {
+    const transactions = await client.getTransactions(Orderbooks.BTCUSD, 1)
     transactions.every(t => {
       return expect(t).to.be.an.instanceof(Transaction) &&
       expect(t.orderbook_code).to.eq(Orderbooks.BTCUSD)
@@ -64,8 +76,24 @@ describe('Market', () => {
   })
 
   it('get candles', async () => {
-    const candles = await client.getCandles(Orderbooks.BTCUSD)
+    const candles = await client.getCandles()
     candles.every(c => expect(c).to.be.an.instanceof(Candle))
+  })
+
+  it('get candles of one orderbook', async () => {
+    const candles = await client.getCandles(Orderbooks.BTCUSD)
+    candles.every(c => {
+      return expect(c).to.be.an.instanceof(Candle) &&
+      expect(c.orderbook_code).to.eq(Orderbooks.BTCUSD)
+    })
+  })
+
+  it('get daily candles', async () => {
+    const candles = await client.getCandles(null, 1, 24)
+    expect(candles.length).to.eq(6) //One for each active orderbook
+    candles.every(c => {
+      return expect(c).to.be.an.instanceof(Candle)
+    })
   })
 
   it('get orderbooks', async () => {

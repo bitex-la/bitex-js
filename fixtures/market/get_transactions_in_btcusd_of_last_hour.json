@@ -1,7 +1,7 @@
 {
-  "2bd709b071ff1c423f6c144192802797": {
+  "e92e72c3d0b76c088b24d19c875b418f": {
     "meta": {
-      "url": "https://localhost:3000/api/transactions/",
+      "url": "https://localhost:3000/api/transactions/?filter[orderbook_code]=btc_usd&filter[from]=1",
       "method": "get",
       "data": null,
       "headers": {
@@ -23,10 +23,10 @@
         "etag": "W/\"e0234245cb00aa260ccfa99a9a0b235e\"",
         "cache-control": "max-age=0, private, must-revalidate",
         "set-cookie": [
-          "_bitex_la_session=SHBrbHdJV0c1aE5wRWo5N2l2cm85RnRRc0NHZ25LVm40TUxhZXJrSmdXR1E5R0V5R3puaEl6QkVWV0liTG50MFdHMGhRVHo4MFRjR1N4cUR3WXVIQTMwdm9MWERla2huZXh0a0c2UzJjVTZ4MUZyQy9FSUNwYXB4eTRhMExZSng2TmdDMzdLY3ljRzhxNGpCMjhSSWJqclVYUTBFeGRzamtvTG9qdE1lOUM0PS0tNkZEalpPZFRNcjZLcVRJT1Z4TGdJZz09--d5a4634192eca22df8883ac1536b1108d7d36a54; path=/; HttpOnly"
+          "_bitex_la_session=U1AwNjczRU1SRjZaT3crL05EckxMaG93ZGJsRiswVXRadjVpY3hMSFJwZjYrNkhPQUdrUzVjdE5mRHBidEtUSjJ0TXIvRStyd0pUam5JU1owWnVXWElNVSt3UVVGbnluZC9VNWFQVm9Ec2tVRDgrdlpnOGN3aTlkbVlQR0dUZGJ5cG16dHk2aVBqSTY5cGZZZnYyazlreGxmUFZTRjMrcy93SjBaeS85b0pnPS0tRG92ZTVlNG1ncVNqcHpncnhocE52QT09--bef268bc563ab20718ce710c1975b87688baf0d4; path=/; HttpOnly"
         ],
-        "x-request-id": "b0dd82a7-c575-4543-be85-b529a4aa28b7",
-        "x-runtime": "2.278023",
+        "x-request-id": "807d1268-3a1b-4cc2-ab67-00dc9737280d",
+        "x-runtime": "0.681006",
         "connection": "close",
         "transfer-encoding": "chunked"
       },
@@ -41,41 +41,11 @@
               "amount": 0.00162601,
               "orderbook_code": "btc_usd"
             }
-          },
-          {
-            "id": "69",
-            "type": "transactions",
-            "attributes": {
-              "timestamp": 1535396151,
-              "price": 123,
-              "amount": 0.000813,
-              "orderbook_code": "btc_usd"
-            }
-          },
-          {
-            "id": "68",
-            "type": "transactions",
-            "attributes": {
-              "timestamp": 1534398202,
-              "price": 1230,
-              "amount": 0.02142601,
-              "orderbook_code": "btc_ars"
-            }
-          },
-          {
-            "id": "67",
-            "type": "transactions",
-            "attributes": {
-              "timestamp": 153233100,
-              "price": 1232.2,
-              "amount": 2.1111,
-              "orderbook_code": "btc_ars"
-            }
           }
         ]
       },
       "config": {
-        "url": "https://localhost:3000/api/transactions/",
+        "url": "https://localhost:3000/api/transactions/?filter[orderbook_code]=btc_usd&filter[from]=1",
         "method": "get",
         "data": null,
         "headers": {

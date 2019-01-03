@@ -1,0 +1,77 @@
+{
+  "4d49b3f4218a92f710b16ccc1f6aea35": {
+    "meta": {
+      "url": "https://localhost:3000/api/candles/?filter[orderbook_code]=btc_usd",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"3be5f4c13bc2c8d14429ee5d6bd2f2eb\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-request-id": "21ee5616-43fc-4638-a195-e7ce84a6367a",
+        "x-runtime": "0.255954",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1544446800_1",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1544446800,
+              "low": 100,
+              "open": 200,
+              "close": 300,
+              "high": 400,
+              "volume": 10,
+              "price_before_last": 250,
+              "vwap": 310,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "1544450400_1",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1544450400,
+              "low": 123,
+              "open": 123,
+              "close": 123,
+              "high": 123,
+              "volume": 0.09756097,
+              "price_before_last": 123,
+              "vwap": 123,
+              "orderbook_code": "btc_usd"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/candles/?filter[orderbook_code]=btc_usd",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

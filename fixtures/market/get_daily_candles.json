@@ -1,7 +1,7 @@
 {
-  "7abbc9e1f1492833fde6fa0c389a8bb9": {
+  "1e265dda0656baf054f417bfd7fb53f2": {
     "meta": {
-      "url": "https://localhost:3000/api/candles/",
+      "url": "https://localhost:3000/api/candles/?filter[days]=1&span=24",
       "method": "get",
       "data": null,
       "headers": {
@@ -20,23 +20,23 @@
         "x-xss-protection": "1; mode=block",
         "x-content-type-options": "nosniff",
         "content-type": "application/vnd.api+json; charset=utf-8",
-        "etag": "W/\"8815ce155420837a6d12bedb9b48cb17\"",
+        "etag": "W/\"a27ae8fbb400ecd136f5f9cfde332456\"",
         "cache-control": "max-age=0, private, must-revalidate",
         "set-cookie": [
-          "_bitex_la_session=eDdMeWxjZmVTWm83elZpRmdhTENXWXlnYjZJUkxYOXdJUHhENkRyWmdhUUxjdFZKeEdUcWJZNXM3ZmlFb0tQNjVwVkw2WitkWFh3V1lvSllKc0NlWWw1YkswSE54QklPQVB6UzMrcGFTZ2JKcWJyVzVxUjFYdVRMV0pUVE1kWHRFQVJwcVc4UVNWcjBDUXRMSko5cGgvQm5CQXc3ZUpTYTQyVHIvNTZXc1JzPS0tZmJSTkRiQmxTZWdvVHh3MEJSbWZKUT09--4e00e0c3de0fa13a89ac248668dab6e956c26216; path=/; HttpOnly"
+          "_bitex_la_session=TDExdXVTbTJYYXhheDlkR3BzbzUzN21hcVRSdWJBVVFEaDI2V2k3OFF6VCtXSXd0KzY1c0VNS1VHaysrM0RKZldERWtDbEhnSHFubjhhdGU2aC9PbmhlMjliV1dCSm5IUVAzbXJ3SnNYMmRwK0xYM3Z6OGZSVTJ1ZUR1dkNLamRBakt2YS80bnM4QU44MS8wRUMrT1NDZzJ0RnM0bU55V3c5YTY2bmdIYzVrPS0tbkhvNTRIOUtvMTEvUDVoOXhVNkdrdz09--d4abd602918702c67ec04f41dd34b2c6bcbc50e9; path=/; HttpOnly"
         ],
-        "x-request-id": "a7839741-e927-4f36-8b69-37987cbba31b",
-        "x-runtime": "1.419740",
+        "x-request-id": "0aa73ee8-9508-4f3e-a921-14e53c400aa9",
+        "x-runtime": "0.664670",
         "connection": "close",
         "transfer-encoding": "chunked"
       },
       "data": {
         "data": [
           {
-            "id": "1546547892_1",
+            "id": "1546547992_1",
             "type": "candles",
             "attributes": {
-              "timestamp": 1546547892,
+              "timestamp": 1546547992,
               "low": 0,
               "open": 0,
               "close": 0,
@@ -48,10 +48,10 @@
             }
           },
           {
-            "id": "1546547892_5",
+            "id": "1546547992_5",
             "type": "candles",
             "attributes": {
-              "timestamp": 1546547892,
+              "timestamp": 1546547992,
               "low": 0,
               "open": 0,
               "close": 0,
@@ -63,10 +63,10 @@
             }
           },
           {
-            "id": "1546547892_11",
+            "id": "1546547992_11",
             "type": "candles",
             "attributes": {
-              "timestamp": 1546547892,
+              "timestamp": 1546547992,
               "low": 0,
               "open": 0,
               "close": 0,
@@ -78,10 +78,10 @@
             }
           },
           {
-            "id": "1546547892_10",
+            "id": "1546547992_10",
             "type": "candles",
             "attributes": {
-              "timestamp": 1546547892,
+              "timestamp": 1546547992,
               "low": 0,
               "open": 0,
               "close": 0,
@@ -93,10 +93,10 @@
             }
           },
           {
-            "id": "1546547892_12",
+            "id": "1546547992_12",
             "type": "candles",
             "attributes": {
-              "timestamp": 1546547892,
+              "timestamp": 1546547992,
               "low": 0,
               "open": 0,
               "close": 0,
@@ -108,10 +108,10 @@
             }
           },
           {
-            "id": "1546547892_8",
+            "id": "1546547992_8",
             "type": "candles",
             "attributes": {
-              "timestamp": 1546547892,
+              "timestamp": 1546547992,
               "low": 0,
               "open": 0,
               "close": 0,
@@ -125,7 +125,7 @@
         ]
       },
       "config": {
-        "url": "https://localhost:3000/api/candles/",
+        "url": "https://localhost:3000/api/candles/?filter[days]=1&span=24",
         "method": "get",
         "data": null,
         "headers": {

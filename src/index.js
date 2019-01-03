@@ -91,10 +91,14 @@ export default class Bitex {
 
   /**
    * Get transactions of a specific orderbook
-   * @param {string} orderbook_code 
+   * @param {string} [orderbook_code]
+   * @param {number} [hours] - Number of hours ago to take the transactions from.
    */
-  async getTransactions(orderbook_code){
-    return this.client.findAll({type: Transaction, filter: { orderbook_code }})
+  async getTransactions(orderbook_code, hours){
+    let query = {type: Transaction, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(hours) Object.assign(query.filter, { from: hours })
+    return this.client.findAll(query)
   }
 
   /**
@@ -107,10 +111,16 @@ export default class Bitex {
 
   /**
    * Get candles for a specific orderbook
-   * @param {string} orderbook_code 
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to start the candles from.
+   * @param {number} [span] - Amount of hours for each candle. 
    */
-  async getCandles(orderbook_code){
-    return this.client.findAll({type: Candle, filter: { orderbook_code }})
+  async getCandles(orderbook_code, days, span){
+    let query = {type: Candle, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(span) query.customParams = { span }
+    return this.client.findAll(query)
   }
 
   /**
@@ -134,7 +144,7 @@ export default class Bitex {
   async getAsks(orderbook_code){
     let query = {type: Ask}
     if (orderbook_code) {
-      Object.assign(query, {filter: {orderbook_code}})
+      Object.assign(query, {filter: { orderbook_code }})
     }
     return this.client.findAll(query)
   }
@@ -224,7 +234,7 @@ export default class Bitex {
   async cancelOrders(orderbook_code){
     let actionParams = {action: 'cancel', type: Order}
     if (orderbook_code) {
-      Object.assign(actionParams, {filter: {orderbook_code}})
+      Object.assign(actionParams, {filter: { orderbook_code }})
     }
     return this.client.customAction(actionParams)
   }
