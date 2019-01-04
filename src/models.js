@@ -10,6 +10,13 @@ export class Account {
   }
 }
 
+export class ApiKey {
+  constructor(){
+    this.write = null
+    this.token = null
+  }
+}
+
 export class Ask {
   constructor(){
     this.amount = null

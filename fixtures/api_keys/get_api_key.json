@@ -1,0 +1,56 @@
+{
+  "612540d9bb9bc03292dfc906483e2b33": {
+    "meta": {
+      "url": "https://localhost:3000/api/api_keys/3/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "Version": "2.0",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"69b23b9b02e360fd0119d5a1bf89050e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=eDlsV2JQOHFmbThlTEFEWjVCdlBpQUZuRVFKRmIwSjlXR2lVdHF6RWJ0NkcxNis0YnlLMXBlMUJwM0xjdFcxdzdMYlN5VDlUNEYvT1hYOGJUMHptUHpNVmVONWhiRlcrbHRBTjJveXo2Y1kwekFDL1pzcDl6WFgvUEltMlpvUG41NnRUSXJTZGVWaWRqMk0zbUJtTFdDSkcyS1ViMFNETWhqVFo1dmpqcTVVPS0tSTNaN1E5YkRCN1ZVWG5QeDZRT00zZz09--dd53f41cdfb702589f7ff8a13f2728a3bf9b16ea; path=/; HttpOnly"
+        ],
+        "x-request-id": "8bd96c88-2cdc-42cd-887e-c196fe031c27",
+        "x-runtime": "1.115641"
+      },
+      "data": {
+        "data": {
+          "id": "3",
+          "type": "api_keys",
+          "attributes": {
+            "write": false,
+            "token": "**********************************************************************a9ab3c9bb5"
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/api_keys/3/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "Version": "2.0",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

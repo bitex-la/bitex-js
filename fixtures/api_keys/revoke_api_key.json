@@ -1,0 +1,47 @@
+{
+  "68b92ef294545d409c4dec906df0514d": {
+    "meta": {
+      "url": "https://localhost:3000/api/api_keys/3/",
+      "method": "delete",
+      "data": "{\"data\":{\"type\":\"api_keys\",\"id\":3,\"attributes\":{\"write\":null,\"token\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "Version": "2.0",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 76
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=VnF5NmNVcE4vSVptMXNBQndHY0c0ZzVMcWVKSU5KUlMzcWpkbnA4V0lnTHFNVktRZ1ZhSytJK3I3OTE4Z0NIWklMSVI4alNzdEFZM3h2Vmp4blZsTzhiNjZ6bXk4ZmRhNFJvQ2dkSHFVSHVhVjBkSFRPQVNLRW5ybktYMmJKRVdob0Nzb1g1U2M2cUNtRnVCYXVwOHUybG1RdmVDei93RFRFNG56dGQrdzhjPS0teTkzZWc0ZjdMaVFOU0FyWVJBL2tlQT09--6549148dcabeb6a5de5cf5192ac8d68109b7b924; path=/; HttpOnly"
+        ],
+        "x-request-id": "506db2c0-343f-411c-9d7e-ca3db6e42569",
+        "x-runtime": "1.451565"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/api_keys/3/",
+        "method": "delete",
+        "data": "{\"data\":{\"type\":\"api_keys\",\"id\":3,\"attributes\":{\"write\":null,\"token\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "Version": "2.0",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 76
+        }
+      }
+    }
+  }
+}

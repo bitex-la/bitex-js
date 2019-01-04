@@ -2,6 +2,7 @@ import JsonapiClient from 'heather-js'
 import * as models from './models'
 const {
   Account,
+  ApiKey,
   Ask,
   Bid,
   Buy,
@@ -53,6 +54,7 @@ export default class Bitex {
 
     this.client = new JsonapiClient(url)
     this.client.setHeader('Authorization', apiKey)
+    this.client.setHeader('Version', '2.0')
 
     this.defineModels()
   }
@@ -85,7 +87,7 @@ export default class Bitex {
 
   /**
    * Get ticker of a specific orderbook
-   * @param {string} orderbook_code 
+   * @param {string} orderbook_code
    */
   async getTicker(orderbook_code){
     return this.client.find({type: Ticker, id: orderbook_code})
@@ -105,7 +107,7 @@ export default class Bitex {
 
   /**
    * Get a specific transaction.
-   * @param {number} id 
+   * @param {number} id
    */
   async getTransaction(id){
     return this.client.findAll({type: Transaction, id})
@@ -115,7 +117,7 @@ export default class Bitex {
    * Get candles for a specific orderbook
    * @param {string} [orderbook_code]
    * @param {number} [days] - Number of days ago to start the candles from.
-   * @param {number} [span] - Amount of hours for each candle. 
+   * @param {number} [span] - Amount of hours for each candle.
    */
   async getCandles(orderbook_code, days, span){
     let query = {type: Candle, filter: {}}
@@ -153,7 +155,7 @@ export default class Bitex {
 
   /**
    * Get a specific Ask.
-   * @param {number} id 
+   * @param {number} id
    */
   async getAsk(id){
     return this.client.find({type: Ask, id})
@@ -161,7 +163,7 @@ export default class Bitex {
 
   /**
    * Cancel an Ask.
-   * @param {number} id 
+   * @param {number} id
    */
   async cancelAsk(id){
     let ask = new Ask()
@@ -198,7 +200,7 @@ export default class Bitex {
 
   /**
    * Get a specific Bid.
-   * @param {number} id 
+   * @param {number} id
    */
   async getBid(id){
     return this.client.find({type: Bid, id})
@@ -206,7 +208,7 @@ export default class Bitex {
 
   /**
    * Cancel a Bid.
-   * @param {number} id 
+   * @param {number} id
    */
   async cancelBid(id){
     let bid = new Bid()
@@ -218,7 +220,7 @@ export default class Bitex {
   /**
    * Get own Orders.
    * Orders are both Bids and Asks.
-   * @param {number} id 
+   * @param {number} id
    */
   async getOrders(){
     return this.client.findAll({type: Order})
@@ -318,7 +320,7 @@ export default class Bitex {
   async getCashWallet(currency_code){
     return this.client.find({type: CashWallet, id: currency_code})
   }
-  
+
   /**
    * Get Coin Wallets (with its addresses) and balances
    */
@@ -370,7 +372,7 @@ export default class Bitex {
    * 'UYU'.
    * @param {number} amount
    * @param {WithdrawalInstruction} withdrawal_instruction
-   * @param {number} otp - One time password obtained from the 2FA (Google
+   * @param {string} otp - One time password obtained from the 2FA (Google
    * Authenticator)
    */
   async createCashWithdrawal(fiat_code, amount, withdrawal_instruction, otp){
@@ -426,7 +428,7 @@ export default class Bitex {
 
   /**
    * Delete Withdrawal Instruction.
-   * @param {number} id 
+   * @param {number} id
    */
   async deleteWithdrawalInstructions(id){
     let withdrawalInstruction = new WithdrawalInstruction()
@@ -440,7 +442,7 @@ export default class Bitex {
    * @param {number} amount
    * @param {string} label
    * @param {string} to_addresses
-   * @param {number} otp - One time password obtained from the 2FA (Google
+   * @param {string} otp - One time password obtained from the 2FA (Google
    * Authenticator)
    */
   async createCoinWithdrawal(coin_code, amount, label, to_addresses, otp){
@@ -475,7 +477,7 @@ export default class Bitex {
 
   /**
    * Get a specific Buying Bot.
-   * @param {number} id 
+   * @param {number} id
    */
   async getBuyingBot(id){
     return this.client.find({type: BuyingBot, id})
@@ -492,8 +494,8 @@ export default class Bitex {
    * @example
    * //Buy 100 USD in BTC
    * createBuyingBot(100, Orderbooks.BTCUSD)
-   * @param {number} amount 
-   * @param {string} orderbook_code 
+   * @param {number} amount
+   * @param {string} orderbook_code
    */
   async createBuyingBot(amount, orderbook_code){
     let buyingBot = new BuyingBot()
@@ -506,7 +508,7 @@ export default class Bitex {
    * Cancel a Buying Bot.
    * The orders executed by the bot will not be cancelled, but it won't create
    * any more.
-   * @param {number} buyingBotId 
+   * @param {number} buyingBotId
    */
   async cancelBuyingBot(buyingBotId){
     let buyingBot = new BuyingBot()
@@ -523,7 +525,7 @@ export default class Bitex {
 
   /**
    * Get a specific Selling Bot.
-   * @param {number} id 
+   * @param {number} id
    */
   async getSellingBot(id){
     return this.client.find({type: SellingBot, id})
@@ -540,8 +542,8 @@ export default class Bitex {
    * @example
    * //Sell 1 BTC into USD
    * createSellingBot(1, Orderbooks.BTCUSD)
-   * @param {number} amount 
-   * @param {string} orderbook_code 
+   * @param {number} amount
+   * @param {string} orderbook_code
    */
   async createSellingBot(amount, orderbook_code){
     let sellingBot = new SellingBot()
@@ -554,7 +556,7 @@ export default class Bitex {
    * Cancel a Selling Bot.
    * The orders executed by the bot will not be cancelled, but it won't create
    * any more.
-   * @param {number} sellingBotId 
+   * @param {number} sellingBotId
    */
   async cancelSellingBot(sellingBotId){
     let sellingBot = new SellingBot()
@@ -571,7 +573,7 @@ export default class Bitex {
 
   /**
    * Get a specific Payment.
-   * @param {number} id 
+   * @param {number} id
    */
   async getPayment(id){
     return this.client.find({type: Payment, id})
@@ -594,7 +596,7 @@ export default class Bitex {
   ){
     let payment = new Payment()
     Object.assign(payment, {
-      amount, keep, currency_code, callback_url, customer_reference, 
+      amount, keep, currency_code, callback_url, customer_reference,
       merchant_reference
     })
 
@@ -622,5 +624,46 @@ export default class Bitex {
     })
 
     return this.client.create({resource: pos})
+  }
+
+  /**
+   * Get all Api Keys.
+   */
+  async getApiKeys(){
+    return this.client.findAll({type: ApiKey})
+  }
+
+  /**
+   * Get a specific Api Key.
+   * @param {number} id
+   */
+  async getApiKey(id){
+    return this.client.find({type: ApiKey, id})
+  }
+
+  /**
+   * Create a new Api Key.
+   * @param {boolean} write - Permission to write. If FALSE provided, the ApiKey
+   * will be read-only. @default false.
+   * @param {string} otp - One time password obtained from the 2FA (Google
+   * Authenticator)
+   */
+  async createApiKey(write = false, otp = ''){
+    let apiKey = new ApiKey()
+    Object.assign(apiKey, { write })
+
+    this.client.setHeader('One-Time-Password', otp)
+    return this.client.create({resource: apiKey})
+  }
+
+  /**
+   * Revoke an Api Key.
+   * After doing this action, the Api Key will no longer work.
+   * @param {number} id
+   */
+  async deleteApiKey(id){
+    let apiKey = new ApiKey()
+    apiKey.id = id
+    return this.client.delete({resource: apiKey})
   }
 }

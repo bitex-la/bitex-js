@@ -1,0 +1,60 @@
+{
+  "aebb4c482766219c27fe1584f3c154ff": {
+    "meta": {
+      "url": "https://localhost:3000/api/api_keys/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"write\":true,\"token\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "Version": "2.0",
+        "One-Time-Password": "otp",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 69
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 201,
+      "statusText": "Created",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"28ef91ce9b6c7762a1a80cc57bb10384\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=aVVNMkYzbnJoNERoK0VqY0FoS2luSFM5ejcxUk43NzJLZkV5NWoyTU43VEJaNUdOaThGR3FGa0ZJSStxVmxLakZTZHJsc3dZSGJLeTFBRm11QmhHM2VWY0dIMGxjQ3ZPa085QW8xWWFQSTNXa0lJZkhrVi81bEtwRzI4SXZTWWdjYkVZckhHMEF4RDVDMlA5UG12b1VXdFhydlAxT0dkZEY3RGRHSUVEcWJ3PS0tVmxZMHlISVBqQUYwY0dhT0g5RDdCUT09--f08feea6b39672664375367129cb0319a51d0bca; path=/; HttpOnly"
+        ],
+        "x-request-id": "46f91d08-cbe4-4f63-9af5-0de11db196df",
+        "x-runtime": "0.979640"
+      },
+      "data": {
+        "data": {
+          "id": "11",
+          "type": "api_keys",
+          "attributes": {
+            "write": true,
+            "token": "ee699f6a2c1851f5663134a8b7f357fd7a22e6a4da477dab3570dcaf0a272966ac56b63dcf2e4d32"
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/api_keys/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"write\":true,\"token\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "Version": "2.0",
+          "One-Time-Password": "767280",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 69
+        }
+      }
+    }
+  }
+}
