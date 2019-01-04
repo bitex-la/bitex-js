@@ -92,7 +92,7 @@ export default class Bitex {
   /**
    * Get transactions of a specific orderbook
    * @param {string} [orderbook_code]
-   * @param {number} [hours] - Number of hours ago to take the transactions from.
+   * @param {number} [hours] - Number of hours ago to get the transactions from.
    */
   async getTransactions(orderbook_code, hours){
     let query = {type: Transaction, filter: {}}
