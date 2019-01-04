@@ -1,0 +1,57 @@
+{
+  "e82ea62ef800b6026c6c226e4d6e1c8a": {
+    "meta": {
+      "url": "https://localhost:3000/api/cash_wallets/USD/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"08c417fc768b027bd61ae54e9a3d9b76\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=M2NRc3NORldaUkFzQXA0Wk1CamN0emlDbWI2M0pIWTZCZDdtTk9Nb0RRbUE4REhpWVZHbmUvaHRhRUVGUzA2YnBzQnorUm5URHBWWmJYcVRyKzVqSU5CbGloNTE1QUg4aGczZXZ4b2JCcGhablpHWEtjdEZHbXhyOG5qblhQdDhDK0hEUTZTR3BRdmptUXpzM25HVklJVkJKT1lQT0R0SHB4RDZ2bDJvRzljPS0tQ3ErQ3p6T1JCci9mNHZYNi90Zk16Zz09--6d919b8e6f7d9d83810e70c822bb7dcc984f5b43; path=/; HttpOnly"
+        ],
+        "x-request-id": "c2c7a051-290f-4a21-b2af-6c2e5c1374c8",
+        "x-runtime": "0.894203",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "usd",
+          "type": "cash_wallets",
+          "attributes": {
+            "balance": 989.65,
+            "available": 844.65,
+            "currency": "usd"
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/cash_wallets/USD/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

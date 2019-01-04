@@ -1,0 +1,143 @@
+{
+  "41ecf6f9b238b4303501070ed5d5988e": {
+    "meta": {
+      "url": "https://localhost:3000/api/cash_withdrawals/1/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"defcdf0878d1c4874371d3572f83310d\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=TTJ2a1FCTXAxeCt2WHFBQmFFZGVMSnZHUXZWRmtaN0p1TWtObmY1WDVnVytEcW1uR1BtT3hJU1hGbHlianI3RkhKbGtHdUxLNDQ4M0ZnSGQ4aVN6dVJnTnFzdFMxZUppL0ZmUmZQV3VvZGs3d3BNZlBWaVYrQ3VucFg2SXpxVjFYZWoyZlFXZzJkMG5zaXNZMmJDMjFPTDhSejVLc2JOaVVjOG5zKysyaGpNPS0tTUtFMVZ2b1N5T2h0clFEdUZobU5odz09--d5908ebf573738299b04d292a23d8626c252759b; path=/; HttpOnly"
+        ],
+        "x-request-id": "67325232-4305-4a24-863f-91d17e2ec947",
+        "x-runtime": "0.676694",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "1",
+          "type": "cash_withdrawals",
+          "attributes": {
+            "status": "pending",
+            "amount": 12,
+            "gross_amount": 12,
+            "cost": 0,
+            "fee": 0,
+            "net_amount": 12,
+            "country": "OTHER",
+            "payment_method": "international_bank",
+            "fiat_code": "usd",
+            "label": "internacional",
+            "created_at": "2018-10-30T17:29:14.309Z"
+          },
+          "relationships": {
+            "withdrawal_instruction": {
+              "data": {
+                "id": "1",
+                "type": "withdrawal_instructions"
+              }
+            },
+            "funding_receipt": {
+              "data": {
+                "id": "1",
+                "type": "invoicing_funding_receipts"
+              }
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "1",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "internacional",
+              "schema": "bitex",
+              "body": {
+                "name": "nico",
+                "city": "caba",
+                "phone": "12341234",
+                "address": "calle falsa 123",
+                "postal_code": "1234",
+                "bank_account_number": "1234123412341234",
+                "account_type": "savings",
+                "bank": "lalala bank",
+                "bank_swift": "1234123412341234",
+                "bank_city": "santiago",
+                "bank_address": "calle falsa 321",
+                "bank_postal_code": "1234",
+                "currency": "CLP",
+                "payment_method": "international_bank",
+                "country": "OTHER"
+              }
+            }
+          },
+          {
+            "id": "1",
+            "type": "invoicing_funding_receipts",
+            "attributes": {
+              "invoice_code": "1234",
+              "receipt_type": {
+                "attributes": {
+                  "id": 1,
+                  "code": "a"
+                },
+                "id": 1,
+                "code": "a"
+              },
+              "customer_tax_id_type": {
+                "attributes": {
+                  "id": 1,
+                  "code": "rut"
+                },
+                "id": 1,
+                "code": "rut"
+              },
+              "customer_id_number": "45645555",
+              "customer_name": "nico",
+              "customer_country": "mipais",
+              "customer_vat_status": {
+                "attributes": {
+                  "id": 1,
+                  "code": "inscripto"
+                },
+                "id": 1,
+                "code": "inscripto"
+              },
+              "point_of_sale": 1,
+              "amount": 21,
+              "tax": 2
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/cash_withdrawals/1/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

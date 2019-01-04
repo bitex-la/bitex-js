@@ -1,0 +1,84 @@
+{
+  "96bb00c149f642ee5807d5e91e2cdec7": {
+    "meta": {
+      "url": "https://localhost:3000/api/coin_deposits/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"168cf891523bdd973d286553c6c51381\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=alJiYi80a1g0M1NGQU9ndUZHZEdHQTI0OEkrMEc5SW1RMXNNT281eDRZZFVBLzA0SkVnb2hsZkF5VldWTXlTM0poVkxRV2RRMDhEZWdjNk1ucmRvU2w0MVdaYS9DNjFJcWg2NXVLMnQ0TEt3N3ZWWUJPamxVaTdydnNEc0MvbGNCQ0I2a3VUZDRBbzBmOTloeVpRbkFFWGtQeEJaalBseGJGWldzWDU0eE44PS0tQTVqaURWMnAvdytmNzd6QW9PR3dRdz09--9b1eec0d127292b50f08d931c78230f484527b1a; path=/; HttpOnly"
+        ],
+        "x-request-id": "c509d249-1259-422c-b124-59e99a05e3d0",
+        "x-runtime": "0.804529",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "2",
+            "type": "coin_deposits",
+            "attributes": {
+              "coin": "btc",
+              "amount": 321,
+              "created_at": "2018-11-30T13:01:52.283Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "17",
+                  "type": "bitcoin_addresses"
+                }
+              }
+            }
+          },
+          {
+            "id": "3",
+            "type": "coin_deposits",
+            "attributes": {
+              "coin": "btc",
+              "amount": 100,
+              "created_at": "2018-11-06T13:01:52.283Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "29",
+                  "type": "bitcoin_addresses"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/coin_deposits/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

@@ -10,7 +10,9 @@ import {
   CashWithdrawal,
   CoinWallet,
   CoinWithdrawal,
-  WithdrawalInstruction
+  WithdrawalInstruction,
+  CashDeposit,
+  CoinDeposit
 } from '../src/models'
 
 describe('Funding', () => {
@@ -33,9 +35,39 @@ describe('Funding', () => {
     coinWallets.every(cw => expect(cw).to.be.an.instanceof(CoinWallet))
   })
 
+  it('get coin wallet', async () => {
+    const coinWallet = await client.getCoinWallet(65)
+    expect(coinWallet).to.be.an.instanceof(CoinWallet)
+  })
+
   it('get cash wallets', async () => {
     const cashWallets = await client.getCashWallets()
     cashWallets.every(cw => expect(cw).to.be.an.instanceof(CashWallet))
+  })
+
+  it('get cash wallet usd', async () => {
+    const cashWallet = await client.getCashWallet('USD')
+    expect(cashWallet).to.be.an.instanceof(CashWallet)
+  })
+
+  it('get cash deposits', async () => {
+    const cashDeposits = await client.getCashDeposits()
+    cashDeposits.every(cw => expect(cw).to.be.an.instanceof(CashDeposit))
+  })
+
+  it('get cash deposit', async () => {
+    const cashDeposit = await client.getCashDeposit(1)
+    expect(cashDeposit).to.be.an.instanceof(CashDeposit)
+  })
+
+  it('get coin deposits', async () => {
+    const coinDeposits = await client.getCoinDeposits()
+    coinDeposits.every(cw => expect(cw).to.be.an.instanceof(CoinDeposit))
+  })
+
+  it('get coin deposit', async () => {
+    const coinDeposit = await client.getCoinDeposit(2)
+    expect(coinDeposit).to.be.an.instanceof(CoinDeposit)
   })
 
   it('create cash withdrawal', async () => {
@@ -47,6 +79,18 @@ describe('Funding', () => {
     )
     expect(newCashWithdrawal).to.be.an.instanceof(CashWithdrawal)
     expect(newCashWithdrawal.id).to.not.be.empty
+  })
+
+  it('get cash withdrawals', async () => {
+    const cashWithdrawals = await client.getCashWithdrawals()
+    cashWithdrawals.every(cw => {
+      return expect(cw).to.be.an.instanceof(CashWithdrawal)
+    })
+  })
+
+  it('get cash withdrawal', async () => {
+    const cashWithdrawal = await client.getCashWithdrawal(1)
+    expect(cashWithdrawal).to.be.an.instanceof(CashWithdrawal)
   })
 
   it('create withdrawal instructions', async () => {
@@ -80,6 +124,11 @@ describe('Funding', () => {
     })
   })
 
+  it('get withdrawal instruction', async () => {
+    const withdrawalInstruction = await client.getWithdrawalInstruction(1)
+    expect(withdrawalInstruction).to.be.an.instanceof(WithdrawalInstruction)
+  })
+
   it('delete withdrawal instruction', async () => {
     expect(async function(){
       const result = await client.deleteWithdrawalInstructions(4)
@@ -93,5 +142,17 @@ describe('Funding', () => {
     )
     expect(newCoinWithdrawal).to.be.an.instanceof(CoinWithdrawal)
     expect(newCoinWithdrawal.id).to.not.be.empty
+  })
+
+  it('get coin withdrawals', async () => {
+    const coinWithdrawals = await client.getCoinWithdrawals()
+    coinWithdrawals.every(cw => {
+      return expect(cw).to.be.an.instanceof(CoinWithdrawal)
+    })
+  })
+
+  it('get coin withdrawal', async () => {
+    const coinWithdrawal = await client.getCoinWithdrawal(1)
+    expect(coinWithdrawal).to.be.an.instanceof(CoinWithdrawal)
   })
 })

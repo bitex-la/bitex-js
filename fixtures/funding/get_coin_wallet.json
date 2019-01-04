@@ -1,0 +1,59 @@
+{
+  "55af2dda651971cd6e02a09240854a43": {
+    "meta": {
+      "url": "https://localhost:3000/api/coin_wallets/65/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"035117ecb5a9044ee75521da633b140f\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=THl0L1ppZ2l3c1lQbEZ4TjVJRVM2eU4wVzZBYWhGUWkveWdkNEtaSmRCd3poMjMyNjM1MEJTaHgwdGF6M2ZsN2NvNTdaRlZnblN5Zyt2TlhnSk0zNnVTYnZIeEdvWXl5M21GTEV1RzBRUnVRRGtXQWc0Mnh4UjZtdXpRckpHdE1xVUcwMFRNY1RCcVl3L1I1VDJXS3FxNWU2ejBub2hsa3lCL1ErcDFLR2JZPS0tNk5rRG1FSU5BSnFJZVVFNmZxa094Zz09--99bd7e8d42c860e538ffdc32adacf0b554a7636d; path=/; HttpOnly"
+        ],
+        "x-request-id": "a70bd545-1971-4e5b-b9d3-5a6b3f23ce3a",
+        "x-runtime": "0.951613",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "65",
+          "type": "coin_wallets",
+          "attributes": {
+            "balance": 321.98938625,
+            "available": 305.96802845,
+            "currency": "btc",
+            "address": "my6ZLvt56aFMNzcQjMEL349UaVJnJsaRNh",
+            "auto_sell_address": "mkF6EAEpevJ77poL4sSZWFtQkuJms1Ekqx"
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/coin_wallets/65/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

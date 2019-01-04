@@ -7,8 +7,10 @@ const {
   Buy,
   BuyingBot,
   Candle,
+  CashDeposit,
   CashWallet,
   CashWithdrawal,
+  CoinDeposit,
   CoinWallet,
   CoinWithdrawal,
   Market,
@@ -310,6 +312,14 @@ export default class Bitex {
   }
 
   /**
+   * Get a specific Cash Wallet.
+   * @param {string} currency_code - One of: 'USD', 'ARS', 'CLP', 'PYG' & 'UYU'.
+   */
+  async getCashWallet(currency_code){
+    return this.client.find({type: CashWallet, id: currency_code})
+  }
+  
+  /**
    * Get Coin Wallets (with its addresses) and balances
    */
   async getCoinWallets(){
@@ -317,7 +327,45 @@ export default class Bitex {
   }
 
   /**
-   * Create Cash Wiwthdrawal.
+   * Get a specific Coin Wallet (with its addresses) and balances.
+   * @param {number} id
+   */
+  async getCoinWallet(id){
+    return this.client.find({type: CoinWallet, id})
+  }
+
+  /**
+   * Get Cash Deposits.
+   */
+  async getCashDeposits(){
+    return this.client.findAll({type: CashDeposit})
+  }
+
+  /**
+   * Get a specific Cash Deposit.
+   * @param {number} id
+   */
+  async getCashDeposit(id){
+    return this.client.find({type: CashDeposit, id})
+  }
+
+  /**
+   * Get Coin Deposits.
+   */
+  async getCoinDeposits(){
+    return this.client.findAll({type: CoinDeposit})
+  }
+
+  /**
+   * Get a specific Coin Deposit.
+   * @param {number} id
+   */
+  async getCoinDeposit(id){
+    return this.client.find({type: CoinDeposit, id})
+  }
+
+  /**
+   * Create Cash Withdrawal.
    * @param {string} fiat_code - Possible values: 'USD', 'ARS', 'CLP', 'PYG' and
    * 'UYU'.
    * @param {number} amount
@@ -331,6 +379,21 @@ export default class Bitex {
 
     this.client.setHeader('One-Time-Password', otp)
     return this.client.create({resource: cashWithdrawal})
+  }
+
+  /**
+   * Get all Cash Withdrawals.
+   */
+  async getCashWithdrawals(){
+    return this.client.findAll({type: CashWithdrawal})
+  }
+
+  /**
+   * Get a specific Cash Withdrawal.
+   * @param {number} id
+   */
+  async getCashWithdrawal(id){
+    return this.client.find({type: CashWithdrawal, id})
   }
 
   /**
@@ -351,6 +414,14 @@ export default class Bitex {
    */
   async getWithdrawalInstructions(){
     return this.client.findAll({type: WithdrawalInstruction})
+  }
+
+  /**
+   * Get a specific Withdrawal Instruction.
+   * @param {number} id
+   */
+  async getWithdrawalInstruction(id){
+    return this.client.find({type: WithdrawalInstruction, id})
   }
 
   /**
@@ -378,6 +449,21 @@ export default class Bitex {
 
     this.client.setHeader('One-Time-Password', otp)
     return this.client.create({resource: coinWithdrawal})
+  }
+
+  /**
+   * Get all Coin Withdrawals.
+   */
+  async getCoinWithdrawals(){
+    return this.client.findAll({type: CoinWithdrawal})
+  }
+
+  /**
+   * Get a specific Coin Withdrawal.
+   * @param {number} id
+   */
+  async getCoinWithdrawal(id){
+    return this.client.find({type: CoinWithdrawal, id})
   }
 
   /**

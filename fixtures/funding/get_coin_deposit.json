@@ -1,0 +1,65 @@
+{
+  "fd8b2846aa937bee757220ff06f73578": {
+    "meta": {
+      "url": "https://localhost:3000/api/coin_deposits/2/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"bba8f950d0a0d35fcca53134eed521d7\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=VE0vaTVJTjNLc09vRE5qWmMzTWltemJQWUY2ODNYNlcwS1VpWFJhNXU1dkc1UlNrVk1iTGNQTTJzZG5DeHBxdURvZ2g1Rm5vZktvWllCc01GVmxTd3VtdkZqeVQ3QTZyOUt3UE9FKzVyNm5wZ2hEc2ZqYVR5cFJOeGRNMXAvd21qcHpJMjAyS2wxZ3VzL1Y2ZUt1WHphK3FFZHpnbWpkdW5VTk80eEIweDd3PS0tNXV4dlpLQ29Ta1lvbmY0UzVYN1lSdz09--300f1cdcb196e3bbd0b67f9ed76b31e0ca5a5b4a; path=/; HttpOnly"
+        ],
+        "x-request-id": "bc732ef0-f1e8-47fa-b5c0-1be1e4a323dd",
+        "x-runtime": "0.711090",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "2",
+          "type": "coin_deposits",
+          "attributes": {
+            "coin": "btc",
+            "amount": 321,
+            "created_at": "2018-11-30T13:01:52.283Z"
+          },
+          "relationships": {
+            "address": {
+              "data": {
+                "id": "17",
+                "type": "bitcoin_addresses"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/coin_deposits/2/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

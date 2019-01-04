@@ -1,0 +1,379 @@
+{
+  "490c18e82f6028d0f2baa479bffc5fd2": {
+    "meta": {
+      "url": "https://localhost:3000/api/cash_withdrawals/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"33a815985d591793bfb5203da04a4546\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=WkF4cmwwWlBTYU5KTEJ6TGYySnNiUjhNWjE2eGdGa2swK3VMM2pFRTlEZ1N4WUI3NklTUzZNYk5VU2JiU2NyRE90NFVqemFiajdIMmJNeFZpeU5GOVBRNzJ0eWtXVlFpTkFHVVJVREE4eURDcHl2aUhhQjR5aHJjZUtlMUZpT08xUWhwclFNUkxScGl3YnN3cVVDWVVXeFFXWUI5d0dCVURHeVpaa3NoK1BnPS0tN2N3MHkwRG5Ba1dyeGo0SHVKdXFFQT09--87161382f5555dbbcde85180d5ceb418695e2916; path=/; HttpOnly"
+        ],
+        "x-request-id": "900bde2d-42b0-484a-9411-87de955ea635",
+        "x-runtime": "0.868856",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 12,
+              "gross_amount": 12,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 12,
+              "country": "OTHER",
+              "payment_method": "international_bank",
+              "fiat_code": "usd",
+              "label": "internacional",
+              "created_at": "2018-10-30T17:29:14.309Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "1",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": {
+                  "id": "1",
+                  "type": "invoicing_funding_receipts"
+                }
+              }
+            }
+          },
+          {
+            "id": "2",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 100,
+              "gross_amount": 100,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 100,
+              "country": "OTHER",
+              "payment_method": "international_bank",
+              "fiat_code": "ars",
+              "label": "internacional",
+              "created_at": "2018-12-03T13:24:50.927Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "1",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          },
+          {
+            "id": "3",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 100,
+              "gross_amount": 100,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 100,
+              "country": "OTHER",
+              "payment_method": "international_bank",
+              "fiat_code": "ars",
+              "label": "internacional",
+              "created_at": "2018-12-03T13:42:49.566Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "1",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          },
+          {
+            "id": "4",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 12,
+              "gross_amount": 12,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 12,
+              "country": "AR",
+              "payment_method": "third_party",
+              "fiat_code": "ars",
+              "label": "thirdparty",
+              "created_at": "2018-12-07T14:14:56.696Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "2",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          },
+          {
+            "id": "5",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 12,
+              "gross_amount": 12,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 12,
+              "country": "OTHER",
+              "payment_method": "international_bank",
+              "fiat_code": "usd",
+              "label": "internacional",
+              "created_at": "2018-12-10T18:57:01.027Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "1",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          },
+          {
+            "id": "6",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 100,
+              "gross_amount": 100,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 100,
+              "country": "AR",
+              "payment_method": "domestic_bank",
+              "fiat_code": "ars",
+              "label": "Local Bank",
+              "created_at": "2018-12-12T16:54:54.759Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "3",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          },
+          {
+            "id": "7",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 100,
+              "gross_amount": 100,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 100,
+              "country": "AR",
+              "payment_method": "third_party",
+              "fiat_code": "ars",
+              "label": "thirdparty",
+              "created_at": "2018-12-12T20:16:48.627Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "2",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          },
+          {
+            "id": "8",
+            "type": "cash_withdrawals",
+            "attributes": {
+              "status": "pending",
+              "amount": 21,
+              "gross_amount": 21,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 21,
+              "country": "AR",
+              "payment_method": "third_party",
+              "fiat_code": "usd",
+              "label": "thirdparty",
+              "created_at": "2018-12-19T14:34:05.861Z"
+            },
+            "relationships": {
+              "withdrawal_instruction": {
+                "data": {
+                  "id": "2",
+                  "type": "withdrawal_instructions"
+                }
+              },
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          }
+        ],
+        "included": [
+          {
+            "id": "1",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "internacional",
+              "schema": "bitex",
+              "body": {
+                "name": "nico",
+                "city": "caba",
+                "phone": "12341234",
+                "address": "calle falsa 123",
+                "postal_code": "1234",
+                "bank_account_number": "1234123412341234",
+                "account_type": "savings",
+                "bank": "lalala bank",
+                "bank_swift": "1234123412341234",
+                "bank_city": "santiago",
+                "bank_address": "calle falsa 321",
+                "bank_postal_code": "1234",
+                "currency": "CLP",
+                "payment_method": "international_bank",
+                "country": "OTHER"
+              }
+            }
+          },
+          {
+            "id": "1",
+            "type": "invoicing_funding_receipts",
+            "attributes": {
+              "invoice_code": "1234",
+              "receipt_type": {
+                "attributes": {
+                  "id": 1,
+                  "code": "a"
+                },
+                "id": 1,
+                "code": "a"
+              },
+              "customer_tax_id_type": {
+                "attributes": {
+                  "id": 1,
+                  "code": "rut"
+                },
+                "id": 1,
+                "code": "rut"
+              },
+              "customer_id_number": "45645555",
+              "customer_name": "nico",
+              "customer_country": "mipais",
+              "customer_vat_status": {
+                "attributes": {
+                  "id": 1,
+                  "code": "inscripto"
+                },
+                "id": 1,
+                "code": "inscripto"
+              },
+              "point_of_sale": 1,
+              "amount": 21,
+              "tax": 2
+            }
+          },
+          {
+            "id": "2",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "thirdparty",
+              "schema": "bitex",
+              "body": {
+                "name": "nico",
+                "city": "caba",
+                "phone": "12341234",
+                "payment_method": "third_party",
+                "country": "AR",
+                "currency": "ARS"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "Local Bank",
+              "schema": "bitex",
+              "body": {
+                "name": "John Doe",
+                "city": "Buenos Aires",
+                "phone": "12341234",
+                "cuit": "12341234",
+                "address": "My Address 123",
+                "bank": "hsbc",
+                "bank_account_number": "12341234",
+                "cbu": "1234123412341234",
+                "account_type": "savings",
+                "currency": "ARS",
+                "country": "AR",
+                "payment_method": "domestic_bank"
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/cash_withdrawals/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}
