@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import VCR from 'axios-vcr'
 
-import Bitex, { Orderbooks } from '../src'
+import Bitex from '../src'
 import { ApiKey } from '../src/models'
 
 describe('Api Keys', () => {
