@@ -1,0 +1,108 @@
+{
+  "2bdb25633a713cec65311cc8bf5ec22e": {
+    "meta": {
+      "url": "https://localhost:3000/api/merchants/payments/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency_code\":\"usd\",\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"coin_deposits\":[],\"callback_url\":\"https://mystore.com/webhook\"}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 487
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"0ff0a04a2dde7369c8ad518dcfe8610f\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=UkxFMXhHVjRZcUVMQzVBSFlwNEIzR1ZlWWJsR3ZBOFk4VnJWVFg0VG91ZUVBSnJDNWVUYkZFaDA4YVhTNEFwTDRsMTh1Z0E2S1dIek5xVzVLRmducGNoMjdnQjJBOHRxS0toSTRRT0FuajZCbWFleHdGMWRrUHQvcEJhVVlYdDBEY1lZYmFaNFliZ0NTRXIzL1d2NXVpcEVQdi9xTmEvOTY0TUcyWk9JMU5JPS0tVFRMenRYeTV4VnVZdkRXa2JjYkJ5dz09--fc00170137b9a6b8c662b6c5b4bad51a1a9489f2; path=/; HttpOnly"
+        ],
+        "x-request-id": "f4d8104c-31d7-4516-b3c0-5ab5a9328e44",
+        "x-runtime": "1.067656",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "8",
+          "type": "payments",
+          "attributes": {
+            "amount": 200,
+            "callback_url": "https://mystore.com/webhook",
+            "confirmed_quantity": 0,
+            "currency_code": "usd",
+            "customer_reference": "Purchase at My Store",
+            "expected_quantity": 0.03100775,
+            "keep": 10,
+            "kept": null,
+            "last_quoted_on": "2018-12-11T19:23:57.778Z",
+            "merchant_reference": "Sale id: 2212",
+            "overpaid": null,
+            "quote_valid_until": "2018-12-11T19:24:57.778Z",
+            "settlement_amount": null,
+            "settlement_currency": null,
+            "status": "pending",
+            "unconfirmed_quantity": 0,
+            "valid_until": "2018-12-11T20:23:57.533Z"
+          },
+          "relationships": {
+            "address": {
+              "data": {
+                "id": "40",
+                "type": "bitcoin_addresses"
+              }
+            },
+            "coin_deposits": {
+              "data": []
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "40",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "mgXXoiG58oR1dtFj2Kg5T15s9rcXNA9eRu"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "8",
+                  "type": "payments"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/merchants/payments/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"payments\",\"attributes\":{\"amount\":200,\"confirmed_quantity\":null,\"currency_code\":\"usd\",\"customer_reference\":\"Purchase at My Store\",\"expected_quantity\":null,\"keep\":10,\"kept\":null,\"last_quoted_on\":null,\"merchant_reference\":\"Sale id: 2212\",\"overpaid\":null,\"quote_valid_until\":null,\"settlement_amount\":null,\"settlement_currency\":null,\"status\":null,\"unconfirmed_quantity\":null,\"valid_until\":null,\"address\":null,\"coin_deposits\":[],\"callback_url\":\"https://mystore.com/webhook\"}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 487
+        }
+      }
+    }
+  }
+}

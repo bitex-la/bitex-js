@@ -1,0 +1,88 @@
+{
+  "4efbc9977c7981a3a3c67e92ba7af79a": {
+    "meta": {
+      "url": "https://localhost:3000/api/asks/?filter[orderbook_code]=btc_usd",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"e2f855ca91d4a6752d2f35711327b05a\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=NnZ3L2dWMW40RVF3RHBEWDRPa2ZzUVdDY1k0UjYreGZoa29oVFJoTlc5NjFEeU00Q1VKY1IwaUUvNDNrOTY3RTF2S1hQZTlvM3FUY04vc0hCRG9qSWhvZGozUWV1OVJ6VDU5NkdRejZNUFQzOWVVQkpLYlJYZ1ZGNnhIM3g3aHpabkpIZDhobWRPV1d1V0NmbmwzWEVaY2pRemhLZVVtby9vR2sydDlVSGtJPS0tclR2TkNPMkcreUpjVjVJQ1lmc21Ddz09--f16e51f059f26d22ffac0c60278117f6b6ceac6d; path=/; HttpOnly"
+        ],
+        "x-request-id": "0fa327b1-89c9-41a8-8c9b-87a695c17a7f",
+        "x-runtime": "0.747828",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "16",
+            "type": "asks",
+            "attributes": {
+              "amount": 1,
+              "remaining_amount": 1,
+              "price": 123,
+              "status": "executing",
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          },
+          {
+            "id": "17",
+            "type": "asks",
+            "attributes": {
+              "amount": 0.43,
+              "remaining_amount": 0.43,
+              "price": 142,
+              "status": "executing",
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/asks/?filter[orderbook_code]=btc_usd",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

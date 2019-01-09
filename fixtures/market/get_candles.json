@@ -1,0 +1,140 @@
+{
+  "7abbc9e1f1492833fde6fa0c389a8bb9": {
+    "meta": {
+      "url": "https://localhost:3000/api/candles/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"8815ce155420837a6d12bedb9b48cb17\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=eDdMeWxjZmVTWm83elZpRmdhTENXWXlnYjZJUkxYOXdJUHhENkRyWmdhUUxjdFZKeEdUcWJZNXM3ZmlFb0tQNjVwVkw2WitkWFh3V1lvSllKc0NlWWw1YkswSE54QklPQVB6UzMrcGFTZ2JKcWJyVzVxUjFYdVRMV0pUVE1kWHRFQVJwcVc4UVNWcjBDUXRMSko5cGgvQm5CQXc3ZUpTYTQyVHIvNTZXc1JzPS0tZmJSTkRiQmxTZWdvVHh3MEJSbWZKUT09--4e00e0c3de0fa13a89ac248668dab6e956c26216; path=/; HttpOnly"
+        ],
+        "x-request-id": "a7839741-e927-4f36-8b69-37987cbba31b",
+        "x-runtime": "1.419740",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1546547892_1",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1546547892,
+              "low": 0,
+              "open": 0,
+              "close": 0,
+              "high": 0,
+              "volume": 0,
+              "price_before_last": 0,
+              "vwap": 0,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "1546547892_5",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1546547892,
+              "low": 0,
+              "open": 0,
+              "close": 0,
+              "high": 0,
+              "volume": 0,
+              "price_before_last": 0,
+              "vwap": 0,
+              "orderbook_code": "btc_ars"
+            }
+          },
+          {
+            "id": "1546547892_11",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1546547892,
+              "low": 0,
+              "open": 0,
+              "close": 0,
+              "high": 0,
+              "volume": 0,
+              "price_before_last": 0,
+              "vwap": 0,
+              "orderbook_code": "btc_clp"
+            }
+          },
+          {
+            "id": "1546547892_10",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1546547892,
+              "low": 0,
+              "open": 0,
+              "close": 0,
+              "high": 0,
+              "volume": 0,
+              "price_before_last": 0,
+              "vwap": 0,
+              "orderbook_code": "btc_pyg"
+            }
+          },
+          {
+            "id": "1546547892_12",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1546547892,
+              "low": 0,
+              "open": 0,
+              "close": 0,
+              "high": 0,
+              "volume": 0,
+              "price_before_last": 0,
+              "vwap": 0,
+              "orderbook_code": "btc_uyu"
+            }
+          },
+          {
+            "id": "1546547892_8",
+            "type": "candles",
+            "attributes": {
+              "timestamp": 1546547892,
+              "low": 0,
+              "open": 0,
+              "close": 0,
+              "high": 0,
+              "volume": 0,
+              "price_before_last": 0,
+              "vwap": 0,
+              "orderbook_code": "bch_usd"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/candles/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

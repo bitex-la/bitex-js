@@ -1,309 +1,669 @@
-import axios from 'axios'
-import _ from 'lodash'
 import JsonapiClient from 'heather-js'
-import {
+import * as models from './models'
+const {
   Account,
+  ApiKey,
   Ask,
-  AssetWallet,
-  Bank,
   Bid,
-  BitcoinAddress,
+  Buy,
   BuyingBot,
-  CancelStatus,
   Candle,
   CashDeposit,
-  CashDepositMethod,
+  CashWallet,
   CashWithdrawal,
+  CoinDeposit,
+  CoinWallet,
   CoinWithdrawal,
-  ContactRequest,
-  Country,
-  Emission,
   Market,
   Movement,
-  Notification,
   Order,
   Orderbook,
-  OrderGroup,
   Payment,
   POS,
-  Purchase,
-  PurchaseIntention,
-  Reception,
-  Sale,
+  Sell,
   SellingBot,
   Ticker,
   Transaction,
-  User,
-  UserCoinAddressBookEntry,
   WithdrawalInstruction
-} from './models'
+} = models
+
+export const Orderbooks = {
+  BTCUSD: 'btc_usd',
+  BTCARS: 'btc_ars',
+  BTCCLP: 'btc_clp',
+  BTCPYG: 'btc_pyg',
+  BTCUYU: 'btc_uyu',
+  BCHUSD: 'bch_usd'
+}
 
 export default class Bitex {
+  /**
+   * Create Bitex client.
+   * @param {object} config
+   * @param {string} config.apiKey
+   * @param {string} [config.environment] - Use 'sandbox' for testing against
+   * https://sandbox.bitex.la and 'test' for testing locally.
+   */
   constructor({apiKey, environment = 'production'}){
     const prefix = (environment !== 'production') ? environment + '.' : ''
-    if(environment === 'test') process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+    let url = `https://${prefix}bitex.la/api`
+    if(environment === 'test'){
+      process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+      url = 'https://localhost:3000/api'
+    }
 
-    this.client = new JsonapiClient(`https://${prefix}bitex.la/api`)
+    this.client = new JsonapiClient(url)
     this.client.setHeader('Authorization', apiKey)
+    this.client.setHeader('Version', '2.0')
 
     this.defineModels()
   }
 
+  /**
+   * @private
+   * Define Bitex models
+   */
   defineModels(){
-    this.client.define(Account)
-    this.client.define(Ask)
-    this.client.define(AssetWallet)
-    this.client.define(Bank)
-    this.client.define(Bid)
-    this.client.define(BitcoinAddress)
-    this.client.define(BuyingBot)
-    this.client.define(CancelStatus)
-    this.client.define(Candle)
-    this.client.define(CashDeposit)
-    this.client.define(CashDepositMethod)
-    this.client.define(CashWithdrawal)
-    this.client.define(CoinWithdrawal)
-    this.client.define(ContactRequest)
-    this.client.define(Country)
-    this.client.define(Emission)
-    this.client.define(Market)
-    this.client.define(Movement)
-    this.client.define(Notification)
-    this.client.define(Order)
-    this.client.define(Orderbook)
-    this.client.define(OrderGroup)
-    this.client.define(Payment)
-    this.client.define(POS)
-    this.client.define(Purchase)
-    this.client.define(PurchaseIntention)
-    this.client.define(Reception)
-    this.client.define(Sale)
-    this.client.define(SellingBot)
-    this.client.define(Ticker)
-    this.client.define(Transaction)
-    this.client.define(User)
-    this.client.define(UserCoinAddressBookEntry)
-    this.client.define(WithdrawalInstruction)
+    for(let key in models){
+      const model = models[key]
+      this.client.define(model)
+    }
   }
 
-  async getMarket(code){
-    return this.client.find({type: Market, id: code})
+  /**
+   * Get Market information.
+   * @param {string} orderbook_code
+   */
+  async getMarket(orderbook_code){
+    return this.client.find({type: Market, id: orderbook_code})
   }
 
+  /**
+   * Get tickers of all available orderbooks
+   */
   async getTickers(){
     return this.client.findAll({type: Ticker})
   }
 
-  async getTicker(code){
-    return this.client.find({type: Ticker, id: code})
+  /**
+   * Get ticker of a specific orderbook
+   * @param {string} orderbook_code
+   */
+  async getTicker(orderbook_code){
+    return this.client.find({type: Ticker, id: orderbook_code})
   }
 
-  async getTransactions(code){
-    return this.client.findAll({type: Transaction, orderbookCode: code}).then(
-      (market) => {
-        return market.transactions
-      }
-    )
+  /**
+   * Get transactions of a specific orderbook
+   * @param {string} [orderbook_code]
+   * @param {number} [hours] - Number of hours ago to get the transactions from.
+   */
+  async getTransactions(orderbook_code, hours){
+    let query = {type: Transaction, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(hours) Object.assign(query.filter, { from: hours })
+    return this.client.findAll(query)
   }
 
-  async getCandles(code){
-    return this.client.findAll({type: Candle, orderbookCode: code}).then(
-      (market) => market.candles
-    )
+  /**
+   * Get a specific transaction.
+   * @param {number} id
+   */
+  async getTransaction(id){
+    return this.client.findAll({type: Transaction, id})
   }
 
-  async createAsk(orderbookCode, price, amount){
+  /**
+   * Get candles for a specific orderbook
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to start the candles from.
+   * @param {number} [span] - Amount of hours for each candle.
+   */
+  async getCandles(orderbook_code, days, span){
+    let query = {type: Candle, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(span) query.customParams = { span }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Create an Ask.
+   * An Ask is a Sell order to be executed in the orderbook.
+   * @param {string} orderbook_code
+   * @param {number} price
+   * @param {number} amount
+   */
+  async createAsk(orderbook_code, price, amount){
     let ask = new Ask()
-    ask.price = price
-    ask.amount = amount
+    Object.assign(ask, {orderbook_code, price, amount})
 
-    return this.client.create({resource: ask, orderbookCode})
+    return this.client.create({resource: ask})
   }
 
-  async cancelAsk(ids){
-    const asks = ids.map((id) => {
-      let ask = new Ask()
-      ask.id = id
-      return ask
-    })
-
-    //This parameter is ignored by the controller. In case this changes, we should
-    //add the orderbook code as a parameter to this method.
-    const orderbookCode = 'btc_usd'
-
-    return this.client.customAction({type: Ask, action: 'cancel', resource: asks, orderbookCode})
+  /**
+   * Get all own Asks.
+   * @param {string} [orderbook_code]
+   */
+  async getAsks(orderbook_code){
+    let query = {type: Ask}
+    if (orderbook_code) {
+      Object.assign(query, {filter: { orderbook_code }})
+    }
+    return this.client.findAll(query)
   }
 
-  async createBid(orderbookCode, price, amount){
+  /**
+   * Get a specific Ask.
+   * @param {number} id
+   */
+  async getAsk(id){
+    return this.client.find({type: Ask, id})
+  }
+
+  /**
+   * Cancel an Ask.
+   * @param {number} id
+   */
+  async cancelAsk(id){
+    let ask = new Ask()
+    ask.id = id
+
+    return this.client.customAction({action: 'cancel', resource: ask})
+  }
+
+  /**
+   * Create a Bid.
+   * An Bid is a Buy order to be executed in the orderbook.
+   * @param {string} orderbook_code
+   * @param {number} price
+   * @param {number} amount
+   */
+  async createBid(orderbook_code, price, amount){
     let bid = new Bid()
-    bid.price = price
-    bid.amount = amount
+    Object.assign(bid, {orderbook_code, price, amount})
 
-    return this.client.create({resource: bid, orderbookCode})
+    return this.client.create({resource: bid})
   }
 
-  async cancelBid(ids){
-    const bids = ids.map((id) => {
-      let bid = new Bid()
-      bid.id = id
-      return bid
-    })
-
-    //This parameter is ignored by the controller. In case this changes, we should
-    //add the orderbook code as a parameter to this method.
-    const orderbookCode = 'btc_usd'
-
-    return this.client.customAction({type: Bid, action: 'cancel', resource: bids, orderbookCode})
+  /**
+   * Get all own Bids.
+   * @param {string} [orderbook_code]
+   */
+  async getBids(orderbook_code){
+    let query = {type: Bid}
+    if (orderbook_code) {
+      Object.assign(query, {filter: {orderbook_code}})
+    }
+    return this.client.findAll(query)
   }
 
+  /**
+   * Get a specific Bid.
+   * @param {number} id
+   */
+  async getBid(id){
+    return this.client.find({type: Bid, id})
+  }
+
+  /**
+   * Cancel a Bid.
+   * @param {number} id
+   */
+  async cancelBid(id){
+    let bid = new Bid()
+    bid.id = id
+
+    return this.client.customAction({action: 'cancel', resource: bid})
+  }
+
+  /**
+   * Get own Orders.
+   * Orders are both Bids and Asks.
+   * @param {number} id
+   */
   async getOrders(){
     return this.client.findAll({type: Order})
   }
 
-  async cancelOrders(orderbookCode){
-    let order = new Order()
-    order.id = orderbookCode || 'all'
-    return this.client.customAction({resource: order, action: 'cancel'})
+  /**
+   * Cancel all Orders.
+   * @param {string} [orderbook_code] - If no orderbook code is provided, this
+   * will cancel all orders in all orderbooks.
+   * Take into account that some or all the Orders could have been matched just
+   * before this request, and therefore the cancel had no effect. It is
+   * recommended to check the status of the Bids and Asks to obtain the final
+   * execution status.
+   */
+  async cancelOrders(orderbook_code){
+    let actionParams = {action: 'cancel', type: Order}
+    if (orderbook_code) {
+      Object.assign(actionParams, {filter: { orderbook_code }})
+    }
+    return this.client.customAction(actionParams)
   }
 
+  /**
+   * Get own trades (Buys & Sells).
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to get the trades from.
+   * @param {number} [limit] - Max quantity of trades to retrieve.
+   */
+  async getTrades(orderbook_code, days, limit){
+    let query = {type: 'trades', filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(limit) query.customParams = { limit }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Get own buys.
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to get the trades from.
+   * @param {number} [limit] - Max quantity of trades to retrieve.
+   */
+  async getBuys(orderbook_code, days, limit){
+    let query = {type: Buy, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(limit) query.customParams = { limit }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Get own sells.
+   * @param {string} [orderbook_code]
+   * @param {number} [days] - Number of days ago to get the trades from.
+   * @param {number} [limit] - Max quantity of trades to retrieve.
+   */
+  async getSells(orderbook_code, days, limit){
+    let query = {type: Sell, filter: {}}
+    if(orderbook_code) Object.assign(query.filter, { orderbook_code })
+    if(days) Object.assign(query.filter, { days })
+    if(limit) query.customParams = { limit }
+    return this.client.findAll(query)
+  }
+
+  /**
+   * Get all Orderbooks.
+   */
   async getOrderbooks(){
     return this.client.findAll({type: Orderbook})
   }
 
+  /**
+   * Get last movements.
+   */
   async getMovements(){
     return this.client.findAll({type: Movement})
   }
 
+  /**
+   * Get account information and balances.
+   */
   async getAccount(){
     return this.client.findAll({type: Account}).then((accounts) => accounts[0])
   }
 
-  async createCashDeposit(currency, amount, method){
-    let cashDeposit = new CashDeposit()
-    cashDeposit.requested_amount = amount
-    cashDeposit.requested_currency = currency
-    cashDeposit.deposit_method = method
-
-    return this.client.create({resource: cashDeposit})
+  /**
+   * Get Cash Wallets and balances.
+   */
+  async getCashWallets(){
+    return this.client.findAll({type: CashWallet})
   }
 
-  async getAssetWallets(){
-    return this.client.findAll({type: AssetWallet, customParams: {scope: 'exchange'}})
+  /**
+   * Get a specific Cash Wallet.
+   * @param {string} currency_code - One of: 'USD', 'ARS', 'CLP', 'PYG' & 'UYU'.
+   */
+  async getCashWallet(currency_code){
+    return this.client.find({type: CashWallet, id: currency_code})
   }
 
-  async createCashWithdrawal(currency, amount, instructions){
+  /**
+   * Get Coin Wallets (with its addresses) and balances
+   */
+  async getCoinWallets(){
+    return this.client.findAll({type: CoinWallet})
+  }
+
+  /**
+   * Get a specific Coin Wallet (with its addresses) and balances.
+   * @param {number} id
+   */
+  async getCoinWallet(id){
+    return this.client.find({type: CoinWallet, id})
+  }
+
+  /**
+   * Get Cash Deposits.
+   */
+  async getCashDeposits(){
+    return this.client.findAll({type: CashDeposit})
+  }
+
+  /**
+   * Get a specific Cash Deposit.
+   * @param {number} id
+   */
+  async getCashDeposit(id){
+    return this.client.find({type: CashDeposit, id})
+  }
+
+  /**
+   * Get Coin Deposits.
+   */
+  async getCoinDeposits(){
+    return this.client.findAll({type: CoinDeposit})
+  }
+
+  /**
+   * Get a specific Coin Deposit.
+   * @param {number} id
+   */
+  async getCoinDeposit(id){
+    return this.client.find({type: CoinDeposit, id})
+  }
+
+  /**
+   * Create Cash Withdrawal.
+   * @param {string} fiat_code - Possible values: 'USD', 'ARS', 'CLP', 'PYG' and
+   * 'UYU'.
+   * @param {number} amount
+   * @param {WithdrawalInstruction} withdrawal_instruction
+   * @param {string} otp - One time password obtained from the 2FA (Google
+   * Authenticator)
+   */
+  async createCashWithdrawal(fiat_code, amount, withdrawal_instruction, otp){
     let cashWithdrawal = new CashWithdrawal()
-    cashWithdrawal.amount = amount
-    cashWithdrawal.fiat = currency
-    cashWithdrawal.withdrawal_instruction = instructions
+    Object.assign(cashWithdrawal, { fiat_code, amount, withdrawal_instruction })
 
+    this.client.setHeader('One-Time-Password', otp)
     return this.client.create({resource: cashWithdrawal})
   }
 
+  /**
+   * Get all Cash Withdrawals.
+   */
+  async getCashWithdrawals(){
+    return this.client.findAll({type: CashWithdrawal})
+  }
+
+  /**
+   * Get a specific Cash Withdrawal.
+   * @param {number} id
+   */
+  async getCashWithdrawal(id){
+    return this.client.find({type: CashWithdrawal, id})
+  }
+
+  /**
+   * Create Withdrawal Instruction
+   * @param {string} label
+   * @param {object} body - See updated documentation of valid body structures
+   * on https://developers.bitex.la/#29243a11-90f1-4b15-9cc8-eec12b550c0b
+   */
   async createWithdrawalInstructions(label, body){
     let withdrawalInstruction = new WithdrawalInstruction()
-    withdrawalInstruction.label = label
-    withdrawalInstruction.body = body
+    Object.assign(withdrawalInstruction, { label, body })
 
     return this.client.create({resource: withdrawalInstruction})
   }
 
+  /**
+   * Get all Withdrawal Instructions.
+   */
   async getWithdrawalInstructions(){
     return this.client.findAll({type: WithdrawalInstruction})
   }
 
+  /**
+   * Get a specific Withdrawal Instruction.
+   * @param {number} id
+   */
+  async getWithdrawalInstruction(id){
+    return this.client.find({type: WithdrawalInstruction, id})
+  }
+
+  /**
+   * Delete Withdrawal Instruction.
+   * @param {number} id
+   */
   async deleteWithdrawalInstructions(id){
     let withdrawalInstruction = new WithdrawalInstruction()
     withdrawalInstruction.id = id
     return this.client.delete({resource: withdrawalInstruction})
   }
 
-  async createCoinWithdrawal(currency, amount, label, address){
+  /**
+   * Create Coin Withdrawal
+   * @param {string} coin_code - Possible values: 'BTC' and 'BCH'
+   * @param {number} amount
+   * @param {string} label
+   * @param {string} to_addresses
+   * @param {string} otp - One time password obtained from the 2FA (Google
+   * Authenticator)
+   */
+  async createCoinWithdrawal(coin_code, amount, label, to_addresses, otp){
     let coinWithdrawal = new CoinWithdrawal()
-    coinWithdrawal.amount = amount
-    coinWithdrawal.currency = currency
-    coinWithdrawal.label = label
-    coinWithdrawal.to_addresses = address
+    Object.assign(coinWithdrawal, { coin_code, amount, label, to_addresses })
 
+    this.client.setHeader('One-Time-Password', otp)
     return this.client.create({resource: coinWithdrawal})
   }
 
+  /**
+   * Get all Coin Withdrawals.
+   */
+  async getCoinWithdrawals(){
+    return this.client.findAll({type: CoinWithdrawal})
+  }
+
+  /**
+   * Get a specific Coin Withdrawal.
+   * @param {number} id
+   */
+  async getCoinWithdrawal(id){
+    return this.client.find({type: CoinWithdrawal, id})
+  }
+
+  /**
+   * Get Buying Bots.
+   */
   async getBuyingBots(){
     return this.client.findAll({type: BuyingBot})
   }
 
+  /**
+   * Get a specific Buying Bot.
+   * @param {number} id
+   */
   async getBuyingBot(id){
     return this.client.find({type: BuyingBot, id})
   }
 
-  async createBuyingBot(amount, orderbookId){
+  /**
+   * Create a Buying Bot.
+   * A Buying Bot will take an amount and an orderbook and will try to buy the
+   * _base_ asset (crypto asset, in general) with the specified amount of the
+   * _quote_ asset.
+   * The strategy used by the buying bot is to buy in little chunks over time
+   * and only if the spread is less than 1%. This prevents the buyer to pay an
+   * abnormal high price.
+   * @example
+   * //Buy 100 USD in BTC
+   * createBuyingBot(100, Orderbooks.BTCUSD)
+   * @param {number} amount
+   * @param {string} orderbook_code
+   */
+  async createBuyingBot(amount, orderbook_code){
     let buyingBot = new BuyingBot()
-    buyingBot.amount = amount
-    let orderbook = new Orderbook()
-    orderbook.id = orderbookId
-    buyingBot.orderbook = orderbook
+    Object.assign(buyingBot, {amount, orderbook_code})
 
     return this.client.create({resource: buyingBot})
   }
 
+  /**
+   * Cancel a Buying Bot.
+   * The orders executed by the bot will not be cancelled, but it won't create
+   * any more.
+   * @param {number} buyingBotId
+   */
   async cancelBuyingBot(buyingBotId){
     let buyingBot = new BuyingBot()
     buyingBot.id = buyingBotId
-    return this.client.customAction({resource: buyingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
+    return this.client.customAction({resource: buyingBot, action: 'cancel'})
   }
 
+  /**
+   * Get Selling Bots.
+   */
   async getSellingBots(){
     return this.client.findAll({type: SellingBot})
   }
 
+  /**
+   * Get a specific Selling Bot.
+   * @param {number} id
+   */
   async getSellingBot(id){
     return this.client.find({type: SellingBot, id})
   }
 
-  async createSellingBot(amount, orderbookId){
+  /**
+   * Create a Selling Bot.
+   * A Selling Bot will take an amount and an orderbook and will try to sell the
+   * specified amount of _base_ asset (crypto asset, in general) in order to get
+   * _quote_ asset.
+   * The strategy used by the selling bot is to sell in little chunks over time
+   * and only if the spread is less than 1%. This prevents the seller to get an
+   * abnormal low price.
+   * @example
+   * //Sell 1 BTC into USD
+   * createSellingBot(1, Orderbooks.BTCUSD)
+   * @param {number} amount
+   * @param {string} orderbook_code
+   */
+  async createSellingBot(amount, orderbook_code){
     let sellingBot = new SellingBot()
-    sellingBot.amount = amount
-    let orderbook = new Orderbook()
-    orderbook.id = orderbookId
-    sellingBot.orderbook = orderbook
+    Object.assign(sellingBot, {amount, orderbook_code})
 
     return this.client.create({resource: sellingBot})
   }
 
+  /**
+   * Cancel a Selling Bot.
+   * The orders executed by the bot will not be cancelled, but it won't create
+   * any more.
+   * @param {number} sellingBotId
+   */
   async cancelSellingBot(sellingBotId){
     let sellingBot = new SellingBot()
     sellingBot.id = sellingBotId
-    return this.client.customAction({resource: sellingBot, action: 'cancel'}).then((response) => this.client.deserialize(response))
+    return this.client.customAction({resource: sellingBot, action: 'cancel'})
   }
 
+  /**
+   * Get all Payments.
+   */
   async getPayments(){
     return this.client.findAll({type: Payment})
   }
 
+  /**
+   * Get a specific Payment.
+   * @param {number} id
+   */
   async getPayment(id){
     return this.client.find({type: Payment, id})
   }
 
-  async createPayment(amount, keep, currency, callback_url, customer_reference, merchant_reference){
+  /**
+   * Create a new Payment.
+   * @param {number} amount - Amount in cash to be paid.
+   * @param {number} keep - Percentage to keep in BTC. If not specified, it will
+   * take the merchant's general 'keep' configuration or 0 otherwise.
+   * @param {string} currency_code - Possible values: 'BTC', 'USD', 'ARS',
+   * 'CLP', 'PYG' and 'UYU'
+   * @param {string} callback_url - URL to be notified when the status of this
+   * payment changes.
+   * @param {*} customer_reference - Reference to show to the customer.
+   * @param {*} merchant_reference - Internal reference for the merchant.
+   */
+  async createPayment(amount, keep, currency_code, callback_url,
+    customer_reference, merchant_reference
+  ){
     let payment = new Payment()
-    payment.amount = amount
-    payment.keep = keep
-    payment.currency = currency
-    payment.callback_url = callback_url
-    payment.customer_reference = customer_reference
-    payment.merchant_reference = merchant_reference
+    Object.assign(payment, {
+      amount, keep, currency_code, callback_url, customer_reference,
+      merchant_reference
+    })
 
     return this.client.create({resource: payment})
   }
 
-  async createPOS(merchant_keep, merchant_logo, merchant_name, merchant_site, merchant_slug){
+  /**
+   * Create a Point of Sale.
+   * Note: This can be configured manually from the web and is commonly set only
+   * once. Use this method if you are providing a service for multiple
+   * merchants.
+   * @param {number} merchant_keep - Percentage to keep in BTC from each sale.
+   * @param {string} merchant_logo - URL of the logo image.
+   * @param {string} merchant_name - Name of the merchant.
+   * @param {string} merchant_site - @deprecated URL of the Merchant.
+   * @param {*} merchant_slug - @deprecated Slug to be used in Bitex POS for the
+   * merchant.
+   */
+  async createPOS(
+    merchant_keep, merchant_logo, merchant_name, merchant_site, merchant_slug
+  ){
     let pos = new POS()
-    pos.merchant_keep = merchant_keep
-    pos.merchant_logo = merchant_logo
-    pos.merchant_name = merchant_name
-    pos.merchant_site = merchant_site
-    pos.merchant_slug = merchant_slug
+    Object.assign(pos, {
+      merchant_keep, merchant_logo, merchant_name, merchant_site, merchant_slug
+    })
 
     return this.client.create({resource: pos})
+  }
+
+  /**
+   * Get all Api Keys.
+   */
+  async getApiKeys(){
+    return this.client.findAll({type: ApiKey})
+  }
+
+  /**
+   * Get a specific Api Key.
+   * @param {number} id
+   */
+  async getApiKey(id){
+    return this.client.find({type: ApiKey, id})
+  }
+
+  /**
+   * Create a new Api Key.
+   * @param {boolean} write - Permission to write. If FALSE provided, the ApiKey
+   * will be read-only. @default false.
+   * @param {string} otp - One time password obtained from the 2FA (Google
+   * Authenticator)
+   */
+  async createApiKey(write = false, otp = ''){
+    let apiKey = new ApiKey()
+    Object.assign(apiKey, { write })
+
+    this.client.setHeader('One-Time-Password', otp)
+    return this.client.create({resource: apiKey})
+  }
+
+  /**
+   * Revoke an Api Key.
+   * After doing this action, the Api Key will no longer work.
+   * @param {number} id
+   */
+  async deleteApiKey(id){
+    let apiKey = new ApiKey()
+    apiKey.id = id
+    return this.client.delete({resource: apiKey})
   }
 }

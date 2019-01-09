@@ -1,0 +1,130 @@
+{
+  "7b7bf319e278714140c21393077d44b9": {
+    "meta": {
+      "url": "https://localhost:3000/api/movements/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"4bf6253c3b2f530f93f9e60bffe7c762\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=bm5lbEllcWQ4M0I4MG9LMmRQcFRacENlbHZMUHh6YTVWT1JtcDZGOVI5OUxGeE8wcnc1cld1ajBkUGJ6emR4UGxyaGwzdFVoNXBzRVBETmdmdU8rRHhiRjhOYmxyUHV6djJ4TUs5OXkxdjFKNmIwdjcyaFBlMGZya2NqbUR3NGRsM3lsRk1ZQlpWTTdWbE5QNUFGaGN6Q0J5d3E1UE5FZFd2N2FUSmRWOHJrPS0tMUlMS001SUhxejZ6dnJ4enhoREdBZz09--23bdc14869664724cf27abe2582a64a4477509b6; path=/; HttpOnly"
+        ],
+        "x-request-id": "3d89d759-ae19-4b7c-9711-b61c4b454a40",
+        "x-runtime": "0.323029",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1528228593Buy",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1528228593,
+              "currencies_involved": "BTC_USD",
+              "currency": "BTC",
+              "amount": 0.995,
+              "fee": 0.005,
+              "fee_decimals": 8,
+              "fee_currency": "BTC",
+              "price": 123,
+              "price_decimals": null,
+              "kind": "Buy"
+            }
+          },
+          {
+            "id": "1528228593Sell",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1528228593,
+              "currencies_involved": "BTC_USD",
+              "currency": "BTC",
+              "amount": 1,
+              "fee": 0.615,
+              "fee_decimals": 2,
+              "fee_currency": "USD",
+              "price": 123,
+              "price_decimals": null,
+              "kind": "Sell"
+            }
+          },
+          {
+            "id": "1527510284CashDeposit",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1527510284,
+              "currencies_involved": "ARS",
+              "currency": "ARS",
+              "amount": 12222,
+              "fee": 0,
+              "fee_decimals": 0,
+              "fee_currency": null,
+              "price": null,
+              "price_decimals": null,
+              "kind": "CashDeposit"
+            }
+          },
+          {
+            "id": "1521731296CoinWithdrawal",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1521731296,
+              "currencies_involved": "BTC",
+              "currency": "BTC",
+              "amount": 12,
+              "fee": 0,
+              "fee_decimals": 0,
+              "fee_currency": null,
+              "price": null,
+              "price_decimals": null,
+              "kind": "CoinWithdrawal"
+            }
+          },
+          {
+            "id": "1521731014CoinDeposit",
+            "type": "movements",
+            "attributes": {
+              "timestamp": 1521731014,
+              "currencies_involved": "BTC",
+              "currency": "BTC",
+              "amount": 321,
+              "fee": 0,
+              "fee_decimals": 0,
+              "fee_currency": null,
+              "price": null,
+              "price_decimals": null,
+              "kind": "CoinDeposit"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/movements/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

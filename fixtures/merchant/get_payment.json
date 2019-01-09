@@ -1,0 +1,128 @@
+{
+  "cbc444ae945168615233f44d1f05e16b": {
+    "meta": {
+      "url": "https://localhost:3000/api/merchants/payments/1/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"d0a631c8682158155cf7baf69acc6960\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=VnhjMlpOOU53aWxiczVyMlhVTHdYWHpIelh0bEZ2VjI3VWF0aElVMy9VcUszRFlBNDdiVE1pTHRkNGRHcXdJVzZuQWo4elczUmZjMDlvTnEyMnhreDE5QWVwTnh2WGI5dWtNcmFyaWZsekhvcWVzUFM2RnJqdHRUK2tBTVFUSkZESEprbyt3dGx1dDZPSlk5YmZsUmVuemhzWDY4dG1oem9YT25Rckxzc09RPS0tV2hxc3V6SmwxbTAyOFFCbk1EVnZOdz09--de20c69cc2b8c9b7daebec503f873317f0d4f3ee; path=/; HttpOnly"
+        ],
+        "x-request-id": "61b10235-6397-4bda-aa6b-4aab2443d6b9",
+        "x-runtime": "0.319829",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "1",
+          "type": "payments",
+          "attributes": {
+            "amount": 100,
+            "callback_url": "https://mystore.com/webhook",
+            "confirmed_quantity": 0,
+            "currency_code": "btc",
+            "customer_reference": "Purchase at My Store",
+            "expected_quantity": 100,
+            "keep": 10,
+            "kept": null,
+            "last_quoted_on": "2018-11-06T21:25:18.814Z",
+            "merchant_reference": "Sale id: 2212",
+            "overpaid": null,
+            "quote_valid_until": "2018-11-06T22:25:18.792Z",
+            "settlement_amount": null,
+            "settlement_currency": null,
+            "status": "pending",
+            "unconfirmed_quantity": 0,
+            "valid_until": "2018-11-06T22:25:18.792Z"
+          },
+          "relationships": {
+            "address": {
+              "data": {
+                "id": "29",
+                "type": "bitcoin_addresses"
+              }
+            },
+            "coin_deposits": {
+              "data": [
+                {
+                  "id": "3",
+                  "type": "coin_deposits"
+                }
+              ]
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "29",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "mowv1ekqFkaM8hBUX5yu45gzKayFog9PDP"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "1",
+                  "type": "payments"
+                }
+              }
+            }
+          },
+          {
+            "id": "3",
+            "type": "coin_deposits",
+            "attributes": {
+              "coin": "btc",
+              "amount": 100,
+              "created_at": "2018-11-06T13:01:52.283Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "29",
+                  "type": "bitcoin_addresses"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/merchants/payments/1/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "cd4714f822bead9fa19794256465a5a5": {
+    "meta": {
+      "url": "https://localhost:3000/api/withdrawal_instructions/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"ab7b9f9eaba495ab7fb9212a21cb498d\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=dE9odGpaalBVYzZmQkNrSFRVSHlzVWFHQmk2dC9GSVcwU1ZtWXF4NUY1aGVFRW1NbzltOXo5akR4bFRxajAzUFhIeUoxNzVycVorR3FXODhhVWR3eUtaSGJTWDMrQnppaEZ6Tm5zWU9jcUJScm5SZ2NFNkJpYzRTWFM3LzRIeUVpcjdBTm90S3dyNVhqZFI1VU02VGlTY2VJcjUySnEyN3RYcnlNVFJKTFBvPS0tbDJ2Q3VucmE0NE42SWlRaS9GeTlRUT09--c88da394b19b6994121582a74230f1d8b9c36b8f; path=/; HttpOnly"
+        ],
+        "x-request-id": "b215de86-1d6f-46ff-a679-d88d759bc2dc",
+        "x-runtime": "0.359716",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "internacional",
+              "schema": "bitex",
+              "body": {
+                "name": "nico",
+                "city": "caba",
+                "phone": "12341234",
+                "address": "calle falsa 123",
+                "postal_code": "1234",
+                "bank_account_number": "1234123412341234",
+                "account_type": "savings",
+                "bank": "lalala bank",
+                "bank_swift": "1234123412341234",
+                "bank_city": "santiago",
+                "bank_address": "calle falsa 321",
+                "bank_postal_code": "1234",
+                "currency": "CLP",
+                "payment_method": "international_bank",
+                "country": "OTHER"
+              }
+            }
+          },
+          {
+            "id": "2",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "thirdparty",
+              "schema": "bitex",
+              "body": {
+                "name": "nico",
+                "city": "caba",
+                "phone": "12341234",
+                "payment_method": "third_party",
+                "country": "AR",
+                "currency": "ARS"
+              }
+            }
+          },
+          {
+            "id": "3",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "Local Bank",
+              "schema": "bitex",
+              "body": {
+                "name": "John Doe",
+                "city": "Buenos Aires",
+                "phone": "12341234",
+                "cuit": "12341234",
+                "address": "My Address 123",
+                "bank": "hsbc",
+                "bank_account_number": "12341234",
+                "cbu": "1234123412341234",
+                "account_type": "savings",
+                "currency": "ARS",
+                "country": "AR",
+                "payment_method": "domestic_bank"
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/withdrawal_instructions/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

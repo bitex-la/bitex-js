@@ -1,0 +1,138 @@
+{
+  "ce9fdda77aac1ebae208c5251dbda9c9": {
+    "meta": {
+      "url": "https://localhost:3000/api/tickers/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"cbc95b292860e7fd4c7ef844eb3866d4\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "x-request-id": "b2dcfcea-9cf9-4751-8e99-9a0ce5766798",
+        "x-runtime": "0.244029",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "btc_usd",
+            "type": "tickers",
+            "attributes": {
+              "last": 120,
+              "open": 100,
+              "high": 150,
+              "low": 90,
+              "vwap": 101,
+              "volume": 0.29268291,
+              "bid": 122.8,
+              "ask": 123,
+              "price_before_last": 122
+            }
+          },
+          {
+            "id": "btc_ars",
+            "type": "tickers",
+            "attributes": {
+              "last": 1200,
+              "open": 1000,
+              "high": 1500,
+              "low": 900,
+              "vwap": 1010,
+              "volume": 0.02926829,
+              "bid": 1220.8,
+              "ask": 1230,
+              "price_before_last": 1220
+            }
+          },
+          {
+            "id": "btc_clp",
+            "type": "tickers",
+            "attributes": {
+              "last": 0,
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "vwap": null,
+              "volume": 0,
+              "bid": 0,
+              "ask": 1231313,
+              "price_before_last": 0
+            }
+          },
+          {
+            "id": "btc_pyg",
+            "type": "tickers",
+            "attributes": {
+              "last": 0,
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "vwap": null,
+              "volume": 0,
+              "bid": 0,
+              "ask": 0,
+              "price_before_last": 0
+            }
+          },
+          {
+            "id": "btc_uyu",
+            "type": "tickers",
+            "attributes": {
+              "last": 0,
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "vwap": null,
+              "volume": 0,
+              "bid": 0,
+              "ask": 0,
+              "price_before_last": 0
+            }
+          },
+          {
+            "id": "bch_usd",
+            "type": "tickers",
+            "attributes": {
+              "last": 0,
+              "open": 0,
+              "high": 0,
+              "low": 0,
+              "vwap": null,
+              "volume": 0,
+              "bid": 0,
+              "ask": 0,
+              "price_before_last": 0
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/tickers/",
+        "method": "get",
+        "data": "{\"data\":{\"type\":\"\"}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 20
+        }
+      }
+    }
+  }
+}

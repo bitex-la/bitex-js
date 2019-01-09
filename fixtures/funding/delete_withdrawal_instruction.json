@@ -1,0 +1,46 @@
+{
+  "16e193f49037c2102c1a7d88d6bfe68b": {
+    "meta": {
+      "url": "https://localhost:3000/api/withdrawal_instructions/4/",
+      "method": "delete",
+      "data": "{\"data\":{\"type\":\"withdrawal_instructions\",\"id\":4,\"attributes\":{\"label\":null,\"body\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 90
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=NzBCY3dwTXR5NEpMM0pBOFNSWTl4aGN6SW54amp5MnpCN0E1d3BDWDVHVjNnS2xocWxQTkl3bE5XTFpWSk9uNXpCci8yZGZTdzdxRVpBbEVCVENjdHFDSzhYUEhiZVpmTTJwVW1SNlFRdUhPRnZpM1lVTDJ6NmVac2E1d2Q0WTd6WEFmeHBYTVdQQXE4RkU3UFhVZFdoS1poTVYyQ2U4V0VNaVpFUDdTaHIwPS0tRTFuOEZXN0R0S291bDZDRnJOdE1VUT09--659ead438d364958a556aa9fecd7e1fef08dcbbf; path=/; HttpOnly"
+        ],
+        "x-request-id": "965e7b10-7159-4790-9435-a8eb58d2487c",
+        "x-runtime": "0.275162",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/withdrawal_instructions/4/",
+        "method": "delete",
+        "data": "{\"data\":{\"type\":\"withdrawal_instructions\",\"id\":4,\"attributes\":{\"label\":null,\"body\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 90
+        }
+      }
+    }
+  }
+}

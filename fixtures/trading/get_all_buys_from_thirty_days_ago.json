@@ -1,0 +1,138 @@
+{
+  "5130bda00fecf1c04eda8e22d3ac6594": {
+    "meta": {
+      "url": "https://localhost:3000/api/buys/?filter[days]=30",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"4c5074aef18482f598bfcd9a5498343b\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=a3lQV3EzaGVmbUNESklwdG9WdnVJc3JvT0NJanlRYk1SYjV3L2dVVEVNYzBQVHV2cFN6dUJ4Z2VsUDNqR3lrWmg4THlGTlExaDBNR0hJWHFvQUdJQ3IyaTNtRUNUZlIwekpJSlBSdExDRzZ5aHVucElGVis4QjdZZ3QxeVZDYVhLZjFTU0dycjBYNmM3eDRzcXY0RE5aK2tSRGVaZURnSkZOU2Nxd0RnQitFPS0tQjRyUTF0RFVUZEtJWVpaWk9jYi8vQT09--9454fccab6074f3e502090258a3af8b1f9758999; path=/; HttpOnly"
+        ],
+        "x-request-id": "e9c0864b-d22e-42d0-a98b-77860d347dca",
+        "x-runtime": "0.754447",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "19",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-12-10T16:41:39.792Z",
+              "coin_amount": 1,
+              "cash_amount": 500,
+              "fee": 0,
+              "price": 500,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "31",
+                  "type": "bids"
+                }
+              }
+            }
+          },
+          {
+            "id": "15",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-12-06T18:28:18.178Z",
+              "coin_amount": 0.09723127,
+              "cash_amount": 12,
+              "fee": 0.00048859,
+              "price": 122.8,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "27",
+                  "type": "bids"
+                }
+              }
+            }
+          },
+          {
+            "id": "13",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-11-26T21:24:20.981Z",
+              "coin_amount": 0.05373,
+              "cash_amount": 5.399999,
+              "fee": 0.00026999,
+              "price": 100,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "15",
+                  "type": "bids"
+                }
+              }
+            }
+          },
+          {
+            "id": "6",
+            "type": "buys",
+            "attributes": {
+              "created_at": "2018-11-23T19:27:10.576Z",
+              "coin_amount": 0.09849496,
+              "cash_amount": 9.8000001,
+              "fee": 0.00049494,
+              "price": 99,
+              "fee_currency": "BTC",
+              "fee_decimals": 8,
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "12",
+                  "type": "bids"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/buys/?filter[days]=30",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

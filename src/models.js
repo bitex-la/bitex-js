@@ -10,27 +10,20 @@ export class Account {
   }
 }
 
+export class ApiKey {
+  constructor(){
+    this.write = null
+    this.token = null
+  }
+}
+
 export class Ask {
   constructor(){
     this.amount = null
     this.remaining_amount = null
     this.price = null,
-    this.orderbook = null
+    this.orderbook_code = null
     this.user = null
-  }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/asks`
-  }
-}
-
-export class AssetWallet {
-  constructor(){
-    this.address = null
-    this.auto_sell_address = null
-    this.balance = null
-    this.available = null
-    this.currency = null
   }
 }
 
@@ -47,12 +40,8 @@ export class Bid {
     this.amount = null
     this.remaining_amount = null
     this.price = null,
-    this.orderbook = null
+    this.orderbook_code = null
     this.user = null
-  }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/bids`
   }
 }
 
@@ -60,6 +49,20 @@ export class BitcoinAddress {
   constructor(){
     this.auto_sell = null
     this.public_address = null
+  }
+}
+
+export class Buy {
+  constructor(){
+    this.created_at = null
+    this.coin_amount = null
+    this.cash_amount = null
+    this.fee = null
+    this.price = null
+    this.fee_currency = null
+    this.fee_decimals = null
+    this.orderbook_code = null
+    this.order = null
   }
 }
 
@@ -72,7 +75,7 @@ export class BuyingBot {
     this.executing = null
     this.to_cancel = null
     this.user = null
-    this.orderbook = null
+    this.orderbook_code = null
   }
 }
 
@@ -94,10 +97,6 @@ export class Candle {
     this.volume = null
     this.price_before_last = null
   }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/candles`
-  }
 }
 
 export class CashDeposit {
@@ -118,6 +117,14 @@ export class CashDepositMethod {
   }
 }
 
+export class CashWallet {
+  constructor(){
+    this.balance = null
+    this.available = null
+    this.currency = null
+  }
+}
+
 export class CashWithdrawal {
   constructor(){
     this.amount = null
@@ -127,6 +134,25 @@ export class CashWithdrawal {
     this.created_at = null
     this.payment_method = null
     this.withdrawal_instruction = null
+  }
+}
+
+export class CoinDeposit {
+  constructor(){
+    this.address = null
+    this.coin = null
+    this.amount = null
+    this.created_at = null
+  }
+}
+
+export class CoinWallet {
+  constructor(){
+    this.address = null
+    this.auto_sell_address = null
+    this.balance = null
+    this.available = null
+    this.currency = null
   }
 }
 
@@ -215,7 +241,7 @@ export class Payment {
   constructor(){
     this.amount = null
     this.confirmed_quantity = null
-    this.currency = null
+    this.currency_code = null
     this.customer_reference = null
     this.expected_quantity = null
     this.keep = null
@@ -230,6 +256,7 @@ export class Payment {
     this.unconfirmed_quantity = null
     this.valid_until = null
     this.address = null
+    this.coin_deposits = []
   }
 
   static path(){
@@ -292,6 +319,20 @@ export class Sale {
   }
 }
 
+export class Sell {
+  constructor(){
+    this.created_at = null
+    this.coin_amount = null
+    this.cash_amount = null
+    this.fee = null
+    this.price = null
+    this.fee_currency = null
+    this.fee_decimals = null
+    this.orderbook_code = null
+    this.order = null
+  }
+}
+
 export class SellingBot {
   constructor(){
     this.amount = null
@@ -301,7 +342,7 @@ export class SellingBot {
     this.executing = null
     this.to_cancel = null
     this.user = null
-    this.orderbook = null
+    this.orderbook_code = null
   }
 }
 
@@ -324,10 +365,6 @@ export class Transaction {
     this.timestamp = null
     this.amount = null
     this.price = null
-  }
-
-  static path({ orderbookCode }){
-    return `markets/${orderbookCode}/transactions`
   }
 }
 

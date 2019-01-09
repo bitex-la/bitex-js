@@ -1,0 +1,72 @@
+{
+  "6a2c29cd9a0eae05444cc607c6a0827b": {
+    "meta": {
+      "url": "https://localhost:3000/api/withdrawal_instructions/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"withdrawal_instructions\",\"attributes\":{\"label\":\"Local Bank\",\"body\":{\"name\":\"John Doe\",\"city\":\"Buenos Aires\",\"phone\":\"12341234\",\"cuit\":\"12341234\",\"address\":\"My Address 123\",\"bank\":\"hsbc\",\"bank_account_number\":\"12341234\",\"cbu\":\"1234123412341234\",\"account_type\":\"savings\",\"currency\":\"ARS\",\"country\":\"AR\",\"payment_method\":\"domestic_bank\"}}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 354
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"4e92ef8c876b1833971e1a4210de6aa7\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=R1FHTlcrWkowSHVYbk43T3pYbUtGbEFWaHhKWkZPYWFGSlhjYWttUnZDSjA2ZnhZaUlFcEJVKzRXTE03V2N0QXhzTTQzL2czM2hsZXErbUdNUVplc3l5WkJwODQ0TnJ5a3lMTERWTWNNb1pFSkh2alhKRGpRVzRtYWVwM2I3QUN1QWV5U2tYL1g3SEx1cTZqM29pTFc0U1krc0x4a0Z2QVVsTTdQcExybmdnPS0tSGJxUFFIMElBWTlTbldOdnMrY0FMUT09--fee711db779a2043c67980a00aaaa70a0920cab8; path=/; HttpOnly"
+        ],
+        "x-request-id": "35f6c886-53c2-469b-9681-ec60f9b46107",
+        "x-runtime": "0.350114",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "3",
+          "type": "withdrawal_instructions",
+          "attributes": {
+            "label": "Local Bank",
+            "schema": "bitex",
+            "body": {
+              "name": "John Doe",
+              "city": "Buenos Aires",
+              "phone": "12341234",
+              "cuit": "12341234",
+              "address": "My Address 123",
+              "bank": "hsbc",
+              "bank_account_number": "12341234",
+              "cbu": "1234123412341234",
+              "account_type": "savings",
+              "currency": "ARS",
+              "country": "AR",
+              "payment_method": "domestic_bank"
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/withdrawal_instructions/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"withdrawal_instructions\",\"attributes\":{\"label\":\"Local Bank\",\"body\":{\"name\":\"John Doe\",\"city\":\"Buenos Aires\",\"phone\":\"12341234\",\"cuit\":\"12341234\",\"address\":\"My Address 123\",\"bank\":\"hsbc\",\"bank_account_number\":\"12341234\",\"cbu\":\"1234123412341234\",\"account_type\":\"savings\",\"currency\":\"ARS\",\"country\":\"AR\",\"payment_method\":\"domestic_bank\"}}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 354
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "bcbf948e060a3d7387ba7eac7f203b97": {
+    "meta": {
+      "url": "https://localhost:3000/api/accounts/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"2c859ad65598456607cd57bd6b2b992c\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=QVlXa3hlM3lIY2lTTmNYdnkrbDVHZFd0WlMzd0s3TGdXWk9Vd2R3dUx5cGdxdTV5Wnk3RXd2WHkzQ3RpbDhNdnJ3SzdDQ1RyMWJaNXdkczBJenI2MTRFaEhLc3dBQTUwR0pGakdLcEdLL1JQaXNxNCtPbWthS0N1QUMrNG54b1c0Zml5MjN1NHJ2RnhWR2h1UlNKK2pKeFZQY1psS1hzTzRyYW5hdEVKeWtnPS0tWmt3eXNFOUVMUG9aakR2S0RnMm5Qdz09--dd909bfe43c18d43502cf618c31fb15acdb250fd; path=/; HttpOnly"
+        ],
+        "x-request-id": "adde9c1c-2c41-46b2-ac3b-67fdc677f7a2",
+        "x-runtime": "0.327752",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "5",
+            "type": "accounts",
+            "attributes": {
+              "balances": {
+                "btc": {
+                  "total": 321.98938625,
+                  "available": 321.86370735
+                },
+                "usd": {
+                  "total": 989.65,
+                  "available": 965.65
+                },
+                "ars": {
+                  "total": 17729.63985054,
+                  "available": 17517.63985054
+                },
+                "clp": {
+                  "total": 0,
+                  "available": 0
+                },
+                "bch": {
+                  "total": 0,
+                  "available": 0
+                },
+                "pyg": {
+                  "total": 0,
+                  "available": 0
+                },
+                "uyu": {
+                  "total": 0,
+                  "available": 0
+                }
+              },
+              "country": "AR"
+            },
+            "relationships": {
+              "movements": {
+                "data": []
+              },
+              "pending_movements": {
+                "data": []
+              },
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          }
+        ],
+        "included": [
+          {
+            "id": "5",
+            "type": "users",
+            "attributes": {
+              "name": "person2@example.com",
+              "email": "person2@example.com",
+              "kyc_accepted": true,
+              "otp_enabled": true,
+              "do_not_email": false,
+              "trezor_login_enabled": false
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/accounts/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

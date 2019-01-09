@@ -1,0 +1,71 @@
+{
+  "d3f599b996f1aec09d2f16f2cda4687f": {
+    "meta": {
+      "url": "https://localhost:3000/api/coin_withdrawals/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"coin_withdrawals\",\"attributes\":{\"currency\":null,\"amount\":12.3456789,\"label\":\"Trezor\",\"to_addresses\":\"mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb\",\"coin_code\":\"btc\"}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "One-Time-Password": "otp",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 174
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"dde2d44a6f8a313113d2e4c009fdf453\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=a01qWGpGeEhjTnVxZXNneGE1dlZUTmZKaytia1JERnJoVmM1WkFFM2Y5WXFwcFpjeEF0alJRdG9MSjZ5UWJxVE0wVEZHeGlnQjBEeG5CYUNZcUhLa2NkdkxaWFViRm8wRm9kME5mZHBUemdlVElZd3ZDK0dZTlhoazVRZFRoSDdERUtxeGNXVnFOQkw0MjUxNVhnQ1Yxd25zbFVXek9TK1AzWjBlRjMxWlpVPS0tNlc0eE5QQkMxTStDSU9RRytYTmZHQT09--3efd576a3ed1f48ecddbbdf5506a7ad01f0313b9; path=/; HttpOnly"
+        ],
+        "x-request-id": "fcbca8fe-737a-4ec6-ab24-e875dd7e8b9d",
+        "x-runtime": "0.443920",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "2",
+          "type": "coin_withdrawals",
+          "attributes": {
+            "amount": 12.3456789,
+            "status": "received",
+            "label": "Trezor",
+            "to_addresses": "mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb",
+            "coin_code": "btc"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "5",
+                "type": "users"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/coin_withdrawals/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"coin_withdrawals\",\"attributes\":{\"currency\":null,\"amount\":12.3456789,\"label\":\"Trezor\",\"to_addresses\":\"mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb\",\"coin_code\":\"btc\"}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "One-Time-Password": "441303",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 174
+        }
+      }
+    }
+  }
+}

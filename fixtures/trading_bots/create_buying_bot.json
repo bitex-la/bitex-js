@@ -1,0 +1,71 @@
+{
+  "ee332b69954133e448616c837fdd23d9": {
+    "meta": {
+      "url": "https://localhost:3000/api/buying_bots/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"buying_bots\",\"attributes\":{\"amount\":100,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook_code\":\"btc_usd\"}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 185
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"a014c66a16ecc2668c18be11b830f616\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=RU9QY3JYbnpwcmpldVJlUzZrdzNZOHJWbis2TTVUUktrY2ZvRmJ3M3NBa0Nja3dNTGNMNjk3SHNKKzRhNkRHQVMzYjdPYnk2b2RFeVlWMmE4UFQxcDhJYnk1dmcxWG52aXZXYklBZzBGZllzK3BKWHg4TjV6YnFTMk9BR0V0bko1ZzN4WjE5eHdUQm4weGR3VGxxWS9LWjNvOU5pWkFUWmY1OGVlL0JkVmY4PS0tTzhzU1pRQVh2aEhnckhOWVc2b0xYZz09--7a1c6a5b4e131581cde0d9a0b5afbdd34cf43f82; path=/; HttpOnly"
+        ],
+        "x-request-id": "bcd8460b-c8b8-4bdb-905f-8da0af829661",
+        "x-runtime": "0.267571",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "2",
+          "type": "buying_bots",
+          "attributes": {
+            "amount": 100,
+            "remaining_amount": 100,
+            "chunk_size": 5,
+            "eta": "2018-12-11T18:21:52.860Z",
+            "executing": true,
+            "to_cancel": false,
+            "orderbook_code": "btc_usd"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "5",
+                "type": "users"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/buying_bots/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"buying_bots\",\"attributes\":{\"amount\":100,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook_code\":\"btc_usd\"}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 185
+        }
+      }
+    }
+  }
+}

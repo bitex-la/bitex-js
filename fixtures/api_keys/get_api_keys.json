@@ -1,0 +1,98 @@
+{
+  "b740aae2ab737a51856c27426c4653c9": {
+    "meta": {
+      "url": "https://localhost:3000/api/api_keys/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "Version": "2.0",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"2ed78f3d203edd8c3fc1380ea5858707\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=M0FSSlFiWU9tVzkvVGdJakpydFRUQzlNKzcydUY4Rm1YdCs5R0p1L05NZnc2SFNpSjNpUkJSQXc0V3R6c0JISVRJYk5TdkhkOW5uZS9qTFRqYSt4L0hJSzNFN1ZoUmFrRStTd2N3UUZYRHFCM1FVY3lPQjFINVlvQTAyNVcwUHZ0ZnlEdy9pRjNFNXRkWVVCdWk1QTk4MllqV1pPOWVnVHhVNVNhek5yNWhVPS0tbVRTVnFvQkpsSTNVSmRGaGN6NnYyQT09--6686eddde03682919ad4625f2e5bf68897d7d636; path=/; HttpOnly"
+        ],
+        "x-request-id": "dbecd61d-fbf6-46ef-a9f4-7d5aeb34b46c",
+        "x-runtime": "7.542254"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "2",
+            "type": "api_keys",
+            "attributes": {
+              "write": true,
+              "token": "**********************************************************************ur_api_key"
+            }
+          },
+          {
+            "id": "3",
+            "type": "api_keys",
+            "attributes": {
+              "write": false,
+              "token": "**********************************************************************a9ab3c9bb5"
+            }
+          },
+          {
+            "id": "4",
+            "type": "api_keys",
+            "attributes": {
+              "write": true,
+              "token": "**********************************************************************8ce2d4aa50"
+            }
+          },
+          {
+            "id": "5",
+            "type": "api_keys",
+            "attributes": {
+              "write": false,
+              "token": "**********************************************************************8b13025061"
+            }
+          },
+          {
+            "id": "6",
+            "type": "api_keys",
+            "attributes": {
+              "write": false,
+              "token": "**********************************************************************asdfasdfad"
+            }
+          },
+          {
+            "id": "7",
+            "type": "api_keys",
+            "attributes": {
+              "write": true,
+              "token": "**********************************************************************id_api_key"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/api_keys/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "Version": "2.0",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

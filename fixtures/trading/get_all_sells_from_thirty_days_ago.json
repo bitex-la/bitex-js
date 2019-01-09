@@ -1,0 +1,138 @@
+{
+  "b282ac3289a76e8d8b7a99c7da658465": {
+    "meta": {
+      "url": "https://localhost:3000/api/sells/?filter[days]=30",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"9b80252d98f6b6ef6bd16cd4cb6062fc\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=by9kSEl5cGFzVUFFaDluNVBrb0Q2QjlJUHRwNUxsOUdvN0ZpT2JiWi8rei9BQzhMRVFjRHc1d2dnUGZEN1phSFY2ZzM3UFJXdU5lMjZxSWxpVStOeTh6THlJdUgyU3B5UnNHZFlXbGpDWmtMQUlZdUFycHVubGcwM1M5N2lyc3lUeE9Da2M3UDl3Z0hjU3I3dFlpTHBhR0RBUEZtMHVpbC8raXQ1ZkVVVzhFPS0tYmFYRzFlcWw0SGdHTkI4Q0NxcnhjQT09--da8df6f655c3e612590167ff9e71e7be2bed9b74; path=/; HttpOnly"
+        ],
+        "x-request-id": "d9e25f68-0c54-4e6e-b7b7-1964fe26d50f",
+        "x-runtime": "1.044318",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "18",
+            "type": "sells",
+            "attributes": {
+              "created_at": "2018-12-10T14:13:12.942Z",
+              "coin_amount": 0.09756097,
+              "cash_amount": 11.94,
+              "fee": 0.06,
+              "price": 123,
+              "fee_currency": "USD",
+              "fee_decimals": 2,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "13",
+                  "type": "asks"
+                }
+              }
+            }
+          },
+          {
+            "id": "15",
+            "type": "sells",
+            "attributes": {
+              "created_at": "2018-12-06T18:28:18.178Z",
+              "coin_amount": 0.09771986,
+              "cash_amount": 11.94,
+              "fee": 0.06,
+              "price": 122.8,
+              "fee_currency": "USD",
+              "fee_decimals": 2,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "12",
+                  "type": "asks"
+                }
+              }
+            }
+          },
+          {
+            "id": "13",
+            "type": "sells",
+            "attributes": {
+              "created_at": "2018-11-26T21:24:20.981Z",
+              "coin_amount": 0.05399999,
+              "cash_amount": 5.37299901,
+              "fee": 0.02699999,
+              "price": 100,
+              "fee_currency": "ARS",
+              "fee_decimals": 2,
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "11",
+                  "type": "asks"
+                }
+              }
+            }
+          },
+          {
+            "id": "6",
+            "type": "sells",
+            "attributes": {
+              "created_at": "2018-11-23T19:27:10.576Z",
+              "coin_amount": 0.0989899,
+              "cash_amount": 9.7510001,
+              "fee": 0.049,
+              "price": 99,
+              "fee_currency": "ARS",
+              "fee_decimals": 2,
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "5",
+                  "type": "asks"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/sells/?filter[days]=30",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "00be74abf3db5cc715fca90994153b9c": {
+    "meta": {
+      "url": "https://localhost:3000/api/buying_bots/1/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"47b0e31a816b7bba2ad2804b1b775465\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=MmViSnVJWDdxM1F0NDZ4OFN2ZVB3YThnbjNrd2FmQVZMbXN4c1dyR3gySFUwK012SWRCUVZXUDNhVDlkWlArNndCUlBEZ2ErM0FiRFV1anFXdUtyQ1dpbjBHSzJBWDNOMndRSm9ZTkFVYUExL3F2aWQyZHdaMUpyYi93V3RSZEovMUM1QTR5SkNndnZEUG8wZzVlVXZXZVllWVBOTFhiUStrTUtIVldibnlFPS0tUTNYOEs4ZWtIeStDQ3l5dkc3elhGQT09--462abaf7108fecb379df6d62072f2ff6e51b576a; path=/; HttpOnly"
+        ],
+        "x-request-id": "ffcdeccb-d196-4924-bceb-756d6ec260fe",
+        "x-runtime": "0.278792",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "1",
+          "type": "buying_bots",
+          "attributes": {
+            "amount": 100,
+            "remaining_amount": 100,
+            "chunk_size": 50,
+            "eta": "2018-12-11T18:00:00.818Z",
+            "executing": true,
+            "to_cancel": false,
+            "orderbook_code": "btc_usd"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "5",
+                "type": "users"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/buying_bots/1/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

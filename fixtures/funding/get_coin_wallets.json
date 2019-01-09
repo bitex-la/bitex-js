@@ -1,0 +1,72 @@
+{
+  "983f4f9b2e145a28e8199d2c0d335af4": {
+    "meta": {
+      "url": "https://localhost:3000/api/coin_wallets/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"9abe366f010ee8fae474987100e01ac3\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=KytHS0lRZjgvaHM3Z3RLQjJZbE1yTzZ3Y3ordVFmYkVwOHZUZmx5bjM2NmUrU0UrcU93RkRxTGhCU1dKWUpUUmVsMGNCZ0FyOWxkVVp4NmZPeW9oMUNGOURSYnUzWmZiTXNuR1phS3huelljbzRWYjN6ZjlGaGlQSHZBMldUN2xRZDhDTUI4NUMwdy9iY2Y5RVJoZXBMb0JBTkpzTm5qQnNLM2RNOXl5VUNnPS0td0V5YWVySXl4OVBmcno4THlVQzQ5Zz09--71139bf0bfa60753bfa28f77bbfd1c950fe27ffb; path=/; HttpOnly"
+        ],
+        "x-request-id": "9360c658-f12e-40b5-9137-ea74f7290b74",
+        "x-runtime": "1.853030",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "65",
+            "type": "coin_wallets",
+            "attributes": {
+              "balance": 321.98938625,
+              "available": 321.86370735,
+              "currency": "btc",
+              "address": "my6ZLvt56aFMNzcQjMEL349UaVJnJsaRNh",
+              "auto_sell_address": "mkF6EAEpevJ77poL4sSZWFtQkuJms1Ekqx"
+            }
+          },
+          {
+            "id": "70",
+            "type": "coin_wallets",
+            "attributes": {
+              "balance": 0,
+              "available": 0,
+              "currency": "bch",
+              "address": "bchtest:qrf5klp29hng2z7c6sp74yzp68waqxzh6uhq4u9vyv",
+              "auto_sell_address": "bchtest:qrxd6cn3eu3v60q04sd4r03pnc77lzd9xvckfwlq9q"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/coin_wallets/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

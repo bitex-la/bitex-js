@@ -1,0 +1,67 @@
+{
+  "531a0e4064b9d843c59c68e6b84d3432": {
+    "meta": {
+      "url": "https://localhost:3000/api/coin_withdrawals/1/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"26c0a4593792d3d7fca2caeacc59b1d3\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=U1VKTkphNW83R1h6TVoyeHVkbXZuSVA2T3lJM2NOTng1UEJOSmh5TnB4UmNZQXo4c291alByNVR2emJVYm5vMGZUaC9LOS9nNjNyVXZYYUxKOTdkVTJsOXk3dHZrbWhLanNJZjZGd2xFRmRwZkd2UXpYMk9MR2VSaWNRNXM4SXRvUERyR3BUZ2F2VlNjVXY3SXE1MmtCcE5SSlZVdGNaS3VtcmVPNVMxQzlJPS0tYjBOY1pOcHdPYlZIUzBhR3BvWm1GQT09--5c96630d92a449302f323a014e055a1d8be99587; path=/; HttpOnly"
+        ],
+        "x-request-id": "e618948e-e798-48d6-b799-144e9355c6fa",
+        "x-runtime": "0.793771",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "1",
+          "type": "coin_withdrawals",
+          "attributes": {
+            "amount": 0.1256789,
+            "status": "pending",
+            "label": "Trezor",
+            "to_addresses": "mszEUK9E6E7n4SNcrjYH8Fr7ZTGP9n3dRb",
+            "coin_code": "btc"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "5",
+                "type": "users"
+              }
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/coin_withdrawals/1/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

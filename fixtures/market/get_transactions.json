@@ -1,0 +1,90 @@
+{
+  "2bd709b071ff1c423f6c144192802797": {
+    "meta": {
+      "url": "https://localhost:3000/api/transactions/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"e0234245cb00aa260ccfa99a9a0b235e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=SHBrbHdJV0c1aE5wRWo5N2l2cm85RnRRc0NHZ25LVm40TUxhZXJrSmdXR1E5R0V5R3puaEl6QkVWV0liTG50MFdHMGhRVHo4MFRjR1N4cUR3WXVIQTMwdm9MWERla2huZXh0a0c2UzJjVTZ4MUZyQy9FSUNwYXB4eTRhMExZSng2TmdDMzdLY3ljRzhxNGpCMjhSSWJqclVYUTBFeGRzamtvTG9qdE1lOUM0PS0tNkZEalpPZFRNcjZLcVRJT1Z4TGdJZz09--d5a4634192eca22df8883ac1536b1108d7d36a54; path=/; HttpOnly"
+        ],
+        "x-request-id": "b0dd82a7-c575-4543-be85-b529a4aa28b7",
+        "x-runtime": "2.278023",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "70",
+            "type": "transactions",
+            "attributes": {
+              "timestamp": 1535396216,
+              "price": 123,
+              "amount": 0.00162601,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "69",
+            "type": "transactions",
+            "attributes": {
+              "timestamp": 1535396151,
+              "price": 123,
+              "amount": 0.000813,
+              "orderbook_code": "btc_usd"
+            }
+          },
+          {
+            "id": "68",
+            "type": "transactions",
+            "attributes": {
+              "timestamp": 1534398202,
+              "price": 1230,
+              "amount": 0.02142601,
+              "orderbook_code": "btc_ars"
+            }
+          },
+          {
+            "id": "67",
+            "type": "transactions",
+            "attributes": {
+              "timestamp": 153233100,
+              "price": 1232.2,
+              "amount": 2.1111,
+              "orderbook_code": "btc_ars"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/transactions/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

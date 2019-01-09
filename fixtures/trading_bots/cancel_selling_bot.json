@@ -1,0 +1,90 @@
+{
+  "a91af3d54e25d64db4294649624d9222": {
+    "meta": {
+      "url": "https://localhost:3000/api/selling_bots/1/cancel/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"selling_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 184
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=TGhIVXNDL3Azb3VuTnZjT0hENXYyOGNaKzBPai9qd1hYNUFnOVlTMVhJdFBhVUZOTjRZMnB1U09EcW9iWlhTbHBEc2RUMy8wZEJTa3ZKMGdxK2hUR3h6dEcreDJrOHZEUnVydkxuQ2xKaUJ1TnNoMjVVYnI2cGdybEVvZUNTVXlkRWgxa0t3and6UEMvSzlkaG1iUHNLQVF6Nk9BdTc4YlhvSm04bjNuempFPS0tRERqVU9mMUlyc21INzJ5dVVxckRRdz09--1372c7b21c5abe0aa87393b4493f9b2c3ebb1965; path=/; HttpOnly"
+        ],
+        "x-request-id": "7fb8c7b6-a837-4f50-958a-57b0da0c9aba",
+        "x-runtime": "0.385643",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/selling_bots/1/cancel/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"selling_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 184
+        }
+      }
+    }
+  },
+  "cbca7bf11ba52bc0226b226d017780aa": {
+    "meta": {
+      "url": "https://localhost:3000/api/selling_bots/1/cancel/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"selling_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook_code\":null}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 189
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 204,
+      "statusText": "No Content",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache",
+        "set-cookie": [
+          "_bitex_la_session=OWNOYW5YMmk2b3FoTE4wUVBMQkY5aEZEdmlYK0Q4bmpyVWxaYVREN1VycHdOKzhrbjlhTlJuLzAyVHlLKytYWkR1UC8wODdFR3JPQWpLblNUTmVPcFFvMXZ2S3g2VFlVSHdDdm81Y1Qzd1dOL1NxbktraDlwSzBWa2NqeS9vb1RReGNOUGNIN0l3OGsxaDNzckRCNE5QNU11bTdpNXE3ZkpkRG9BVWsrL3U4PS0tKzJLVS8rWThyMmJvUGdxcWhLK1plQT09--367b6862bce9c0bb861009dd3e3f108be7e3518a; path=/; HttpOnly"
+        ],
+        "x-request-id": "68611e87-fc32-4b44-8af4-51813f150a9f",
+        "x-runtime": "0.268665",
+        "connection": "close"
+      },
+      "data": "",
+      "config": {
+        "url": "https://localhost:3000/api/selling_bots/1/cancel/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"selling_bots\",\"id\":1,\"attributes\":{\"amount\":null,\"remaining_amount\":null,\"chunk_size\":null,\"eta\":null,\"executing\":null,\"to_cancel\":null,\"user\":null,\"orderbook_code\":null}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 189
+        }
+      }
+    }
+  }
+}

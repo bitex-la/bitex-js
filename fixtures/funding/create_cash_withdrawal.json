@@ -1,0 +1,98 @@
+{
+  "d4f7ac866a2488dd0b89813f58a07175": {
+    "meta": {
+      "url": "https://localhost:3000/api/cash_withdrawals/",
+      "method": "post",
+      "data": "{\"data\":{\"type\":\"cash_withdrawals\",\"attributes\":{\"amount\":100,\"fiat\":null,\"label\":null,\"status\":null,\"created_at\":null,\"payment_method\":null,\"fiat_code\":\"ars\"},\"relationships\":{\"withdrawal_instruction\":{\"data\":{\"type\":\"withdrawal_instructions\",\"id\":2,\"attributes\":{\"label\":null,\"body\":null}}}}}}",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "One-Time-Password": "otp",
+        "User-Agent": "axios-vcr",
+        "Content-Length": 295
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"ec6db0b96e202bcd7fdd9ed71ea477d8\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=dVUxd2VWY0NlMHhjVlJjcFRRZkFWMDc4ekNycjhCTVZJQ1liWWs5WnhQaVRpYXYzdndnYVNGd1k5RXkvTmQ3MzZjUmRYaldqWDJDbWNvblRSWUpVcTRJSDgwZU91Z3E5REsxdktkcWhmNWZxSW9QV1Qzc25zdklrcmhJOHhsT3dqOWh5R0FZbnk1YmM1MzZnYnRBQlhHL01TTlR1TXdhMUlIT1ZHaEJadVA0PS0tN1FMQnIyYTBOUTRTZmVqZ1FtYkVzdz09--cb9f310aa853328d6f20a55fad9e295087dcd266; path=/; HttpOnly"
+        ],
+        "x-request-id": "3f6579e8-fcd3-4391-b6ae-25c5ba88359d",
+        "x-runtime": "1.569347",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "7",
+          "type": "cash_withdrawals",
+          "attributes": {
+            "status": "received",
+            "amount": 100,
+            "gross_amount": 100,
+            "cost": 0,
+            "fee": 0,
+            "net_amount": 100,
+            "country": "AR",
+            "payment_method": "third_party",
+            "fiat_code": "ars",
+            "label": "thirdparty",
+            "created_at": "2018-12-12T20:16:48.627Z"
+          },
+          "relationships": {
+            "withdrawal_instruction": {
+              "data": {
+                "id": "2",
+                "type": "withdrawal_instructions"
+              }
+            },
+            "funding_receipt": {
+              "data": null
+            }
+          }
+        },
+        "included": [
+          {
+            "id": "2",
+            "type": "withdrawal_instructions",
+            "attributes": {
+              "label": "thirdparty",
+              "schema": "bitex",
+              "body": {
+                "name": "nico",
+                "city": "caba",
+                "phone": "12341234",
+                "payment_method": "third_party",
+                "country": "AR",
+                "currency": "ARS"
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/cash_withdrawals/",
+        "method": "post",
+        "data": "{\"data\":{\"type\":\"cash_withdrawals\",\"attributes\":{\"amount\":100,\"fiat\":null,\"label\":null,\"status\":null,\"created_at\":null,\"payment_method\":null,\"fiat_code\":\"ars\"},\"relationships\":{\"withdrawal_instruction\":{\"data\":{\"type\":\"withdrawal_instructions\",\"id\":2,\"attributes\":{\"label\":null,\"body\":null}}}}}}",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "One-Time-Password": "441303",
+          "User-Agent": "axios-vcr",
+          "Content-Length": 295
+        }
+      }
+    }
+  }
+}

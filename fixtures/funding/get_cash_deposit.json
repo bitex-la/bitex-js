@@ -1,0 +1,72 @@
+{
+  "f700743bad2df6757aa8c18247219443": {
+    "meta": {
+      "url": "https://localhost:3000/api/cash_deposits/1/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"0fa849547de226da35ba382792c59527\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=YUdSOEhjQnk5T0lqaTl6K3dVTVd6L2ducUMvZXY0V3p0aXFpcXMxeEtzTyswNXo5V29CTjdQdDJqbDIzSzdvMUFiWXE3Wk9wRXRDbWFHVThlSCtkRTBmNnpuM2VvdFY5MnVMNjgvTVVyRWxvSG5Oc3M3ZnFsR0RMZzhCVHdNRkpxbUtRNEI0TERxMS9qdUtYWVlreDdvNTBYYW9KY0YvcTdkSlNEbU9nUmU4PS0tcTM5YTRGbk13Ykl0V0J5K0o5Z0pmZz09--010736710fe61d0aeb440bf61861bcbaa0012076; path=/; HttpOnly"
+        ],
+        "x-request-id": "f043e121-ba93-4fe8-9e94-d49f43b4b566",
+        "x-runtime": "1.048756",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": {
+          "id": "1",
+          "type": "cash_deposits",
+          "attributes": {
+            "status": "done",
+            "requested_amount": null,
+            "requested_currency": "USD",
+            "deposit_method": "bank",
+            "country": null,
+            "clearing_data": null,
+            "amount": 1000,
+            "fiat_code": "usd",
+            "gross_amount": 1000,
+            "cost": 0,
+            "fee": 0,
+            "net_amount": 1000,
+            "created_at": "2000-01-01T00:00:02.354Z"
+          },
+          "relationships": {
+            "funding_receipt": {
+              "data": null
+            }
+          }
+        }
+      },
+      "config": {
+        "url": "https://localhost:3000/api/cash_deposits/1/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

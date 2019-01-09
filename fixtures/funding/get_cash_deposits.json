@@ -1,0 +1,98 @@
+{
+  "dc4a85348d6aca9f21a25977d6476f37": {
+    "meta": {
+      "url": "https://localhost:3000/api/cash_deposits/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"548d6f94499856ad95e48b945bc9bb65\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=MzVhZExST0dPY2YxVFJaMmdtaGpzdmZSZjlQZGhXSm1hMUtjYUg3cXJwZkkwdmZhbFh6NWxITlJpZlZnUjgyaFBxNm84QXJ5QitWU25oT2dMeEF1Ri9Mc0IvWVVVcXkzb3Vrb0FlYWhzV2hUcmIycDJNa3k4Wi9GTVRVMVFtYzVKZERLdXJBdWtEYitaWGp0d0xoT2VhSnFKS05VM01IUVhwY055ZVNpQTIwPS0tY3hId0NhREhKeUdqelpQYmkxbEtmQT09--dec3b52bfdf3668bb07ece2353746adc5e1c9dd7; path=/; HttpOnly"
+        ],
+        "x-request-id": "a05c0efa-dd55-4c60-a861-6cc6f68e3485",
+        "x-runtime": "0.816584",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1",
+            "type": "cash_deposits",
+            "attributes": {
+              "status": "done",
+              "requested_amount": null,
+              "requested_currency": "USD",
+              "deposit_method": "bank",
+              "country": null,
+              "clearing_data": null,
+              "amount": 1000,
+              "fiat_code": "usd",
+              "gross_amount": 1000,
+              "cost": 0,
+              "fee": 0,
+              "net_amount": 1000,
+              "created_at": "2000-01-01T00:00:02.354Z"
+            },
+            "relationships": {
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          },
+          {
+            "id": "2",
+            "type": "cash_deposits",
+            "attributes": {
+              "status": "done",
+              "requested_amount": null,
+              "requested_currency": "USD",
+              "deposit_method": "bank",
+              "country": null,
+              "clearing_data": null,
+              "amount": 17729.9148505,
+              "fiat_code": "ars",
+              "gross_amount": 18000.01,
+              "cost": 181.0001,
+              "fee": 89.0950495,
+              "net_amount": 17729.9148505,
+              "created_at": "2018-11-21T13:35:19.862Z"
+            },
+            "relationships": {
+              "funding_receipt": {
+                "data": null
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/cash_deposits/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

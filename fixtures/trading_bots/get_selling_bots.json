@@ -1,0 +1,49 @@
+{
+  "67b0fb9c062c6f60d35fc37f2e4f462a": {
+    "meta": {
+      "url": "https://localhost:3000/api/selling_bots/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"e0234245cb00aa260ccfa99a9a0b235e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=TkVzM3BZaCtlRUlrbjVNM0p3a1BkWFp2TjlPdUhWdHFRUys2dU9hY0NBc1RHVm42NzF0aHJGdGdpMUM2RXZuNVJ0R25lK2lIeDdpdEtPWjNDdkYvTEtjOTZEZGhZalFidGFHOUlFb1p2UVFzTWZhYmRaTFlJeTNuTnB4M1p6Y3B2MzZqZEIwUk1nc0R2ODBLZ3JkQlFPOXZ6L2t2TnhWNnE5RE5ZcGdvTE9RPS0tamxrQ3AvT2V1eEd2Wk5Nck1TaDkvZz09--003990dd69c5805e0cb9bff195e82a87b33b1bf6; path=/; HttpOnly"
+        ],
+        "x-request-id": "fb674ec4-5e5f-410a-9564-fb47f434d39c",
+        "x-runtime": "0.478368",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": []
+      },
+      "config": {
+        "url": "https://localhost:3000/api/selling_bots/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "5ec23e61e513ba9c291804e9861e95c5": {
+    "meta": {
+      "url": "https://localhost:3000/api/merchants/payments/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"6ee8c2baed74fe0d6e64845820b5a414\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=T2luV0ZuWWVDbm4zeUZjM1VyYzBlbjNvUWsxMDJYWVAyQWJkc2NKV2JJc3lQajZiZytHNW1WNXhpbXlORW96M0FEbUc3OG95NVpuU0pxYVNlRXN0YWk5Zk9nSyt0M0pLV3ptdlRTQ3U0d1FCVzlUMEd3UUUvaE5lZGNQTjhWcUhsdVlWVTRrWU5YMlFuU1RqcEhTWGl3VDBZcDZaMjEvSkRUSVhVeFhrRmdrPS0tVEp2SGd4N0krZkw5WXR4Zkd3eDI1QT09--6753a2d9373e1c41213d74fa9cb50fbb74981a0c; path=/; HttpOnly"
+        ],
+        "x-request-id": "595be082-40e3-4a69-b7dd-7a0a8cab4f4b",
+        "x-runtime": "0.489538",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "1",
+            "type": "payments",
+            "attributes": {
+              "amount": 100,
+              "callback_url": "https://mystore.com/webhook",
+              "confirmed_quantity": 0,
+              "currency_code": "btc",
+              "customer_reference": "Purchase at My Store",
+              "expected_quantity": 100,
+              "keep": 10,
+              "kept": null,
+              "last_quoted_on": "2018-11-06T21:25:18.814Z",
+              "merchant_reference": "Sale id: 2212",
+              "overpaid": null,
+              "quote_valid_until": "2018-11-06T22:25:18.792Z",
+              "settlement_amount": null,
+              "settlement_currency": null,
+              "status": "pending",
+              "unconfirmed_quantity": 0,
+              "valid_until": "2018-11-06T22:25:18.792Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "29",
+                  "type": "bitcoin_addresses"
+                }
+              },
+              "coin_deposits": {
+                "data": [
+                  {
+                    "id": "3",
+                    "type": "coin_deposits"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "2",
+            "type": "payments",
+            "attributes": {
+              "amount": 200,
+              "callback_url": "https://mystore.com/webhook",
+              "confirmed_quantity": 0,
+              "currency_code": "btc",
+              "customer_reference": "Purchase at My Store",
+              "expected_quantity": 200,
+              "keep": 10,
+              "kept": null,
+              "last_quoted_on": "2018-12-11T18:06:15.341Z",
+              "merchant_reference": "Sale id: 2212",
+              "overpaid": null,
+              "quote_valid_until": "2018-12-11T19:06:15.320Z",
+              "settlement_amount": null,
+              "settlement_currency": null,
+              "status": "pending",
+              "unconfirmed_quantity": 0,
+              "valid_until": "2018-12-11T19:06:15.320Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "34",
+                  "type": "bitcoin_addresses"
+                }
+              },
+              "coin_deposits": {
+                "data": []
+              }
+            }
+          },
+          {
+            "id": "3",
+            "type": "payments",
+            "attributes": {
+              "amount": 100,
+              "callback_url": "https://mystore.com/webhook",
+              "confirmed_quantity": 0,
+              "currency_code": "usd",
+              "customer_reference": "Purchase at My Store",
+              "expected_quantity": 0.01550388,
+              "keep": 10,
+              "kept": null,
+              "last_quoted_on": "2018-12-11T18:28:01.304Z",
+              "merchant_reference": "Sale id: 2212",
+              "overpaid": null,
+              "quote_valid_until": "2018-12-11T18:29:01.303Z",
+              "settlement_amount": null,
+              "settlement_currency": null,
+              "status": "pending",
+              "unconfirmed_quantity": 0,
+              "valid_until": "2018-12-11T19:28:01.280Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "35",
+                  "type": "bitcoin_addresses"
+                }
+              },
+              "coin_deposits": {
+                "data": []
+              }
+            }
+          },
+          {
+            "id": "4",
+            "type": "payments",
+            "attributes": {
+              "amount": 100,
+              "callback_url": "https://mystore.com/webhook",
+              "confirmed_quantity": 0,
+              "currency_code": "usd",
+              "customer_reference": "Purchase at My Store",
+              "expected_quantity": 0.01550388,
+              "keep": 10,
+              "kept": null,
+              "last_quoted_on": "2018-12-11T18:29:18.182Z",
+              "merchant_reference": "Sale id: 2212",
+              "overpaid": null,
+              "quote_valid_until": "2018-12-11T18:30:18.182Z",
+              "settlement_amount": null,
+              "settlement_currency": null,
+              "status": "pending",
+              "unconfirmed_quantity": 0,
+              "valid_until": "2018-12-11T19:29:18.161Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "36",
+                  "type": "bitcoin_addresses"
+                }
+              },
+              "coin_deposits": {
+                "data": []
+              }
+            }
+          },
+          {
+            "id": "5",
+            "type": "payments",
+            "attributes": {
+              "amount": 100,
+              "callback_url": "https://mystore.com/webhook",
+              "confirmed_quantity": 0,
+              "currency_code": "usd",
+              "customer_reference": "Purchase at My Store",
+              "expected_quantity": 0.01550388,
+              "keep": 10,
+              "kept": null,
+              "last_quoted_on": "2018-12-11T18:32:51.456Z",
+              "merchant_reference": "Sale id: 2212",
+              "overpaid": null,
+              "quote_valid_until": "2018-12-11T18:33:51.455Z",
+              "settlement_amount": null,
+              "settlement_currency": null,
+              "status": "pending",
+              "unconfirmed_quantity": 0,
+              "valid_until": "2018-12-11T19:32:51.440Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "37",
+                  "type": "bitcoin_addresses"
+                }
+              },
+              "coin_deposits": {
+                "data": []
+              }
+            }
+          },
+          {
+            "id": "6",
+            "type": "payments",
+            "attributes": {
+              "amount": 200,
+              "callback_url": "https://mystore.com/webhook",
+              "confirmed_quantity": 0,
+              "currency_code": "usd",
+              "customer_reference": "Purchase at My Store",
+              "expected_quantity": 0.03100775,
+              "keep": 10,
+              "kept": null,
+              "last_quoted_on": "2018-12-11T18:48:33.714Z",
+              "merchant_reference": "Sale id: 2212",
+              "overpaid": null,
+              "quote_valid_until": "2018-12-11T18:49:33.713Z",
+              "settlement_amount": null,
+              "settlement_currency": null,
+              "status": "pending",
+              "unconfirmed_quantity": 0,
+              "valid_until": "2018-12-11T19:48:33.683Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "38",
+                  "type": "bitcoin_addresses"
+                }
+              },
+              "coin_deposits": {
+                "data": []
+              }
+            }
+          },
+          {
+            "id": "7",
+            "type": "payments",
+            "attributes": {
+              "amount": 200,
+              "callback_url": "https://mystore.com/webhook",
+              "confirmed_quantity": 0,
+              "currency_code": "usd",
+              "customer_reference": "Purchase at My Store",
+              "expected_quantity": 0.03100775,
+              "keep": 10,
+              "kept": null,
+              "last_quoted_on": "2018-12-11T19:12:22.897Z",
+              "merchant_reference": "Sale id: 2212",
+              "overpaid": null,
+              "quote_valid_until": "2018-12-11T19:13:22.896Z",
+              "settlement_amount": null,
+              "settlement_currency": null,
+              "status": "pending",
+              "unconfirmed_quantity": 0,
+              "valid_until": "2018-12-11T20:12:22.840Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "39",
+                  "type": "bitcoin_addresses"
+                }
+              },
+              "coin_deposits": {
+                "data": []
+              }
+            }
+          }
+        ],
+        "included": [
+          {
+            "id": "29",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "mowv1ekqFkaM8hBUX5yu45gzKayFog9PDP"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "1",
+                  "type": "payments"
+                }
+              }
+            }
+          },
+          {
+            "id": "3",
+            "type": "coin_deposits",
+            "attributes": {
+              "coin": "btc",
+              "amount": 100,
+              "created_at": "2018-11-06T13:01:52.283Z"
+            },
+            "relationships": {
+              "address": {
+                "data": {
+                  "id": "29",
+                  "type": "bitcoin_addresses"
+                }
+              }
+            }
+          },
+          {
+            "id": "34",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "mhhmwu8a7ZRn8HpFyAKUQjWwRv9hCFN84r"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "2",
+                  "type": "payments"
+                }
+              }
+            }
+          },
+          {
+            "id": "35",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "mgDQWWcrPsxYUeJbr7C9yxyDN59vB4uzJp"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "3",
+                  "type": "payments"
+                }
+              }
+            }
+          },
+          {
+            "id": "36",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "mnU4XpYtxEHUXycaYngj6XG92myLckUC7p"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "4",
+                  "type": "payments"
+                }
+              }
+            }
+          },
+          {
+            "id": "37",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "n1VnZ8YBdE2iXFqMZeVoTJp5Ek2RTbdcJr"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "5",
+                  "type": "payments"
+                }
+              }
+            }
+          },
+          {
+            "id": "38",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "mpTrYgPXSsAoBAsa2UDBpfhJCNLWTS1TY2"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "6",
+                  "type": "payments"
+                }
+              }
+            }
+          },
+          {
+            "id": "39",
+            "type": "bitcoin_addresses",
+            "attributes": {
+              "auto_sell": false,
+              "public_address": "msBNCehv7fBt5taUvsJeKxNXXgs3BCgaxc"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              },
+              "payment": {
+                "data": {
+                  "id": "7",
+                  "type": "payments"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/merchants/payments/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

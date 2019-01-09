@@ -1,0 +1,60 @@
+{
+  "e92e72c3d0b76c088b24d19c875b418f": {
+    "meta": {
+      "url": "https://localhost:3000/api/transactions/?filter[orderbook_code]=btc_usd&filter[from]=1",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"e0234245cb00aa260ccfa99a9a0b235e\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=U1AwNjczRU1SRjZaT3crL05EckxMaG93ZGJsRiswVXRadjVpY3hMSFJwZjYrNkhPQUdrUzVjdE5mRHBidEtUSjJ0TXIvRStyd0pUam5JU1owWnVXWElNVSt3UVVGbnluZC9VNWFQVm9Ec2tVRDgrdlpnOGN3aTlkbVlQR0dUZGJ5cG16dHk2aVBqSTY5cGZZZnYyazlreGxmUFZTRjMrcy93SjBaeS85b0pnPS0tRG92ZTVlNG1ncVNqcHpncnhocE52QT09--bef268bc563ab20718ce710c1975b87688baf0d4; path=/; HttpOnly"
+        ],
+        "x-request-id": "807d1268-3a1b-4cc2-ab67-00dc9737280d",
+        "x-runtime": "0.681006",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "70",
+            "type": "transactions",
+            "attributes": {
+              "timestamp": 1535396216,
+              "price": 123,
+              "amount": 0.00162601,
+              "orderbook_code": "btc_usd"
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/transactions/?filter[orderbook_code]=btc_usd&filter[from]=1",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

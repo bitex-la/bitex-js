@@ -1,0 +1,94 @@
+{
+  "e37c7223146e8220f4b5ceb14c9fb50c": {
+    "meta": {
+      "url": "https://localhost:3000/api/sells/?filter[orderbook_code]=btc_usd",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"5398d25a4ed93b96c854b8def44038c9\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=SmNhN1FTWDZpN05TOWYwQ2prYjRWSUFWRjNYQUNVdjdRbndwbUl2WFM0L1FSK0V3S0VuRUZGR1hIMHpBaFV4dzB3d2ZGZC8wMUpBQzFIeHJTZGptMjVqOWpvRDN4QjY1czB6QkJrU2lGU1lIenNzc2h4SVdIeVFwb1lsR1o0bzRINk4waGVraGwrNHlqRHRtYzE4WHFwUlhjeCtWMFVrbThLTWluTUNpdGZnPS0ta1Juc2pEVDhSYmo5bW5iMzd6SVFGQT09--94349d9835d837ae586f8f108aff81b7ffec86d8; path=/; HttpOnly"
+        ],
+        "x-request-id": "b48dff09-4a7b-49c0-878d-49e2df826d41",
+        "x-runtime": "0.981156",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "18",
+            "type": "sells",
+            "attributes": {
+              "created_at": "2018-12-10T14:13:12.942Z",
+              "coin_amount": 0.09756097,
+              "cash_amount": 11.94,
+              "fee": 0.06,
+              "price": 123,
+              "fee_currency": "USD",
+              "fee_decimals": 2,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "13",
+                  "type": "asks"
+                }
+              }
+            }
+          },
+          {
+            "id": "15",
+            "type": "sells",
+            "attributes": {
+              "created_at": "2018-12-06T18:28:18.178Z",
+              "coin_amount": 0.09771986,
+              "cash_amount": 11.94,
+              "fee": 0.06,
+              "price": 122.8,
+              "fee_currency": "USD",
+              "fee_decimals": 2,
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "order": {
+                "data": {
+                  "id": "12",
+                  "type": "asks"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/sells/?filter[orderbook_code]=btc_usd",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}

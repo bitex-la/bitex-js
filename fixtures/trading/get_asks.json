@@ -1,0 +1,107 @@
+{
+  "9339927b99aac1ee3607c403fc442085": {
+    "meta": {
+      "url": "https://localhost:3000/api/asks/",
+      "method": "get",
+      "data": null,
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/vnd.api+json",
+        "Authorization": "valid_api_key",
+        "User-Agent": "axios-vcr"
+      }
+    },
+    "fixture": true,
+    "originalResponseData": {
+      "status": 200,
+      "statusText": "OK",
+      "headers": {
+        "x-frame-options": "SAMEORIGIN",
+        "x-xss-protection": "1; mode=block",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/vnd.api+json; charset=utf-8",
+        "etag": "W/\"f51855898182f2ea91480ed654499467\"",
+        "cache-control": "max-age=0, private, must-revalidate",
+        "set-cookie": [
+          "_bitex_la_session=OGd4TTBGUVlSRUtWUmc3dzRvNEgvZmd2N2puMnhzL3dFSUdEcS9HSlVTRWR2KzA3UlBrb1QxQnBxSVE5ZnAzTkJNbWxlRzdWd1dhS1U0aGRyRUpCVDJpZ05EYWU4d0Z3c3VITjY0cGMyNnh4SjNrc2doWjBsdGFaODJ2eEN0dFB2MmM4dmkza2w2dWQySENqeDFsaWVXYWdxZW44Vmd5YVdtVXNqKzdadzZvPS0tci9VOElhZ1pCRGlJTGZCeFdtV1Fkdz09--c410a5be467c65bb7ea99e5c4d94f1a0bc9d2ae7; path=/; HttpOnly"
+        ],
+        "x-request-id": "e4f73840-131f-4110-8491-ad495fee41e2",
+        "x-runtime": "0.744952",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "data": {
+        "data": [
+          {
+            "id": "16",
+            "type": "asks",
+            "attributes": {
+              "amount": 1,
+              "remaining_amount": 1,
+              "price": 123,
+              "status": "executing",
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          },
+          {
+            "id": "17",
+            "type": "asks",
+            "attributes": {
+              "amount": 0.43,
+              "remaining_amount": 0.43,
+              "price": 142,
+              "status": "executing",
+              "orderbook_code": "btc_usd"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          },
+          {
+            "id": "18",
+            "type": "asks",
+            "attributes": {
+              "amount": 2,
+              "remaining_amount": 2,
+              "price": 1234,
+              "status": "executing",
+              "orderbook_code": "btc_ars"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "5",
+                  "type": "users"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "config": {
+        "url": "https://localhost:3000/api/asks/",
+        "method": "get",
+        "data": null,
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/vnd.api+json",
+          "Authorization": "valid_api_key",
+          "User-Agent": "axios-vcr"
+        }
+      }
+    }
+  }
+}
