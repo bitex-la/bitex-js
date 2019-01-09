@@ -94,7 +94,7 @@ export default class Bitex {
   }
 
   /**
-   * Get transactions of a specific orderbook
+   * Get transactions
    * @param {string} [orderbook_code]
    * @param {number} [hours] - Number of hours ago to get the transactions from.
    */
@@ -132,7 +132,7 @@ export default class Bitex {
    * An Ask is a Sell order to be executed in the orderbook.
    * @param {string} orderbook_code
    * @param {number} price
-   * @param {number} amount
+   * @param {number} amount - The amount is in _base_ currency (BTC generally)
    */
   async createAsk(orderbook_code, price, amount){
     let ask = new Ask()
@@ -177,7 +177,7 @@ export default class Bitex {
    * An Bid is a Buy order to be executed in the orderbook.
    * @param {string} orderbook_code
    * @param {number} price
-   * @param {number} amount
+   * @param {number} amount - The amount is in _quote_ currency (fiat generally)
    */
   async createBid(orderbook_code, price, amount){
     let bid = new Bid()
@@ -220,7 +220,6 @@ export default class Bitex {
   /**
    * Get own Orders.
    * Orders are both Bids and Asks.
-   * @param {number} id
    */
   async getOrders(){
     return this.client.findAll({type: Order})
@@ -487,7 +486,7 @@ export default class Bitex {
    * Create a Buying Bot.
    * A Buying Bot will take an amount and an orderbook and will try to buy the
    * _base_ asset (crypto asset, in general) with the specified amount of the
-   * _quote_ asset.
+   * _quote_ asset (fiat asset, in general).
    * The strategy used by the buying bot is to buy in little chunks over time
    * and only if the spread is less than 1%. This prevents the buyer to pay an
    * abnormal high price.
@@ -508,11 +507,11 @@ export default class Bitex {
    * Cancel a Buying Bot.
    * The orders executed by the bot will not be cancelled, but it won't create
    * any more.
-   * @param {number} buyingBotId
+   * @param {number} id
    */
-  async cancelBuyingBot(buyingBotId){
+  async cancelBuyingBot(id){
     let buyingBot = new BuyingBot()
-    buyingBot.id = buyingBotId
+    buyingBot.id = id
     return this.client.customAction({resource: buyingBot, action: 'cancel'})
   }
 
@@ -556,11 +555,11 @@ export default class Bitex {
    * Cancel a Selling Bot.
    * The orders executed by the bot will not be cancelled, but it won't create
    * any more.
-   * @param {number} sellingBotId
+   * @param {number} id
    */
-  async cancelSellingBot(sellingBotId){
+  async cancelSellingBot(id){
     let sellingBot = new SellingBot()
-    sellingBot.id = sellingBotId
+    sellingBot.id = id
     return this.client.customAction({resource: sellingBot, action: 'cancel'})
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "bitex-js",
-  "version": "0.2.0",
+  "version": "1.0.2",
   "description": "Bitex SDK in Javascript",
   "main": "dist/index.js",
   "scripts": {
