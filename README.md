@@ -22,6 +22,55 @@ let client = new Bitex({apiKey: 'valid_api_key'})
 
 To get your Api Key, please sign up in https://bitex.la and go to https://bitex.la/developers
 
+## Table of Contents
+
+* [Orderbooks](#orderbooks)
+* [Market Data](#market-data)
+  * [Market Ticker](#market-ticker)
+  * [Get last Transactions](#get-last-transactions)
+  * [Market Candles](#market-candles)
+* [Trading](#trading)
+  * [Create Ask](#create-ask)
+  * [Get Asks](#get-asks)
+  * [Cancel Ask](#cancel-ask)
+  * [Create Bid](#create-bid)
+  * [Get Bids](#get-bids)
+  * [Cancel Bid](#cancel-bid)
+  * [Get all my Orders](#get-all-my-orders)
+  * [Cancel all my Orders](#cancel-all-my-orders)
+  * [Get Trades](#get-trades)
+  * [Get Buys](#get-buys)
+  * [Get Sells](#get-sells)
+* [Movements](#movements)
+* [Account](#account)
+* [Deposit/Withdraw](#depositwithdraw)
+  * [Get Cash Wallets](#get-cash-wallets)
+  * [Get Coin Wallets](#get-coin-wallets)
+  * [Get Cash Deposits](#get-cash-deposits)
+  * [Get Coin Deposits](#get-coin-deposits)
+  * [Create Cash Withdrawal Instructions](#create-cash-withdrawal-instructions)
+  * [Get Cash Withdrawal Instructions](#get-cash-withdrawal-instructions)
+  * [Delete a Cash Withdrawal Instruction](#delete-a-cash-withdrawal-instruction)
+  * [Create Cash Withdrawal](#create-cash-withdrawal)
+  * [Get Cash Withdrawals](#get-cash-withdrawals)
+  * [Create Coin Withdrawal](#create-coin-withdrawal)
+  * [Get Coin Withdrawals](#get-coin-withdrawals)
+* [Buying/Selling Bots](#buyingselling-bots)
+  * [Get Buying Bots](#get-buying-bots)
+  * [Create a Buying Bot](#create-a-buying-bot)
+  * [Cancel a Buying Bot](#cancel-a-buying-bot)
+  * [Get Selling Bots](#get-selling-bots)
+  * [Create a Selling Bot](#create-a-selling-bot)
+  * [Cancel a Selling Bot](#cancel-a-selling-bot)
+* [Merchants](#merchants)
+  * [Get Payments](#get-payments)
+  * [Register a new Payment](#register-a-new-payment)
+  * [Create a POS (Point Of Sale)](#create-a-pos-point-of-sale)
+* [Api Keys](#api-keys)
+  * [Get Api Keys](#get-api-keys)
+  * [Create an Api Key](#create-an-api-key)
+  * [Revoke an Api Key](#revoke-an-api-key)
+
 ### Orderbooks
 
 ```js
@@ -250,7 +299,7 @@ async getAccount()
 
 ### Deposit/Withdraw
 
-#### Get Cash Wallet
+#### Get Cash Wallets
 
 ```js
 /**
